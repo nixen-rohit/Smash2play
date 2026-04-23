@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "components/Header/Button/final/page.jsx"  ],
   "exclude": ["node_modules"]
 }

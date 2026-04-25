@@ -9,7 +9,7 @@ const TennisHero = () => {
       {/* 1. Background Layer */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Img/sky-bg.png"
+          src="/Img/hero-bg.png"
           alt="Sky Background"
           fill
           className="object-cover"
@@ -38,12 +38,12 @@ const TennisHero = () => {
 
       {/* 3. Floating Player */}
       <motion.div
-        className="absolute top-30 right-[-10%] md:right-[5%] z-20 h-[50vh] md:h-[80vh] w-[90vw] md:w-[60vw]"
+        className="absolute top-37 right-[-10%] md:right-[5%] z-20 h-[50vh] md:h-[80vh] w-[90vw] md:w-[60vw]"
         animate={{ y: [0, -15, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image
-          src="/Img/player1.webp"
+          src="/Img/player.webp"
           alt="Tennis Player Jumping"
           fill
           className="object-contain"

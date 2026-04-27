@@ -43,7 +43,7 @@ const ProblemSection = () => {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-sm font-[AlumSemibold] uppercase tracking-[0.3em] text-lime-600 mb-3 block"
+            className="text-sm font-[AlumSemibold] uppercase tracking-[0.3em] text-(--sky-color) mb-3 block"
           >
             The Current Reality
           </motion.span>
@@ -85,7 +85,7 @@ const ProblemSection = () => {
                   transition={{ delay: index * 0.1 }}
                   className="group flex items-center gap-6 p-5 rounded-xl border border-transparent hover:border-slate-100 hover:bg-slate-50 transition-all duration-300"
                 >
-                  <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-slate-100 text-slate-400 group-hover:bg-lime-500 group-hover:text-white transition-colors duration-300">
+                  <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-slate-100 text-slate-400 group-hover:bg-(--sky-color) group-hover:text-white transition-colors duration-300">
                     {icon}
                   </div>
                   <div className="flex items-center flex-1">

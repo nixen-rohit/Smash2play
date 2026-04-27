@@ -4,3 +4,7 @@
   font-family: AlumSemibold;
   src: url(../public/Font/AlumniSans-SemiBold.ttf);
 }
+
+:root {
+  --sky-color: #3a81ab;
+}

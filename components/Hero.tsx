@@ -28,11 +28,11 @@ const TennisHero = () => {
         </div>
 
         {/* TABLET CHANGE: Changed md:hidden to lg:hidden to keep words stacked on tablets */}
-        <h1 className="text-[20vw] md:text-[16vw] lg:text-[17vw] 2xl:text-[18vw] font-[AlumSemibold] leading-[0.8] md:leading-[0.9] lg:leading-[.8] tracking-tighter text-white/90">
-          Play<span className="text-white/70">.</span>{" "}
+        <h1 className="text-[20vw] md:text-[16vw] lg:text-[15vw] 2xl:text-[16vw] font-[AlumSemibold] leading-[0.8] md:leading-[0.9] lg:leading-[.8] tracking-tighter text-white/90">
+          Play<span className="text-white/70">.</span>
           <br className="lg:hidden" />
-          Train<span className="text-white/70">.</span>{" "}
-          <br className="lg:hidden" />
+          Train<span className="text-white/70">.</span>
+          <br />
           Compete<span className="text-white/70">.</span>
         </h1>
       </div>
@@ -54,11 +54,12 @@ const TennisHero = () => {
       </motion.div>
 
       {/* 4. Text Card & Buttons Layer */}
-      <div className="absolute left-6 md:left-10 lg:left-20 bottom-20 md:bottom-12 lg:bottom-15 2xl:bottom-18 z-30 flex flex-col gap-6 max-w-[80vw] md:max-w-md lg:max-w-[50%] 2xl:max-w-sm">
+      <div className="absolute left-6 md:left-10 lg:left-20 bottom-20 md:bottom-12 lg:bottom-15 2xl:bottom-18 z-30 flex flex-col gap-6 max-w-[75%]">
         <div className="rounded-sm bg-white/10 p-4 md:p-8 lg:p-6 shadow-xl backdrop-blur-md border border-white/10">
-          <p className="text-lg md:text-3xl lg:text-xl font-medium leading-tight md:leading-snug text-white">
-            Book premium sports venues, train with expert coaches,{" "}
-            <br className="hidden lg:block" /> or host unforgettable events —
+          <p className="text-lg md:text-3xl lg:text-lg font-medium leading-tight md:leading-snug text-white">
+            Book premium sports venues, <br /> train with expert coaches,
+            <br/> or host unforgettable events —
+            <br />
             all in one place.
           </p>
         </div>

@@ -5,9 +5,10 @@ import Image from "next/image";
 
 const TennisHero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    /* The parent is now a Grid. Everything inside will stack in row 1, col 1 */
+    <section className="grid min-h-screen w-full grid-cols-1 grid-rows-1 overflow-hidden">
       {/* 1. Background Layer */}
-      <div className="absolute inset-0 z-0">
+      <div className="col-start-1 row-start-1 h-full w-full">
         <Image
           src="/Img/hero-bg.png"
           alt="Sky Background"
@@ -17,63 +18,72 @@ const TennisHero = () => {
         />
       </div>
 
-      {/* 2. Headline Layer */}
-      <div className="relative z-10 flex h-full flex-col justify-start mt-16 md:mt-24 lg:mt-15 px-6 md:px-10 lg:px-20">
-        {/* Trusted By Badge */}
-        <div className="mb-4">
-          <p className="text-[10px] md:text-xs font-semibold text-white/90 tracking-[0.2em] uppercase border-l-2 border-white pl-3">
-            Trusted by 1000+ players <br />
-            <span className="text-white/60 font-normal">Across Delhi NCR</span>
-          </p>
-        </div>
+      {/* 2. Content Layer (Text, Player, Card) */}
+      <div className="col-start-1 row-start-1 z-10 flex flex-col justify-between p-6 md:p-12 lg:p-20">
+        {/* Top Section: Trusted Badge & Headline */}
+        <header>
+          <div className="mb-6">
+            <p className="border-l-2 border-white py-1 pl-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 md:text-xs">
+              Trusted by 1000+ players <br />
+              <span className="font-normal text-white/60">
+                Across Delhi NCR
+              </span>
+            </p>
+          </div>
 
-        {/* TABLET CHANGE: Changed md:hidden to lg:hidden to keep words stacked on tablets */}
-        <h1 className="text-[20vw] md:text-[16vw] lg:text-[15vw] 2xl:text-[16vw] font-[AlumSemibold] leading-[0.8] md:leading-[0.9] lg:leading-[.8] tracking-tighter text-white/90">
-          Play<span className="text-white/70">.</span>
-          <br className="lg:hidden" />
-          Train<span className="text-white/70">.</span>
-          <br />
-          Compete<span className="text-white/70">.</span>
-        </h1>
+          <h1 className="text-[20vw] font-[AlumSemibold] leading-[0.85] tracking-tighter text-white/90 md:text-[16vw] lg:text-[14vw] xl:text-[12vw]">
+            Play<span className="text-white/70">.</span>
+            <br className="lg:hidden" />
+            Train<span className="text-white/70">.</span>
+            <br />
+            Compete<span className="text-white/70">.</span>
+          </h1>
+        </header>
+
+        {/* Bottom Section: Text Card & Buttons */}
+        <div className="mt-auto max-w-xl space-y-6 lg:max-w-lg">
+          <div className="rounded-sm border border-white/10 bg-white/10 p-5 shadow-xl backdrop-blur-md md:p-8 lg:p-6">
+            <p className="text-lg font-medium leading-tight text-white md:text-3xl lg:text-xl">
+              Book premium sports venues, train with expert coaches, or host
+              unforgettable events — all in one place.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-row md:gap-4">
+            <button className="group flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-sm bg-white px-8 font-bold text-gray-900 shadow-md transition hover:bg-gray-100 md:h-16 md:text-xl lg:h-12 lg:text-base">
+              Book A Slot
+              <span className="transition-transform group-hover:translate-x-1">
+                &rarr;
+              </span>
+            </button>
+            <button className="group flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-sm bg-white px-8 font-bold text-gray-900 shadow-md transition hover:bg-gray-100 md:h-16 md:text-xl lg:h-12 lg:text-base">
+              Explore Venue
+              <span className="transition-transform group-hover:translate-x-1">
+                &rarr;
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* 3. Floating Player */}
-      <motion.div
-        /* TABLET CHANGE: Adjusted md:right and md:h for tablet portrait scaling */
-        className="absolute top-37 right-[-10%] md:right-0 lg:right-[5%] z-20 h-[50vh] md:h-[70vh] lg:h-[80vh] w-[90vw] md:w-[80vw] lg:w-[60vw]"
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Image
-          src="/Img/play.png"
-          alt="Tennis Player Jumping"
-          fill
-          className="object-contain"
-          priority
-        />
-      </motion.div>
-
-      {/* 4. Text Card & Buttons Layer */}
-      <div className="absolute left-6 md:left-10 lg:left-20 bottom-20 md:bottom-12 lg:bottom-15 2xl:bottom-18 z-30 flex flex-col gap-6 max-w-[75%]">
-        <div className="rounded-sm bg-white/10 p-4 md:p-8 lg:p-6 shadow-xl backdrop-blur-md border border-white/10">
-          <p className="text-lg md:text-3xl lg:text-lg font-medium leading-tight md:leading-snug text-white">
-            Book premium sports venues, <br /> train with expert coaches,
-            <br/> or host unforgettable events —
-            <br />
-            all in one place.
-          </p>
-        </div>
-
-        {/* TABLET CHANGE: flex-col maintained through md, sm:flex-row changed to lg:flex-row 
-            This ensures buttons stay stacked on tablet but go side-by-side on desktop */}
-        <div className="flex flex-col lg:flex-row gap-3">
-          <button className="flex items-center justify-center gap-2 px-6 h-12 md:h-16 lg:h-12 bg-white text-gray-900 font-bold md:text-xl lg:text-base rounded-sm shadow-md hover:bg-gray-100 transition whitespace-nowrap">
-            Book A Slot <span>&rarr;</span>
-          </button>
-          <button className="flex items-center justify-center gap-2 px-6 h-12 md:h-16 lg:h-12 bg-white text-gray-900 font-bold md:text-xl lg:text-base rounded-sm shadow-md hover:bg-gray-100 transition whitespace-nowrap">
-            Explore Venue <span>&rarr;</span>
-          </button>
-        </div>
+      {/* 3. Floating Player Layer */}
+      {/* We use 'pointer-events-none' so the player doesn't block button clicks */}
+      <div className="pointer-events-none col-start-1 row-start-1 flex items-center justify-end overflow-hidden pt-20">
+        <motion.div
+          className="h-[60vh] w-[90vw] md:h-[75vh] md:w-[70vw] lg:h-[85vh] lg:w-[55vw]"
+          animate={{ y: [0, -20, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="relative h-full w-full translate-x-10 lg:translate-x-0">
+            <Image
+              src="/Img/play.png"
+              alt="Tennis Player Jumping"
+              fill
+              className="object-contain object-right"
+              priority
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

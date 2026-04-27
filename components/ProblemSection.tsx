@@ -1,120 +1,156 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  HiOutlineExclamationTriangle,
-  HiOutlineClock,
-  HiOutlineAcademicCap,
-  HiOutlineClipboardDocumentCheck,
-  HiOutlineUsers,
-} from "react-icons/hi2";
+import { MapPinOff, Clock, UserX, ClipboardX } from "lucide-react";
+
+const DashedConnector = ({ index }: { index: number }) => {
+  const isLeftToRight = index % 2 === 0;
+
+  return (
+    <div
+      className="hidden lg:block absolute z-0 pointer-events-none"
+      style={{
+        top: "80%", // Starts near the bottom of the current card
+        height: "160px", // The vertical distance to the next card
+        width: "100%",
+        left: 0,
+      }}
+    >
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 1000 150"
+        fill="none"
+        preserveAspectRatio="none"
+      >
+        <motion.path
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 1 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          viewport={{ once: true }}
+          // Dynamic Path Logic
+          d={
+            isLeftToRight
+              ? "M 250 0 V 40 Q 250 75 500 75 H 700 Q 750 75 750 110 V 150" // Left to Right "S"
+              : "M 750 0 V 40 Q 750 75 500 75 H 300 Q 250 75 250 110 V 150" // Right to Left "S"
+          }
+          stroke="#D1D5DB"
+          strokeWidth="2"
+          strokeDasharray="8 8"
+          markerEnd="url(#arrowhead)"
+        />
+        <defs>
+          <marker
+            id="arrowhead"
+            markerWidth="10"
+            markerHeight="7"
+            refX="10"
+            refY="3.5"
+            orient="auto"
+          >
+            <polygon points="0 0, 10 3.5, 0 7" fill="#D1D5DB" />
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  );
+};
 
 const ProblemSection = () => {
   const problems = [
     {
-      text: "Poor quality grounds",
-      icon: <HiOutlineExclamationTriangle className="w-6 h-6" />,
+      id: 1,
+      title: "Poor quality grounds",
+      icon: MapPinOff,
+      duration: "1 Week",
+      color: "bg-[#064E3B]",
     },
     {
-      text: "No availability when you want",
-      icon: <HiOutlineClock className="w-6 h-6" />,
+      id: 2,
+      title: "No availability",
+      icon: Clock,
+      duration: "2 Weeks",
+      color: "bg-[#1F2937]",
     },
     {
-      text: "No proper coaching",
-      icon: <HiOutlineAcademicCap className="w-6 h-6" />,
+      id: 3,
+      title: "No proper coaching",
+      icon: UserX,
+      duration: "1-2 Days",
+      color: "bg-[#1F2937]",
     },
     {
-      text: "No organized experience",
-      icon: <HiOutlineClipboardDocumentCheck className="w-6 h-6" />,
-    },
-    {
-      text: "No community",
-      icon: <HiOutlineUsers className="w-6 h-6" />,
+      id: 4,
+      title: "No organized experience",
+      icon: ClipboardX,
+      duration: "1-2 Days",
+      color: "bg-[#064E3B]",
     },
   ];
 
   return (
-    <section className="py-24 px-6 md:px-20 bg-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-sm font-[AlumSemibold] uppercase tracking-[0.3em] text-(--sky-color) mb-3 block"
-          >
-            The Current Reality
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-8xl font-[AlumSemibold] leading-[0.9] tracking-tighter text-slate-900 max-w-3xl"
-          >
-            Why Finding Good Sports Facilities is Hard.
-          </motion.h2>
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header Content */}
+        <div className="mb-24 text-center md:text-left">
+          <span className="bg-[#BEF264] text-green-900 px-4 py-1.5 rounded-full text-xs font-bold mb-6 inline-block">
+            Problem Analysis
+          </span>
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-6">
+            Why the Current <br /> System is Broken
+          </h2>
+          <p className="text-gray-500 max-w-xl text-lg">
+            We’ve mapped out the friction points that prevent athletes from
+            staying consistent and reaching their peak.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
-          {/* Left: Clean, Minimalist Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            className="relative h-[400px] lg:h-full min-h-[500px] w-full overflow-hidden rounded-2xl shadow-2xl"
-          >
-            <Image
-              src="/Img/hero-bg.png"
-              alt="Frustrated athlete on court"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Subtle Gradient overlay to add depth */}
-            <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 to-transparent" />
-          </motion.div>
+        {/* The Zig-Zag List */}
+        <div className="relative flex flex-col items-center">
+          {problems.map((item, index) => (
+            <div
+              key={item.id}
+              className={`relative flex w-full mb-32 last:mb-0 ${
+                index % 2 === 0 ? "justify-start" : "justify-end"
+              }`}
+            >
+              {/* Connector logic - connects 1->2, 2->3, 3->4 */}
+              {index < problems.length - 1 && <DashedConnector index={index} />}
 
-          {/* Right: List of Pain Points */}
-          <div className="flex flex-col justify-center">
-            <ul className="space-y-4">
-              {problems.map(({ text, icon }, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group flex items-center gap-6 p-5 rounded-xl border border-transparent hover:border-slate-100 hover:bg-slate-50 transition-all duration-300"
+              {/* The Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="w-full md:w-[45%] bg-[#F8FAF2] rounded-[40px] p-8 flex gap-6 z-10 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                {/* Vertical Pill Label */}
+                <div
+                  className={`w-10 rounded-full flex items-center justify-center shrink-0 ${item.color}`}
                 >
-                  <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-slate-100 text-slate-400 group-hover:bg-(--sky-color) group-hover:text-white transition-colors duration-300">
-                    {icon}
-                  </div>
-                  <div className="flex items-center flex-1">
-                    <span className="text-slate-300 mr-3 text-2xl">—</span>
-                    <p className="text-xl md:text-2xl font-[AlumSemibold] text-slate-700 tracking-tight">
-                      {text}
-                    </p>
-                  </div>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-        </div>
+                  <span className="text-white text-[10px] font-bold uppercase rotate-180 [writing-mode:vertical-lr] py-4">
+                    {item.duration}
+                  </span>
+                </div>
 
-        {/* Center-aligned Quote at the end */}
-        <div className="mt-24 md:mt-40 max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-4"
-          >
-            <p className="text-3xl md:text-8xl font-[AlumSemibold] text-slate-900 leading-[1.1] tracking-tighter italic">
-              “So playing becomes a hassle… <br />
-              <span className="text-lime-500 not-italic">
-                and you stop showing up.”
-              </span>
-            </p>
-          </motion.div>
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-green-700 shadow-sm">
+                      <item.icon size={20} />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900">
+                      {item.id}. {item.title}
+                    </h4>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Lack of standardization and accessibility leads to a drop in
+                    performance and long-term engagement.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

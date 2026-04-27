@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import HowItsWorkSection from "@/components/HowItsWorkSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection"
 import React from "react";
@@ -9,6 +10,7 @@ const page = () => {
       <Hero />
       <ProblemSection />  
       <SolutionSection />
+      <HowItsWorkSection/>
     </div>
   );
 };

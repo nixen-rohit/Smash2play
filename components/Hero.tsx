@@ -43,7 +43,7 @@ const TennisHero = () => {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image
-          src="/Img/player.webp"
+          src="/Img/play.png"
           alt="Tennis Player Jumping"
           fill
           className="object-contain"

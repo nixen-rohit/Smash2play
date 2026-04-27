@@ -16,7 +16,7 @@ interface SlideItem {
 const SLIDES: SlideItem[] = [
   {
     id: 1,
-    image: "/img/img1.jpg",
+    image: "/Img/img1.jpg",
     author: "LUNDEV",
     title: "DESIGN SLIDER",
     topic: "ANIMAL",
@@ -25,7 +25,7 @@ const SLIDES: SlideItem[] = [
   },
   {
     id: 2,
-    image: "/img/img2.jpg",
+    image: "/Img/img2.jpg",
     author: "LUNDEV",
     title: "DESIGN SLIDER",
     topic: "NATURE",
@@ -33,7 +33,7 @@ const SLIDES: SlideItem[] = [
   },
   {
     id: 3,
-    image: "/img/img3.jpg",
+    image: "/Img/img3.jpg",
     author: "LUNDEV",
     title: "DESIGN SLIDER",
     topic: "OCEAN",
@@ -41,7 +41,7 @@ const SLIDES: SlideItem[] = [
   },
   {
     id: 4,
-    image: "/img/img4.jpg",
+    image: "/Img/img4.jpg",
     author: "LUNDEV",
     title: "DESIGN SLIDER",
     topic: "FOREST",

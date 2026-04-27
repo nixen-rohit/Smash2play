@@ -167,7 +167,7 @@ export default function Carousel() {
       <div className="absolute bottom-12 left-1/2 z-40 flex gap-4">
         {/* Placeholder for the shrinking card so the tray doesn't snap left */}
         {isAnimating && direction === "prev" && (
-          <div style={{ width: CONFIG.THUMB_WIDTH, height: CONFIG.THUMB_HEIGHT }} className="flex-shrink-0" />
+          <div style={{ width: CONFIG.THUMB_WIDTH, height: CONFIG.THUMB_HEIGHT }} className="shrink-0" />
         )}
 
         <AnimatePresence mode="popLayout">
@@ -182,7 +182,7 @@ export default function Carousel() {
               }}
               exit={{ opacity: 0, scale: 0.8 }}
               style={{ width: CONFIG.THUMB_WIDTH, height: CONFIG.THUMB_HEIGHT }}
-              className="relative flex-shrink-0 overflow-hidden rounded-3xl cursor-pointer"
+              className="relative shrink-0 overflow-hidden rounded-3xl cursor-pointer"
               onClick={moveNext}
             >
               <img src={item.image} className="h-full w-full object-cover" />
@@ -192,7 +192,7 @@ export default function Carousel() {
       </div>
 
       {/* 5. CONTROLS (Separated from Tray) */}
-      <div className="absolute bottom-10 left-[10%] z-[100] flex gap-4">
+      <div className="absolute bottom-10 left-[10%] z-100 flex gap-4">
         <button 
           onClick={movePrev} 
           disabled={isAnimating}

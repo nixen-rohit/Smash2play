@@ -7,7 +7,7 @@ import Carousel from "@/components/Carousel";
 
 const page = () => {
   return (
-    <div className="h-screen w-full bg-zinc-100 text-black">
+    <div className="h-screen w-full  ">
       
       <Hero />
       <Carousel />      

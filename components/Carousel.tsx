@@ -20,7 +20,7 @@ const SLIDES: SlideItem[] = [
     author: "LUNDEV",
     title: "DESIGN SLIDER",
     topic: "ANIMAL",
-   
+
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
   },
   {
@@ -49,13 +49,12 @@ const SLIDES: SlideItem[] = [
   },
 ];
 
-
 const CONFIG = {
   TRANSITION_MS: 800,
   THUMB_WIDTH: 150,
   THUMB_HEIGHT: 220,
   THUMB_BOTTOM: 50,
-  THUMB_LEFT: "calc(50% + 16px)", 
+  THUMB_LEFT: "calc(50% + 16px)",
 };
 
 export default function Carousel() {
@@ -95,22 +94,29 @@ export default function Carousel() {
   }, [isAnimating]);
 
   const activeSlide = items[0];
-  const nextSlide = items[1]; 
-  const lastSlide = items[items.length - 1]; 
+  const nextSlide = items[1];
+  const lastSlide = items[items.length - 1];
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black text-white font-sans">
-      
       {/* 1. BACKGROUND LAYER */}
       <div className="absolute inset-0 z-0">
         {direction === "prev" ? (
-          <img src={lastSlide.image} className="w-full h-full object-cover opacity-50" alt="incoming-prev" />
+          <img
+            src={lastSlide.image}
+            className="w-full h-full object-cover opacity-50"
+            alt="incoming-prev"
+          />
         ) : (
           <div className="w-full h-full">
             {!isAnimating && activeSlide.CustomBg ? (
               activeSlide.CustomBg
             ) : (
-              <img src={activeSlide.image} className="w-full h-full object-cover opacity-50" alt="current" />
+              <img
+                src={activeSlide.image}
+                className="w-full h-full object-cover opacity-50"
+                alt="current"
+              />
             )}
           </div>
         )}
@@ -122,9 +128,24 @@ export default function Carousel() {
           <motion.div
             key="expanding-card"
             className="absolute z-50 overflow-hidden"
-            initial={{ width: CONFIG.THUMB_WIDTH, height: CONFIG.THUMB_HEIGHT, bottom: CONFIG.THUMB_BOTTOM, left: CONFIG.THUMB_LEFT, borderRadius: 24 }}
-            animate={{ width: "100%", height: "100%", bottom: 0, left: 0, borderRadius: 0 }}
-            transition={{ duration: CONFIG.TRANSITION_MS / 1000, ease: [0.4, 0, 0.2, 1] }}
+            initial={{
+              width: CONFIG.THUMB_WIDTH,
+              height: CONFIG.THUMB_HEIGHT,
+              bottom: CONFIG.THUMB_BOTTOM,
+              left: CONFIG.THUMB_LEFT,
+              borderRadius: 24,
+            }}
+            animate={{
+              width: "100%",
+              height: "100%",
+              bottom: 0,
+              left: 0,
+              borderRadius: 0,
+            }}
+            transition={{
+              duration: CONFIG.TRANSITION_MS / 1000,
+              ease: [0.4, 0, 0.2, 1],
+            }}
           >
             <img src={nextSlide.image} className="w-full h-full object-cover" />
           </motion.div>
@@ -134,11 +155,29 @@ export default function Carousel() {
           <motion.div
             key="shrinking-card"
             className="absolute z-50 overflow-hidden"
-            initial={{ width: "100%", height: "100%", bottom: 0, left: 0, borderRadius: 0 }}
-            animate={{ width: CONFIG.THUMB_WIDTH, height: CONFIG.THUMB_HEIGHT, bottom: CONFIG.THUMB_BOTTOM, left: CONFIG.THUMB_LEFT, borderRadius: 24 }}
-            transition={{ duration: CONFIG.TRANSITION_MS / 1000, ease: [0.4, 0, 0.2, 1] }}
+            initial={{
+              width: "100%",
+              height: "100%",
+              bottom: 0,
+              left: 0,
+              borderRadius: 0,
+            }}
+            animate={{
+              width: CONFIG.THUMB_WIDTH,
+              height: CONFIG.THUMB_HEIGHT,
+              bottom: CONFIG.THUMB_BOTTOM,
+              left: CONFIG.THUMB_LEFT,
+              borderRadius: 24,
+            }}
+            transition={{
+              duration: CONFIG.TRANSITION_MS / 1000,
+              ease: [0.4, 0, 0.2, 1],
+            }}
           >
-            <img src={activeSlide.image} className="w-full h-full object-cover" />
+            <img
+              src={activeSlide.image}
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         )}
       </AnimatePresence>
@@ -155,19 +194,28 @@ export default function Carousel() {
               transition={{ duration: 0.4 }}
               className="max-w-2xl"
             >
-              <span className="font-bold tracking-[10px] text-orange-500 uppercase">{activeSlide.author}</span>
-              <h1 className="text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">{activeSlide.title}</h1>
-              <p className="text-gray-300 text-lg leading-relaxed">{activeSlide.description}</p>
+              <span className="font-bold tracking-[10px] text-orange-500 uppercase">
+                {activeSlide.author}
+              </span>
+              <h1 className="text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">
+                {activeSlide.title}
+              </h1>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                {activeSlide.description}
+              </p>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
       {/* 4. THUMBNAILS */}
-      <div className="absolute bottom-12 left-1/2 z-40 flex gap-4">
+      <div className="absolute bottom-12 left-1/2 z-80 flex gap-4 ">
         {/* Placeholder for the shrinking card so the tray doesn't snap left */}
         {isAnimating && direction === "prev" && (
-          <div style={{ width: CONFIG.THUMB_WIDTH, height: CONFIG.THUMB_HEIGHT }} className="shrink-0" />
+          <div
+            style={{ width: CONFIG.THUMB_WIDTH, height: CONFIG.THUMB_HEIGHT }}
+            className="shrink-0"
+          />
         )}
 
         <AnimatePresence mode="popLayout">
@@ -176,9 +224,10 @@ export default function Carousel() {
               key={item.id}
               layout
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ 
-                opacity: index === 0 && isAnimating && direction === "next" ? 0 : 1,
-                scale: 1 
+              animate={{
+                opacity:
+                  index === 0 && isAnimating && direction === "next" ? 0 : 1,
+                scale: 1,
               }}
               exit={{ opacity: 0, scale: 0.8 }}
               style={{ width: CONFIG.THUMB_WIDTH, height: CONFIG.THUMB_HEIGHT }}
@@ -193,15 +242,15 @@ export default function Carousel() {
 
       {/* 5. CONTROLS (Separated from Tray) */}
       <div className="absolute bottom-10 left-[10%] z-100 flex gap-4">
-        <button 
-          onClick={movePrev} 
+        <button
+          onClick={movePrev}
           disabled={isAnimating}
           className="px-6 py-2 border border-white/50 rounded-full hover:bg-white hover:text-black transition-colors disabled:opacity-30"
         >
           PREV
         </button>
-        <button 
-          onClick={moveNext} 
+        <button
+          onClick={moveNext}
           disabled={isAnimating}
           className="px-6 py-2 border border-white/50 rounded-full hover:bg-white hover:text-black transition-colors disabled:opacity-30"
         >

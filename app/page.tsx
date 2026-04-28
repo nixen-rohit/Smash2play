@@ -1,19 +1,18 @@
-import Hero from "@/components/Hero";
+
 import HowItsWorkSection from "@/components/HowItsWorkSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
-
+import { Hero } from "@/components/Hero";
 import Carousel from "@/components/Carousel";
 
 const page = () => {
   return (
     <div className="min-h-screen w-full">
-      
-      <Hero />
-      <Carousel />      
+      <Hero />      
+      <Carousel />
       <ProblemSection />
       <SolutionSection />
-      <HowItsWorkSection/>
+      <HowItsWorkSection />
     </div>
   );
 };

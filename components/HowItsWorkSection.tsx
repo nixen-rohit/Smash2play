@@ -86,7 +86,7 @@ const HowItsWorkSection = () => {
               className="bg-[#141C1F] p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[320px] border border-white/5 group"
             >
               {/* Corner Icon */}
-              <div className="absolute top-6 right-6 text-[#BEF264]/20 group-hover:text-[#BEF264] transition-colors duration-500">
+              <div className="absolute top-6 right-6 text-[#BEF264]/20 group-hover:text-[#BEF264]  transition-colors duration-500">
                 <PiTennisBallFill size={28} />
               </div>
 

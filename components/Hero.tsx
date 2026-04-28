@@ -1,92 +1,222 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
-const TennisHero = () => {
+const word = "PLAY. TRAIN.  COMPETE";
+
+const sideImages = [
+  {
+    src: "https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=1000",
+    alt: "Mountain hiking adventure",
+    position: "left",
+    span: 1,
+  },
+  {
+    src: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1000",
+    alt: "Camping under stars",
+    position: "left",
+    span: 1,
+  },
+  {
+    src: "https://images.unsplash.com/photo-1533873984035-25970ab07461?q=80&w=1000",
+    alt: "Forest exploration",
+    position: "right",
+    span: 1,
+  },
+  {
+    src: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=1000",
+    alt: "Lake camping view",
+    position: "right",
+    span: 1,
+  },
+];
+
+export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+useEffect(() => {
+  let ticking = false;
+
+  const handleScroll = () => {
+    if (!sectionRef.current || ticking) return;
+
+    ticking = true;
+
+    requestAnimationFrame(() => {
+      const rect = sectionRef.current!.getBoundingClientRect();
+      const scrollableHeight = window.innerHeight * 2;
+      const scrolled = -rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
+
+      setScrollProgress(progress);
+      ticking = false;
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
+  // Text fades out first (0 to 0.2)
+  const textOpacity = Math.max(0, 1 - scrollProgress / 0.2);
+
+  // Image transforms start after text fades (0.2 to 1)
+  const imageProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.8));
+
+  // Smooth interpolations
+  const centerWidth = 100 - imageProgress * 58; // 100% to 42%
+  const centerHeight = 100 - imageProgress * 30; // 100% to 70%
+  const sideWidth = imageProgress * 22; // 0% to 22%
+  const sideOpacity = imageProgress;
+  const sideTranslateLeft = -100 + imageProgress * 100; // -100% to 0%
+  const sideTranslateRight = 100 - imageProgress * 100; // 100% to 0%
+  const borderRadius = imageProgress * 24; // 0px to 24px
+  const gap = imageProgress * 16; // 0px to 16px
+
+  // Vertical offset for side columns to move them up on mobile
+  const sideTranslateY = -(imageProgress * 15); // Move up by 15% when fully expanded
+
   return (
-    /* The parent is now a Grid. Everything inside will stack in row 1, col 1 */
-    <section className="grid min-h-screen w-full grid-cols-1 grid-rows-1 overflow-hidden">
-      {/* 1. Background Layer */}
-      <div className="col-start-1 row-start-1 h-full w-full">
-        <Image
-          src="/Img/hero-bg.png"
-          alt="Sky Background"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+    <section ref={sectionRef} className="relative bg-background">
+      {/* Sticky container for scroll animation */}
+      <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="flex h-full w-full items-center justify-center">
+          {/* Bento Grid Container */}
+          <div
+            className="relative flex h-full w-full items-stretch justify-center"
+            style={{
+              gap: `${gap}px`,
+              padding: `${imageProgress * 16}px`,
+              paddingBottom: `${0 + imageProgress * 40}px`,
+            }}
+          >
+            {/* Left Column */}
+            <div
+              className="flex flex-col will-change-transform"
+              style={{
+                width: `${sideWidth}%`,
+                gap: `${gap}px`,
+                transform: `translateX(${sideTranslateLeft}%) translateY(${sideTranslateY}%)`,
+                opacity: sideOpacity,
+              }}
+            >
+              {sideImages
+                .filter((img) => img.position === "left")
+                .map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative overflow-hidden will-change-transform"
+                    style={{
+                      flex: img.span,
+                      borderRadius: `${borderRadius}px`,
+                    }}
+                  >
+                    <Image
+                      src={img.src || "/placeholder.svg"}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+            </div>
 
-      {/* 2. Content Layer (Text, Player, Card) */}
-      <div className="col-start-1 row-start-1 z-10 flex flex-col justify-between p-6 md:p-12 lg:p-20">
-        {/* Top Section: Trusted Badge & Headline */}
-        <header>
-          <div className="mb-6">
-            <p className="border-l-2 border-white py-1 pl-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90 md:text-xs">
-              Trusted by 1000+ players <br />
-              <span className="font-normal text-white/60">
-                Across Delhi NCR
-              </span>
-            </p>
-          </div>
+            {/* Main Hero video - Center */}
+            <div
+              className="relative overflow-hidden will-change-transform"
+              style={{
+                width: `${centerWidth}%`,
+                height: `${centerHeight}%`,
+                flex: "0 0 auto",
+                borderRadius: `${borderRadius}px`,
+              }}
+            >
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+              >
+                <source src="/Video/hero.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
 
-          <h1 className="text-[20vw] font-[AlumSemibold] leading-[0.85] tracking-tighter text-white/90 md:text-[16vw] lg:text-[14vw] xl:text-[12vw]">
-            Play<span className="text-white/70">.</span>
-            <br className="lg:hidden" />
-            Train<span className="text-white/70">.</span>
-            <br />
-            Compete<span className="text-white/70">.</span>
-          </h1>
-        </header>
+              {/* Overlay Text - Fades out first */}
+              <div
+                className="absolute inset-0 flex items-end overflow-hidden"
+                style={{ opacity: textOpacity }}
+              >
+                <h1 className="w-full text-[8vw] font-medium leading-[0.9] tracking-tighter text-white">
+                  {word.split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block animate-[slideUp_0.8s_ease-out_forwards] opacity-0"
+                      style={{
+                        animationDelay: `${index * 0.08}s`,
+                        transition: "all 1.5s",
+                        transitionTimingFunction:
+                          "cubic-bezier(0.86, 0, 0.07, 1)",
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </h1>
+              </div>
+            </div>
 
-        {/* Bottom Section: Text Card & Buttons */}
-        <div className="mt-auto max-w-xl space-y-6 lg:max-w-lg">
-          <div className="rounded-sm border border-white/10 bg-white/10 p-5 shadow-xl backdrop-blur-md md:p-8 lg:p-6">
-            <p className="text-lg font-medium leading-tight text-white md:text-3xl lg:text-xl">
-              Book premium sports venues, train with expert coaches, or host
-              unforgettable events — all in one place.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-row md:gap-4">
-            <button className="group flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-sm bg-white px-8 font-bold text-gray-900 shadow-md transition hover:bg-gray-100 md:h-16 md:text-xl lg:h-12 lg:text-base">
-              Book A Slot
-              <span className="transition-transform group-hover:translate-x-1">
-                &rarr;
-              </span>
-            </button>
-            <button className="group flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-sm bg-white px-8 font-bold text-gray-900 shadow-md transition hover:bg-gray-100 md:h-16 md:text-xl lg:h-12 lg:text-base">
-              Explore Venue
-              <span className="transition-transform group-hover:translate-x-1">
-                &rarr;
-              </span>
-            </button>
+            {/* Right Column */}
+            <div
+              className="flex flex-col will-change-transform"
+              style={{
+                width: `${sideWidth}%`,
+                gap: `${gap}px`,
+                transform: `translateX(${sideTranslateRight}%) translateY(${sideTranslateY}%)`,
+                opacity: sideOpacity,
+              }}
+            >
+              {sideImages
+                .filter((img) => img.position === "right")
+                .map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative overflow-hidden will-change-transform"
+                    style={{
+                      flex: img.span,
+                      borderRadius: `${borderRadius}px`,
+                    }}
+                  >
+                    <Image
+                      src={img.src || "/placeholder.svg"}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* 3. Floating Player Layer */}
-      {/* We use 'pointer-events-none' so the player doesn't block button clicks */}
-      <div className="pointer-events-none col-start-1 row-start-1 flex items-center justify-end overflow-hidden pt-20">
-        <motion.div
-          className="h-[60vh] w-[90vw] md:h-[75vh] md:w-[70vw] lg:h-[85vh] lg:w-[55vw]"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <div className="relative h-full w-full translate-x-10 lg:translate-x-0">
-            <Image
-              src="/Img/play.png"
-              alt="Tennis Player Jumping"
-              fill
-              className="object-contain object-right"
-              priority
-            />
-          </div>
-        </motion.div>
+      {/* Scroll space to enable animation */}
+      <div className="h-[200vh]" />
+
+      {/* Tagline Section */}
+      <div className="px-6 pt-32 pb-28 md:pt-48 md:px-12 md:pb-36 lg:px-20 lg:pt-56 lg:pb-44">
+        <p className="mx-auto max-w-3xl text-center text-2xl leading-relaxed text-muted-foreground md:text-3xl lg:text-[2rem] lg:leading-snug">
+          Book premium sports venues, train with expert coaches,or host
+          unforgettable game events - Smash2Play brings everything together.
+        </p>
       </div>
     </section>
   );
-};
-
-export default TennisHero;
+}

@@ -221,8 +221,8 @@ export function Hero() {
 
       <div className="h-[200vh]" />
 
-      {/* Tagline Section */}
-      <div className=" text-white  h-[50vh] pb-10">
+      {/* Tagline Section only for mobile and tablet */}
+      <div className="lg:hidden  text-white  h-[50vh] pb-10">
         <div className="mx-auto max-w-4xl text-center">
           {/* Main Paragraph */}
           <p className="mx-auto max-w-3xl text-2xl leading-relaxed text-muted-foreground md:text-3xl lg:text-[2rem] lg:leading-snug">

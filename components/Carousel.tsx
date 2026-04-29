@@ -8,7 +8,6 @@ interface SlideItem {
   image: string;
   author: string;
   title: string;
-  topic: string;
   description: string;
   CustomBg?: React.ReactNode;
 }
@@ -16,36 +15,35 @@ interface SlideItem {
 const SLIDES: SlideItem[] = [
   {
     id: 1,
-    image: "/Img/img1.jpg",
-    author: "LUNDEV",
-    title: "DESIGN SLIDER",
-    topic: "ANIMAL",
+    image: "/Img/badminton-court.jpg",
+    author: "Smash2Play",
+    title: "Badminton Courts",
 
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+    description: "Premium indoor courts with professional flooring",
   },
   {
     id: 2,
-    image: "/Img/img2.jpg",
-    author: "LUNDEV",
-    title: "DESIGN SLIDER",
-    topic: "NATURE",
-    description: "Lorem ipsum dolor sit amet...",
+    image: "/Img/football-turf.jpg",
+    author: "Smash2Play",
+    title: " Football Turf",
+
+    description: "High-quality artificial turf for matches & training",
   },
   {
     id: 3,
-    image: "/Img/img3.jpg",
-    author: "LUNDEV",
-    title: "DESIGN SLIDER",
-    topic: "OCEAN",
-    description: "Lorem ipsum dolor sit amet...",
+    image: "/Img/cricket-turf.jpg",
+    author: "Smash2Play",
+    title: " Box Cricket",
+
+    description: "Fast-paced, fun cricket experience",
   },
   {
     id: 4,
-    image: "/Img/img4.jpg",
-    author: "LUNDEV",
-    title: "DESIGN SLIDER",
-    topic: "FOREST",
-    description: "Lorem ipsum dolor sit amet...",
+    image: "/Img/pickleball-turf.jpg",
+    author: "Smash2Play",
+    title: "Pickleball",
+
+    description: "Fast-growing sport with dedicated courts",
   },
 ];
 
@@ -99,6 +97,13 @@ export default function Carousel() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black text-white font-sans">
+      {/* Header */}
+
+      <h2 className="absolute top-10 left-10 z-100 text-white text-4xl md:text-5xl font-bold leading-tight max-w-xl">
+        Everything You Need —{" "}
+        <span className="text-gray-400">In One Place</span>
+      </h2>
+
       {/* 1. BACKGROUND LAYER */}
       <div className="absolute inset-0 z-0">
         {direction === "prev" ? (
@@ -197,7 +202,7 @@ export default function Carousel() {
               <span className="font-bold tracking-[10px] text-orange-500 uppercase">
                 {activeSlide.author}
               </span>
-              <h1 className="text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">
+              <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">
                 {activeSlide.title}
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed">

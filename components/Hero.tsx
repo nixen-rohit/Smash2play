@@ -2,30 +2,29 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-const word = "PLAY. TRAIN. COMPETE";
 
 const sideImages = [
   {
-    src: "https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=1000",
-    alt: "Mountain hiking adventure",
+    src: "/Img/hero-badminton.jpg",
+    alt: "Hero section Badminton person",
     position: "left",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1000",
-    alt: "Camping under stars",
+    src: "/Img/hero-cricket.png",
+    alt: "Hero section cricket person",
     position: "left",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1533873984035-25970ab07461?q=80&w=1000",
-    alt: "Forest exploration",
+    src: "/Img/hero-pickelball.png",
+    alt: "Hero section picketball person",
     position: "right",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=1000",
-    alt: "Lake camping view",
+    src: "/Img/hero-football.jpg",
+    alt: "Hero section football person",
     position: "right",
     span: 1,
   },
@@ -34,6 +33,11 @@ const sideImages = [
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const words = ["PLAY", "TRAIN", "COMPETE", "All in One Place"];
+
+  // Centered diagonal: starts left-of-center, ends right-of-center
+  const indentSteps = ["5vw", "15vw", "25vw", "35vw"];
 
   useEffect(() => {
     let ticking = false;
@@ -84,18 +88,22 @@ export function Hero() {
 
   const sideWidth = imageProgress * 22; // 0% to 22%
   const sideOpacity = imageProgress;
+
+  const heroTransformY = imageProgress * 20;
+
   const sideTranslateLeft = -100 + imageProgress * 100; // -100% to 0%
   const sideTranslateRight = 100 - imageProgress * 100; // 100% to 0%
+
   const borderRadius = imageProgress * 24; // 0px to 24px
   const gap = imageProgress * 16; // 0px to 16px
 
   // Vertical offset for side columns to move them up on mobile
-  const sideTranslateY = -(imageProgress * 15); // Move up by 15% when fully expanded
+  const sideTranslateY = -(imageProgress * -3); // Move up by 15% when fully expanded
 
   return (
     <section ref={sectionRef} className="relative bg-black ">
       {/* Sticky container for scroll animation */}
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0 h-screen overflow-hidden ">
         <div className="flex h-full w-full items-center justify-center">
           {/* Bento Grid Container */}
           <div
@@ -108,7 +116,7 @@ export function Hero() {
           >
             {/* Left Column */}
             <div
-              className="hidden flex-col will-change-transform lg:flex "
+              className=" hidden flex-col will-change-transform lg:flex "
               style={{
                 width: `${sideWidth}%`,
                 gap: `${gap}px`,
@@ -139,13 +147,16 @@ export function Hero() {
 
             {/* Main Hero video - Center */}
             <div
-              className="relative overflow-hidden will-change-transform border-2 border-white"
-              style={{
-                width: `${centerWidth}%`,
-                height: `${centerHeight}%`,
-                flex: "0 0 auto",
-                borderRadius: `${borderRadius}px`,
-              }}
+              className="relative overflow-hidden will-change-transform border-2 border-white lg:translate-y-[var(--hero-transform-y)]"
+              style={
+                {
+                  width: `${centerWidth}%`,
+                  height: `${centerHeight}%`,
+                  flex: "0 0 auto",
+                  borderRadius: `${borderRadius}px`,
+                  "--hero-transform-y": `${heroTransformY}%`,
+                } as React.CSSProperties
+              }
             >
               <video
                 className="absolute inset-0 h-full w-full object-cover "
@@ -160,32 +171,53 @@ export function Hero() {
               </video>
 
               {/* Overlay Text - Fades out first */}
+
               <div
-                className="absolute inset-0 flex items-end overflow-hidden"
+                className="absolute inset-0 flex items-center justify-center overflow-hidden"
                 style={{ opacity: textOpacity }}
               >
-                <h1 className="w-full text-[12vw] md:text-[10vw] lg:text-[8vw] font-bold leading-[0.9] tracking-tighter text-white">
-                  {word.split("").map((letter, index) => (
-                    <span
-                      key={index}
-                      className="inline-block animate-[slideUp_0.8s_ease-out_forwards] opacity-0"
-                      style={{
-                        animationDelay: `${index * 0.08}s`,
-                        transition: "all 1.5s",
-                        transitionTimingFunction:
-                          "cubic-bezier(0.86, 0, 0.07, 1)",
-                      }}
-                    >
-                      {letter}
-                    </span>
-                  ))}
+                <h1 className="font-bold leading-[0.95]   tracking-tighter text-white flex flex-col gap-5 lg:gap-2">
+                  {words.map((word, wordIndex) => {
+                    const previousLettersCount = words
+                      .slice(0, wordIndex)
+                      .reduce((acc, w) => acc + w.length, 0);
+
+                    return (
+                      <div
+                        key={wordIndex}
+                        className="overflow-hidden"
+                        style={{ paddingLeft: indentSteps[wordIndex] }}
+                      >
+                        <div className="flex items-baseline">
+                          {word.split("").map((letter, letterIndex) => (
+                            <span
+                              key={letterIndex}
+                              className="inline-block  animate-[slideUp_0.8s_ease-out_forwards] opacity-0"
+                              style={{
+                                animationDelay: `${(previousLettersCount + letterIndex) * 0.05}s`,
+                                transition: "all 1.5s",
+                                transitionTimingFunction:
+                                  "cubic-bezier(0.86, 0, 0.07, 1)",
+                                fontSize:
+                                  wordIndex === words.length - 1
+                                    ? "clamp(1.5rem, 5vw, 4rem)"
+                                    : "clamp(1.8rem, 9vw, 7rem)",
+                              }}
+                            >
+                              {letter === " " ? "\u00A0" : letter}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </h1>
               </div>
             </div>
 
             {/* Right Column */}
             <div
-              className="hidden flex-col will-change-transform lg:flex"
+              className=" hidden flex-col will-change-transform lg:flex"
               style={{
                 width: `${sideWidth}%`,
                 gap: `${gap}px`,

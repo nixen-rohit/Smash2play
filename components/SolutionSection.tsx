@@ -1,14 +1,7 @@
 "use client";
-
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import {
-  FaDumbbell,
-  FaTrophy,
-  FaUsers,
-  FaStar,
-  FaChartLine,
-} from "react-icons/fa";
+import { FaDumbbell, FaTrophy, FaUsers } from "react-icons/fa";
 import { FaFutbol } from "react-icons/fa6";
 import { FiCheckCircle } from "react-icons/fi";
 
@@ -51,29 +44,6 @@ const pillars = [
   },
 ];
 
-const reasons = [
-  {
-    title: "Premium infrastructure",
-    description: "better experience",
-    icon: <FaStar className="w-6 h-6 text-yellow-400" />,
-  },
-  {
-    title: "Multiple sports",
-    description: "more engagement",
-    icon: <FaFutbol className="w-6 h-6 text-emerald-400" />,
-  },
-  {
-    title: "Community-driven",
-    description: "people come back",
-    icon: <FaUsers className="w-6 h-6 text-purple-400" />,
-  },
-  {
-    title: "Events & coaching",
-    description: "complete ecosystem",
-    icon: <FaChartLine className="w-6 h-6 text-blue-400" />,
-  },
-];
-
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -98,14 +68,13 @@ export default function SolutionSection() {
     <section className="py-24 bg-slate-50 overflow-hidden relative">
       {/* Background Ornaments */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-blue-100/50 blur-[100px]" />
-        <div className="absolute top-[40%] -left-[10%] w-[40%] h-[40%] rounded-full bg-purple-100/50 blur-[100px]" />
+        <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-100/50 blur-[100px]" />
+        <div className="absolute top-[40%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-100/50 blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -117,16 +86,19 @@ export default function SolutionSection() {
             <span>The Complete Ecosystem</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-            Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Smash2Play</span>
+            Meet{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">
+              Smash2Play
+            </span>
           </h2>
           <p className="text-xl text-slate-600 leading-relaxed">
-            A complete sports ecosystem — play, train, and compete with world-class
-            infrastructure and a strong community.
+            A complete sports ecosystem — play, train, and compete with
+            world-class infrastructure and a strong community.
           </p>
         </motion.div>
 
         {/* Pillars Grid */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -134,62 +106,34 @@ export default function SolutionSection() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24"
         >
           {pillars.map((pillar, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               variants={itemVariants}
               whileHover={{ y: -8 }}
               className="rounded-3xl p-8 bg-white border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-slate-200/60 transition-all duration-300 relative overflow-hidden group"
             >
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${pillar.color} opacity-5 rounded-bl-full -z-10 group-hover:scale-125 transition-transform duration-500`} />
-              
-              <div className={`w-16 h-16 rounded-2xl ${pillar.bg} flex items-center justify-center mb-6 shadow-inner`}>
+              <div
+                className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${pillar.color} opacity-5 rounded-bl-full -z-10 group-hover:scale-125 transition-transform duration-500`}
+              />
+
+              <div
+                className={`w-16 h-16 rounded-2xl ${pillar.bg} flex items-center justify-center mb-6 shadow-inner`}
+              >
                 {pillar.icon}
               </div>
-              
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">{pillar.title}</h3>
-              <p className="text-slate-700 font-medium mb-3">{pillar.description}</p>
-              <p className="text-slate-500 text-sm leading-relaxed">{pillar.subtext}</p>
+
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                {pillar.title}
+              </h3>
+              <p className="text-slate-700 font-medium mb-3">
+                {pillar.description}
+              </p>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                {pillar.subtext}
+              </p>
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Why Smash2Play Works */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl relative"
-        >
-          {/* Background decoration for the dark section */}
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-500/20 blur-3xl pointer-events-none" />
-          
-          <div className="relative px-8 py-16 sm:px-16 sm:py-20 lg:p-20">
-            <div className="text-center mb-16">
-              <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-                Why Smash2Play Works
-              </h3>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mt-6 rounded-full" />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-              {reasons.map((reason, index) => (
-                <div key={index} className="flex flex-col items-center text-center group">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-6 backdrop-blur-md border border-white/10 group-hover:bg-white/10 transition-colors duration-300">
-                    {reason.icon}
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-3">{reason.title}</h4>
-                  <div className="flex items-center text-slate-300 font-medium text-lg">
-                    <span className="mr-2 text-indigo-400 group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    <span>{reason.description}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
       </div>
     </section>
   );

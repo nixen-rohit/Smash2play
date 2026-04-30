@@ -147,7 +147,7 @@ export function Hero() {
 
             {/* Main Hero video - Center */}
             <div
-              className="relative overflow-hidden will-change-transform border-2 border-white lg:translate-y-[var(--hero-transform-y)]"
+              className="relative overflow-hidden will-change-transform border-2 border-white lg:translate-y-(--hero-transform-y)"
               style={
                 {
                   width: `${centerWidth}%`,

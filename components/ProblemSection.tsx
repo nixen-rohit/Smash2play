@@ -11,8 +11,8 @@ const DashedConnector = ({ index }: { index: number }) => {
     <div
       className="hidden lg:block absolute z-0 pointer-events-none"
       style={{
-        top: "80%", // Starts near the bottom of the current card
-        height: "160px", // The vertical distance to the next card
+        top: "80%",
+        height: "160px",
         width: "100%",
         left: 0,
       }}
@@ -123,7 +123,7 @@ const ProblemSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="w-full md:w-[45%] bg-[#F8FAF2] rounded-[40px] p-8 flex gap-6 z-10 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                className="w-full md:w-[45%] bg-[#F8FAF2] rounded-3xl p-8 flex gap-6 z-10 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
               >
                 {/* Vertical Pill Label */}
                 <div

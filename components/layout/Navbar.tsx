@@ -28,6 +28,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
 
+  const wanumber = process.env.NEXT_PUBLIC_WA_NUMBER;
   // --- Scroll Logic: Hide on scroll down, show on scroll up ---
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -127,14 +128,14 @@ export default function Header() {
       <div className="fixed bottom-8 right-6 flex flex-col gap-4 z-110">
         {/* WhatsApp FAB */}
         <FloatingIcon
-          href="https://wa.me/yournumber"
+          href={`https://wa.me/${wanumber}`}
           bgColor="bg-black"
           icon={<FaWhatsapp />}
           label="WhatsApp"
         />
         {/* Call FAB */}
         <FloatingIcon
-          href="tel:+123456789"
+          href={`tel:+${wanumber}`}
           bgColor="bg-black"
           icon={<FaPhone />}
           label="Call Us"

@@ -2,7 +2,7 @@
 
 const HeroDetails = () => {
   return (
-    <section className=" hidden lg:flex  text-white h-[50vh] w-full  bg-black   justify-center items-center  pb-10 ">
+    <section className=" hidden lg:flex  text-white h-[60vh] w-full  bg-black   justify-center items-center py-20 ">
       <div className="mx-auto max-w-4xl text-center ">
         {/* Main Paragraph */}
         <p className="mx-auto max-w-3xl text-2xl leading-relaxed text-muted-foreground md:text-3xl lg:text-[2rem] lg:leading-snug">

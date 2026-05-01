@@ -1,4 +1,4 @@
-
+ 
 
 const HeroDetails = () => {
   return (

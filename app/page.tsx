@@ -7,20 +7,29 @@ import Carousel from "@/components/Carousel";
 import HeroDetails from "@/components/HeroDetails";
 import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
-import Test  from "@/components/test"
+import Test from "@/components/test";
 const page = () => {
   return (
     <div className="min-h-screen w-full">
-      <Testimonial />
-      <Location />
+      <NewHero />
       <Hero />
       <HeroDetails />
       <ProblemSection />
-      <NewHero />
       <SolutionSection />
       <HowItsWorkSection />
+      {/* tick */}
+
+      {/* NEW SECTION */}
+      {/*  PARTNERSHIP MODELS */}
       <Carousel />
-      <Test/>
+
+      {/* event section */}
+
+      <Location />
+      <Testimonial />
+      {/* FUTURE SECTION (OPTIONAL BUT POWERFUL) */}
+
+      <Test />
     </div>
   );
 };

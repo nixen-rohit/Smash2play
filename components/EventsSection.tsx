@@ -62,7 +62,7 @@ const eventsImg: EventImage[] = [
 
  
   return (
-    <section className="bg-[#051a05] text-white py-14 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden">
+    <section className="bg-(--dark-bg) py-14 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Header */}
@@ -73,7 +73,7 @@ const eventsImg: EventImage[] = [
           variants={fadeInVariants}
           className="text-center"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-(--dark-text) font-extrabold mb-4 sm:mb-6 leading-tight">
             Host Unforgettable Events at{" "}
             <span className="text-lime-500 block">Smash2Play</span>
           </h1>
@@ -91,7 +91,7 @@ const eventsImg: EventImage[] = [
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInVariants}
-              className="bg-[#0a290a] border border-green-900/50 p-5 sm:p-6 md:p-8 rounded-3xl hover:border-lime-500/50 transition-all group"
+              className="bg-(--card-bg) border border-green-900/50 p-5 sm:p-6 md:p-8 rounded-3xl hover:border-lime-500/50 transition-all group"
             >
               <div className="bg-green-950 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
                 {service.icon}
@@ -200,7 +200,7 @@ const eventsImg: EventImage[] = [
                 <FaArrowRight size={22} className="rotate-[-45deg]" />
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-medium">
-                "You just show up and enjoy."
+                &quot;You just show up and enjoy.&quot;
               </p>
             </div>
 

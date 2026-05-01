@@ -60,14 +60,7 @@ const eventsImg: EventImage[] = [
   { i: 4, img: '/Img/Trophy.jpg' },
 ];
 
-const sizePatterns = [
-  'aspect-square',         // square
-  'aspect-[4/5]',         // vertical
-  'aspect-[16/9]',        // horizontal
-  'aspect-[3/4]',         // portrait
-  'aspect-video',         // wide
-  'aspect-[5/4]',         // slightly horizontal
-];
+ 
   return (
     <section className="bg-[#051a05] text-white py-14 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
@@ -134,52 +127,41 @@ const sizePatterns = [
           </p>
 
           {/* Image Placeholder Grid (Replace with real photos) */}
-     <section className="w-full py-8">
-      <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[10px] gap-4">
-        {eventsImg.map((item, index) => {
-          const pattern = sizePatterns[index % sizePatterns.length];
+<section className="w-full py-8">
+  {/* Simple Pinterest-style collage */}
+  <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+    {eventsImg.map((item, index) => {
+      
 
-          const spanClass =
-            pattern === 'aspect-square'
-              ? 'row-span-20'
-              : pattern === 'aspect-[4/5]'
-              ? 'row-span-28'
-              : pattern === 'aspect-[16/9]'
-              ? 'row-span-18 col-span-2 md:col-span-2'
-              : pattern === 'aspect-[3/4]'
-              ? 'row-span-30'
-              : pattern === 'aspect-video'
-              ? 'row-span-18 col-span-2'
-              : 'row-span-22';
+     
 
-          return (
-            <motion.div
-              key={item.i}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              whileHover={{ scale: 1.02 }}
-              className={`
-                group relative overflow-hidden rounded-3xl
-                ${spanClass}
-              `}
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src={item.img}
-                  alt={`Event ${item.i}`}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  priority={index < 2}
-                />
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
-    </section>
+      return (
+        <motion.div
+          key={item.i}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          whileHover={{ scale: 1.03 }}
+          className={`
+            relative mb-4 break-inside-avoid
+            overflow-hidden rounded-2xl
+             h-50
+          `}
+        >
+          <Image
+            src={item.img}
+            alt={`Event ${item.i}`}
+            fill
+            className="object-cover transition-transform duration-500 hover:scale-110"
+            sizes="(max-width:768px) 50vw, (max-width:1024px) 33vw, 25vw"
+            priority={index < 2}
+          />
+        </motion.div>
+      );
+    })}
+  </div>
+</section>
          </motion.div>
 
         {/* What We Handle Card (Grid + Bottom Buttons) */}

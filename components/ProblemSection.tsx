@@ -2,7 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPinOff, Clock, UserX, ClipboardX } from "lucide-react";
+import { LuMapPin ,LuClock4,LuClipboardX  } from "react-icons/lu";
+import { FaUserTimes } from "react-icons/fa";
 
 const DashedConnector = ({ index }: { index: number }) => {
   const isLeftToRight = index % 2 === 0;
@@ -62,28 +63,28 @@ const ProblemSection = () => {
     {
       id: 1,
       title: "Poor quality grounds",
-      icon: MapPinOff,
+      icon: LuMapPin,
       duration: "1 Week",
       color: "bg-[#064E3B]",
     },
     {
       id: 2,
       title: "No availability",
-      icon: Clock,
+      icon: LuClock4,
       duration: "2 Weeks",
       color: "bg-[#1F2937]",
     },
     {
       id: 3,
       title: "No proper coaching",
-      icon: UserX,
+      icon: FaUserTimes,
       duration: "1-2 Days",
       color: "bg-[#1F2937]",
     },
     {
       id: 4,
       title: "No organized experience",
-      icon: ClipboardX,
+      icon: LuClipboardX ,
       duration: "1-2 Days",
       color: "bg-[#064E3B]",
     },

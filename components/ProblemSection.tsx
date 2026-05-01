@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { LuMapPin ,LuClock4,LuClipboardX  } from "react-icons/lu";
+import { LuMapPin, LuClock4, LuClipboardX } from "react-icons/lu";
 import { FaUserTimes } from "react-icons/fa";
 
 const DashedConnector = ({ index }: { index: number }) => {
@@ -36,7 +36,7 @@ const DashedConnector = ({ index }: { index: number }) => {
               ? "M 250 0 V 40 Q 250 75 500 75 H 700 Q 750 75 750 110 V 150" // Left to Right "S"
               : "M 750 0 V 40 Q 750 75 500 75 H 300 Q 250 75 250 110 V 150" // Right to Left "S"
           }
-          stroke="#D1D5DB"
+          stroke="#bef365"
           strokeWidth="2"
           strokeDasharray="8 8"
           markerEnd="url(#arrowhead)"
@@ -50,7 +50,7 @@ const DashedConnector = ({ index }: { index: number }) => {
             refY="3.5"
             orient="auto"
           >
-            <polygon points="0 0, 10 3.5, 0 7" fill="#D1D5DB" />
+            <polygon points="0 0, 10 3.5, 0 7" fill="#bef365" />
           </marker>
         </defs>
       </svg>
@@ -64,41 +64,37 @@ const ProblemSection = () => {
       id: 1,
       title: "Poor quality grounds",
       icon: LuMapPin,
-      duration: "1 Week",
       color: "bg-[#064E3B]",
     },
     {
       id: 2,
       title: "No availability",
       icon: LuClock4,
-      duration: "2 Weeks",
       color: "bg-[#1F2937]",
     },
     {
       id: 3,
       title: "No proper coaching",
       icon: FaUserTimes,
-      duration: "1-2 Days",
       color: "bg-[#1F2937]",
     },
     {
       id: 4,
       title: "No organized experience",
-      icon: LuClipboardX ,
-      duration: "1-2 Days",
+      icon: LuClipboardX,
       color: "bg-[#064E3B]",
     },
   ];
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-(--dark-bg) overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header Content */}
         <div className="mb-24 text-center md:text-left">
-          <span className="bg-[#BEF264] text-green-900 px-4 py-1.5 rounded-full text-xs font-bold mb-6 inline-block">
+          <span className="bg-(--green) text-(--white-text) px-4 py-1.5 rounded-full text-xs font-bold mb-6 inline-block">
             Problem Analysis
           </span>
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-(--dark-text) tracking-tight leading-[1.1] mb-6">
             Why the Current <br /> System is Broken
           </h2>
           <p className="text-gray-500 max-w-xl text-lg">
@@ -124,27 +120,18 @@ const ProblemSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="w-full md:w-[45%] bg-[#F8FAF2] rounded-3xl p-8 flex gap-6 z-10 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                className="w-full md:w-[45%] bg-[#141C1F] rounded-3xl p-8 flex gap-6 z-10 shadow-sm border border-white/5 hover:shadow-md transition-shadow"
               >
-                {/* Vertical Pill Label */}
-                <div
-                  className={`w-10 rounded-full flex items-center justify-center shrink-0 ${item.color}`}
-                >
-                  <span className="text-white text-[10px] font-bold uppercase rotate-180 [writing-mode:vertical-lr] py-4">
-                    {item.duration}
-                  </span>
-                </div>
-
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-green-700 shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-(--dark-bg) flex items-center justify-center text-(--dark-text) shadow-sm">
                       <item.icon size={20} />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-900">
+                    <h4 className="text-xl font-bold text-(--green)">
                       {item.id}. {item.title}
                     </h4>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-(--dark-text) text-sm leading-relaxed">
                     Lack of standardization and accessibility leads to a drop in
                     performance and long-term engagement.
                   </p>

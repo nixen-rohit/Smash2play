@@ -34,7 +34,7 @@ const HowItsWorkSection = () => {
   ];
 
   return (
-    <section className="bg-[#0B1215] text-white py-24 px-6 md:px-20 min-h-screen flex items-center">
+    <section className="bg-(--dark-bg) text-white py-24 px-6 md:px-20 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Left Side: Branding & Title */}
         <div className="lg:col-span-5 flex flex-col justify-center">
@@ -43,8 +43,8 @@ const HowItsWorkSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3 mb-12"
           >
-            <div className="w-8 h-8 rounded-full bg-[#BEF264]" />
-            <span className="text-sm font-bold tracking-tight text-[#BEF264]">
+            <div className="w-8 h-8 rounded-full bg-(--green)" />
+            <span className="text-sm font-bold tracking-tight text-(--green)">
               How It Works
             </span>
           </motion.div>
@@ -68,7 +68,7 @@ const HowItsWorkSection = () => {
                 transition={{ repeat: Infinity, duration: 2 }}
                 className="hidden md:block"
               >
-                <HiArrowLongRight className="text-[#BEF264] text-7xl font-light" />
+                <HiArrowLongRight className="text-(--green) text-7xl font-light" />
               </motion.div>
             </div>
           </motion.div>
@@ -86,7 +86,7 @@ const HowItsWorkSection = () => {
               className="bg-[#141C1F] p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[320px] border border-white/5 group"
             >
               {/* Corner Icon */}
-              <div className="absolute top-6 right-6 text-[#BEF264]/20 group-hover:text-[#BEF264]  transition-colors duration-500">
+              <div className="absolute top-6 right-6 text-(--green)/20 group-hover:text-(--green) transition-colors duration-500">
                 <PiTennisBallFill size={28} />
               </div>
 
@@ -103,7 +103,7 @@ const HowItsWorkSection = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-white/5">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#BEF264] font-bold">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-(--green) font-bold">
                   {step.accent}
                 </span>
               </div>

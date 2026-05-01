@@ -14,8 +14,8 @@ const page = () => {
   return (
     <div className="min-h-screen w-full">
       <NewHero />
-      <Hero />
-      <HeroDetails />
+      {/* <Hero />
+      <HeroDetails /> */}
       <ProblemSection />
       <SolutionSection />
       <HowItsWorkSection />

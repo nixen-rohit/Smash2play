@@ -6,15 +6,21 @@
 }
 
 :root {
-  --sky-color: #3a81ab;
-  
+  --dark-bg: #040b0b;
+  --green: #bef365;
+  --dark-text: #fefffe;
+
+  --white-bg: #fefffe;
+  --white-text: #040b0b;
+
+  --card-bg: #151d1e;
+
+  --p: #7d8490;
 }
 
 html {
   scroll-behavior: smooth;
 }
-
-
 
 @keyframes slideUp {
   from {
@@ -28,8 +34,13 @@ html {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes reveal-up {
@@ -75,6 +86,3 @@ html {
     transform: scale(1);
   }
 }
- 
-
- 

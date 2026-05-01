@@ -96,10 +96,10 @@ export default function Carousel() {
   const lastSlide = items[items.length - 1];
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black text-white font-sans">
-                <div className="absolute inset-0 bg-linear-to-b from-[#050B0A] via-transparent to-transparent z-15" />
+    <div id="sports" className="relative h-screen w-full overflow-hidden bg-black text-white font-sans">
+      <div className="absolute inset-0 bg-linear-to-b from-[#050B0A] via-transparent to-transparent z-15" />
 
-                <div className="absolute inset-0 bg-linear-to-t from-[#050B0A] via-transparent to-transparent z-15" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#050B0A] via-transparent to-transparent z-15" />
 
       {/* Header */}
 
@@ -136,7 +136,7 @@ export default function Carousel() {
         {isAnimating && direction === "next" && (
           <motion.div
             key="expanding-card"
-            className="absolute z-50 overflow-hidden"
+            className="absolute z-50 overflow-hidden "
             initial={{
               width: CONFIG.THUMB_WIDTH,
               height: CONFIG.THUMB_HEIGHT,
@@ -149,6 +149,7 @@ export default function Carousel() {
               height: "100%",
               bottom: 0,
               left: 0,
+              filter: "brightness(0.5)",
               borderRadius: 0,
             }}
             transition={{

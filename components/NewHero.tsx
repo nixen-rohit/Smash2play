@@ -18,6 +18,7 @@ const NewHero = () => {
 
   return (
     <section
+    id="home"
       ref={containerRef}
       className="relative min-h-[200vh] bg-[#050B0A] text-white"
     >

@@ -1,14 +1,15 @@
 import HowItsWorkSection from "@/components/HowItsWorkSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
-import { Hero } from "@/components/Hero";
+// import { Hero } from "@/components/Hero";
 import NewHero from "@/components/NewHero";
 import Carousel from "@/components/Carousel";
-import HeroDetails from "@/components/HeroDetails";
+// import HeroDetails from "@/components/HeroDetails";
 import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
 import VenuePartnershipSection from "@/components/VenuePartnershipSection";
 import EventsSection from "@/components/EventsSection";
+
 
 const page = () => {
   return (
@@ -24,6 +25,7 @@ const page = () => {
       <EventsSection/>
       <Location />
       <Testimonial />
+      
       
 
       

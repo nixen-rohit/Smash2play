@@ -8,19 +8,21 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Link from "next/link";
+ 
+
 import {
   FaWhatsapp,
   FaPhone,
-  
+  FaCalendarCheck,
   FaBars,
   FaXmark,
 } from "react-icons/fa6";
-
 const navTabs = [
-  { name: "VENUES", href: "/venues" },
-  { name: "SERVICES", href: "/services" },
-  { name: "EVENTS", href: "/events" },  
-  { name: "Contact", href: "/contact" },
+  { name: "HOME", href: "#home" },
+  { name: "VENUES", href: "#venues" },
+  { name: "SERVICES", href: "#services" },
+  { name: "SPORTS", href: "#sports" },  
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
@@ -139,6 +141,14 @@ export default function Header() {
           bgColor="bg-black"
           icon={<FaPhone />}
           label="Call Us"
+        />
+
+        {/* Trial FAB */}
+        <FloatingIcon
+          href="#pricing"
+          bgColor="bg-black"
+          icon={<FaCalendarCheck />}
+          label="Book Trial"
         />
         
       </div>

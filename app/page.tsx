@@ -7,7 +7,7 @@ import Carousel from "@/components/Carousel";
 import HeroDetails from "@/components/HeroDetails";
 import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
-import Test from "@/components/test";
+import VenuePartnershipSection from "@/components/VenuePartnershipSection";
 import EventsSection from "@/components/EventsSection";
 
 const page = () => {
@@ -26,10 +26,9 @@ const page = () => {
       <Carousel />
 
       <EventsSection/>
-      <Test />
+      <VenuePartnershipSection />
 
-      {/* event section */}
-
+ 
       <Location />
       <Testimonial />
       {/* FUTURE SECTION (OPTIONAL BUT POWERFUL) */}

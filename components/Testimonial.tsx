@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { FaQuoteRight,FaStar  } from "react-icons/fa";
+import { FaQuoteRight, FaStar } from "react-icons/fa";
 import { LuChevronRight, LuChevronLeft } from "react-icons/lu";
- 
+
 interface Testimonial {
   id: number;
   name: string;
@@ -105,16 +105,16 @@ export default function TestimonialSlider() {
   }, [nextSlide]);
 
   return (
-    <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[var(--dark-bg)] py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="relative mb-10 sm:mb-12">
           {/* Centered text */}
           <div className="text-center">
-            <p className="text-gray-400 text-xs sm:text-sm font-medium tracking-wide uppercase mb-2">
+            <p className="text-[var(--green)]/80 text-xs sm:text-sm font-medium tracking-wide uppercase mb-2">
               Testimonial
             </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--dark-text)] leading-tight">
               Transformative Client Experiences
             </h2>
           </div>
@@ -124,14 +124,14 @@ export default function TestimonialSlider() {
             <button
               onClick={prevSlide}
               aria-label="Previous"
-              className="bg-white shadow-md border border-gray-100 p-2.5 sm:p-3 rounded-full text-gray-800 hover:bg-gray-50 transition-all active:scale-95"
+              className="bg-[var(--card-bg)] shadow-md border border-[var(--green)]/20 p-2.5 sm:p-3 rounded-full text-[var(--dark-text)] hover:bg-[var(--green)]/10 hover:border-[var(--green)]/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--green)]/50"
             >
               <LuChevronLeft size={22} />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next"
-              className="bg-white shadow-md border border-gray-100 p-2.5 sm:p-3 rounded-full text-gray-800 hover:bg-gray-50 transition-all active:scale-95"
+              className="bg-[var(--card-bg)] shadow-md border border-[var(--green)]/20 p-2.5 sm:p-3 rounded-full text-[var(--dark-text)] hover:bg-[var(--green)]/10 hover:border-[var(--green)]/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--green)]/50"
             >
               <LuChevronRight size={22} />
             </button>
@@ -167,18 +167,18 @@ export default function TestimonialSlider() {
                     .map((item) => (
                       <div
                         key={item.id}
-                        className="group h-full bg-white border border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
+                        className="group h-full bg-[var(--card-bg)] border border-[var(--green)]/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-[var(--green)]/5   hover:border-[var(--green)]/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
                       >
                         {/* Top */}
                         <div>
                           <div className="flex justify-center mb-5 sm:mb-7">
                             <FaQuoteRight
                               size={36}
-                              className="text-indigo-100 fill-indigo-100 group-hover:text-indigo-200 group-hover:fill-indigo-200 transition sm:w-12 sm:h-12"
+                              className="text-[var(--green)]/20 group-hover:text-[var(--green)]/40 transition sm:w-12 sm:h-12"
                             />
                           </div>
-                          <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium text-center mb-5 sm:mb-7">
-                            "{item.text}"
+                          <p className="text-[var(--p)] text-base sm:text-lg leading-relaxed font-medium text-center mb-5 sm:mb-7">
+                            &ldquo;{item.text}&rdquo;
                           </p>
                         </div>
 
@@ -190,8 +190,8 @@ export default function TestimonialSlider() {
                               size={22}
                               className={`transition-all sm:w-7 sm:h-7 ${
                                 i < item.stars
-                                  ? "text-yellow-400 fill-yellow-400"
-                                  : "text-gray-200"
+                                  ? "text-[var(--green)] fill-[var(--green)]"
+                                  : "text-[var(--green)]/20"
                               }`}
                             />
                           ))}
@@ -204,8 +204,8 @@ export default function TestimonialSlider() {
           </div>
 
           {/* Gradient edges — hidden on mobile to avoid clipping */}
-          <div className="pointer-events-none hidden sm:block absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-white to-transparent" />
-          <div className="pointer-events-none hidden sm:block absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-white to-transparent" />
+          <div className="pointer-events-none hidden sm:block absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-[var(--dark-bg)] to-transparent" />
+          <div className="pointer-events-none hidden sm:block absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-[var(--dark-bg)] to-transparent" />
         </div>
 
         {/* Mobile nav arrows */}
@@ -213,14 +213,14 @@ export default function TestimonialSlider() {
           <button
             onClick={prevSlide}
             aria-label="Previous"
-            className="bg-white shadow-md border border-gray-100 p-2.5 rounded-full text-gray-800 hover:bg-gray-50 transition-all active:scale-95"
+            className="bg-[var(--card-bg)] shadow-md border border-[var(--green)]/20 p-2.5 rounded-full text-[var(--dark-text)] hover:bg-[var(--green)]/10 hover:border-[var(--green)]/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--green)]/50"
           >
             <LuChevronLeft size={20} />
           </button>
           <button
             onClick={nextSlide}
             aria-label="Next"
-            className="bg-white shadow-md border border-gray-100 p-2.5 rounded-full text-gray-800 hover:bg-gray-50 transition-all active:scale-95"
+            className="bg-[var(--card-bg)] shadow-md border border-[var(--green)]/20 p-2.5 rounded-full text-[var(--dark-text)] hover:bg-[var(--green)]/10 hover:border-[var(--green)]/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--green)]/50"
           >
             <LuChevronRight size={20} />
           </button>
@@ -233,8 +233,10 @@ export default function TestimonialSlider() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to page ${index + 1}`}
-              className={`h-1.5 transition-all duration-300 rounded-full ${
-                currentIndex === index ? "w-8 bg-black" : "w-4 bg-gray-200"
+              className={`h-1.5 transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--green)]/50 ${
+                currentIndex === index
+                  ? "w-8 bg-[var(--green)]"
+                  : "w-4 bg-[var(--green)]/30 hover:bg-[var(--green)]/50"
               }`}
             />
           ))}

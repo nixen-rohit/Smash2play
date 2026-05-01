@@ -3,13 +3,20 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { FiSliders, FiX, FiCheck, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import {
+  FiSliders,
+  FiX,
+  FiCheck,
+  FiChevronLeft,
+  FiChevronRight,
+} from "react-icons/fi";
 
 // --- MOCK DATA ---
 const listings = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=400",
+    image:
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=400",
     title: "Smash 2 Play Cricket Box Turf",
     location: "Connaught Place",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.6!2d77.219!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sConnaught+Place+Delhi!5e0!3m2!1sen!2sin",
@@ -17,7 +24,8 @@ const listings = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
+    image:
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
     title: "Smash 2 Play Badminton Academy",
     location: "Karol Bagh",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.9!2d77.190!3d28.651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sKarol+Bagh+Delhi!5e0!3m2!1sen!2sin",
@@ -25,82 +33,58 @@ const listings = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400",
+    image:
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400",
     title: "Smash 2 Play Pickleball Court",
     location: "Karol Bagh",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.9!2d77.190!3d28.651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sKarol+Bagh+Delhi!5e0!3m2!1sen!2sin",
     type: "Delhi",
   },
+
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=400",
-    title: "Smash 2 Play Cricket Box Turf",
-    location: "Anand Parbat",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.5!2d77.175!3d28.655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sAnand+Parbat+Delhi!5e0!3m2!1sen!2sin",
-    type: "Delhi",
-  },
-  {
-    id: 5,
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400",
+    image:
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400",
     title: "Smash 2 Play Box Cricket & Football Turf",
     location: "Karol Bagh",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.9!2d77.190!3d28.651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sKarol+Bagh+Delhi!5e0!3m2!1sen!2sin",
     type: "Delhi",
   },
   {
-    id: 6,
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400",
+    id: 5,
+    image:
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400",
     title: "Smash 2 Play Box Cricket Turf",
     location: "Saket",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.8!2d77.212!3d28.528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sSaket+Delhi!5e0!3m2!1sen!2sin",
     type: "Delhi",
   },
   {
-    id: 7,
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
+    id: 6,
+    image:
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
     title: "Smash 2 Play Badminton Academy",
     location: "Saket",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.8!2d77.212!3d28.528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sSaket+Delhi!5e0!3m2!1sen!2sin",
     type: "Delhi",
   },
+
   {
-    id: 8,
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
-    title: "Smash 2 Play Badminton Academy",
-    location: "Vasant Kunj",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5!2d77.158!3d28.523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sVasant+Kunj+Delhi!5e0!3m2!1sen!2sin",
-    type: "Delhi",
-  },
-  {
-    id: 9,
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
+    id: 7,
+    image:
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
     title: "Smash 2 Play Box Cricket & Football Turf",
     location: "Patel Nagar",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.8!2d77.165!3d28.644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sPatel+Nagar+Delhi!5e0!3m2!1sen!2sin",
     type: "Delhi",
   },
   {
-    id: 10,
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
+    id: 8,
+    image:
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
     title: "Smash 2 Play Box Cricket & Football Turf",
     location: "Vasundhara",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.0!2d77.355!3d28.668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sVasundhara+Ghaziabad!5e0!3m2!1sen!2sin",
-    type: "Delhi",
-  },
-  {
-    id: 11,
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
-    title: "Smash 2 Play Box Cricket Turf",
-    location: "East Of Kailash",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.0!2d77.241!3d28.549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sEast+of+Kailash+Delhi!5e0!3m2!1sen!2sin",
-    type: "Delhi",
-  },
-  {
-    id: 12,
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400",
-    title: "Smash 2 Play Box Cricket & Football Turf",
-    location: "Karkardooma",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.5!2d77.308!3d28.671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x77!2sKarkardooma+Delhi!5e0!3m2!1sen!2sin",
     type: "Delhi",
   },
 ];
@@ -115,13 +99,19 @@ const PAGE_SIZE = 4;
 function getPageNumbers(current: number, total: number): (number | "...")[] {
   if (total <= 5) return Array.from({ length: total }, (_, i) => i + 1);
   const pages: (number | "...")[] = [];
-  const show = new Set([1, total, current, current - 1, current + 1].filter((p) => p >= 1 && p <= total));
+  const show = new Set(
+    [1, total, current, current - 1, current + 1].filter(
+      (p) => p >= 1 && p <= total,
+    ),
+  );
   let prev = 0;
-  [...show].sort((a, b) => a - b).forEach((p) => {
-    if (p - prev > 1) pages.push("...");
-    pages.push(p);
-    prev = p;
-  });
+  [...show]
+    .sort((a, b) => a - b)
+    .forEach((p) => {
+      if (p - prev > 1) pages.push("...");
+      pages.push(p);
+      prev = p;
+    });
   return pages;
 }
 
@@ -158,7 +148,7 @@ export default function Location() {
 
   const toggleTemp = (loc: string) =>
     setTempChecked((prev) =>
-      prev.includes(loc) ? prev.filter((l) => l !== loc) : [...prev, loc]
+      prev.includes(loc) ? prev.filter((l) => l !== loc) : [...prev, loc],
     );
 
   const hasModalFilter = checkedLocations.length > 0;
@@ -171,15 +161,19 @@ export default function Location() {
     return listings.filter((l) => l.location === quickFilter);
   }, [quickFilter, checkedLocations]);
 
-  const totalPages = Math.max(1, Math.ceil(filteredListings.length / PAGE_SIZE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredListings.length / PAGE_SIZE),
+  );
 
   // Clamp page when filter changes
   const safePage = Math.min(currentPage, totalPages);
 
   // Slice for current page
   const pagedListings = useMemo(
-    () => filteredListings.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE),
-    [filteredListings, safePage]
+    () =>
+      filteredListings.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE),
+    [filteredListings, safePage],
   );
 
   const selectedListing =
@@ -192,7 +186,8 @@ export default function Location() {
     setQuickFilter(f);
     setCheckedLocations([]);
     setCurrentPage(1);
-    const next = f === "All" ? listings[0] : listings.find((l) => l.location === f);
+    const next =
+      f === "All" ? listings[0] : listings.find((l) => l.location === f);
     if (next) setSelectedId(next.id);
   };
 
@@ -231,11 +226,12 @@ export default function Location() {
           <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 tracking-tight">
             VENUES
           </h1>
-        <p className="font-semibold text-gray-500">
+          <p className="font-semibold text-gray-500">
             Multiple Locations Across Delhi NCR VENUES
           </p>
           <p className="text-gray-400 mt-1">
-            {filteredListings.length} listing{filteredListings.length !== 1 ? "s" : ""}
+            {filteredListings.length} listing
+            {filteredListings.length !== 1 ? "s" : ""}
           </p>
         </header>
 
@@ -246,9 +242,10 @@ export default function Location() {
               key={f}
               onClick={() => handleQuickFilter(f)}
               className={`px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium whitespace-nowrap transition-all
-                ${quickFilter === f && !hasModalFilter
-                  ? "border-orange-500 text-orange-600 bg-orange-50"
-                  : "border-gray-200 text-gray-600 hover:border-gray-300"
+                ${
+                  quickFilter === f && !hasModalFilter
+                    ? "border-orange-500 text-orange-600 bg-orange-50"
+                    : "border-gray-200 text-gray-600 hover:border-gray-300"
                 }`}
             >
               {f}
@@ -260,9 +257,10 @@ export default function Location() {
             <button
               onClick={openFilterModal}
               className={`flex items-center gap-1.5 px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium whitespace-nowrap transition-all
-                ${hasModalFilter
-                  ? "border-orange-500 text-orange-600 bg-orange-50"
-                  : "border-gray-200 text-gray-600 hover:border-gray-300"
+                ${
+                  hasModalFilter
+                    ? "border-orange-500 text-orange-600 bg-orange-50"
+                    : "border-gray-200 text-gray-600 hover:border-gray-300"
                 }`}
             >
               <FiSliders size={13} />
@@ -286,7 +284,9 @@ export default function Location() {
                   className="absolute top-full left-0 mt-2 z-50 bg-white rounded-2xl shadow-2xl border border-gray-100 w-64"
                 >
                   <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-gray-100">
-                    <span className="font-semibold text-gray-800 text-sm">Filter by Location</span>
+                    <span className="font-semibold text-gray-800 text-sm">
+                      Filter by Location
+                    </span>
                     <button
                       onClick={() => setShowFilterModal(false)}
                       className="text-gray-400 hover:text-gray-600 transition-colors p-0.5 rounded-full hover:bg-gray-100"
@@ -308,9 +308,17 @@ export default function Location() {
                             className={`w-[18px] h-[18px] rounded-[5px] border-2 flex items-center justify-center flex-shrink-0 transition-all
                               ${checked ? "bg-orange-500 border-orange-500" : "border-gray-300 group-hover:border-orange-300"}`}
                           >
-                            {checked && <FiCheck size={11} className="text-white" strokeWidth={3} />}
+                            {checked && (
+                              <FiCheck
+                                size={11}
+                                className="text-white"
+                                strokeWidth={3}
+                              />
+                            )}
                           </span>
-                          <span className="text-sm text-gray-700 select-none">{loc}</span>
+                          <span className="text-sm text-gray-700 select-none">
+                            {loc}
+                          </span>
                         </label>
                       );
                     })}
@@ -327,7 +335,8 @@ export default function Location() {
                       onClick={applyFilter}
                       className="flex-1 py-2 rounded-xl bg-orange-500 text-white text-xs font-semibold hover:bg-orange-600 active:scale-95 transition-all"
                     >
-                      Apply{tempChecked.length > 0 ? ` (${tempChecked.length})` : ""}
+                      Apply
+                      {tempChecked.length > 0 ? ` (${tempChecked.length})` : ""}
                     </button>
                   </div>
                 </motion.div>
@@ -356,9 +365,10 @@ export default function Location() {
                 whileHover={{ scale: 1.01 }}
                 onClick={() => setSelectedId(item.id)}
                 className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-gray-50 rounded-[1.5rem] lg:rounded-[2rem] border transition-all cursor-pointer
-                  ${selectedId === item.id
-                    ? "border-orange-400 bg-orange-50/40"
-                    : "border-transparent hover:border-gray-200"
+                  ${
+                    selectedId === item.id
+                      ? "border-orange-400 bg-orange-50/40"
+                      : "border-transparent hover:border-gray-200"
                   }`}
               >
                 <img
@@ -377,7 +387,9 @@ export default function Location() {
                   </div>
                   <div className="flex items-center gap-1 text-xs text-gray-600 ">
                     <FaMapMarkerAlt className="text-orange-400 text-xl flex-shrink-0" />
-                    <span className="truncate text-gray-700 font-medium text-sm">{item.location}</span>
+                    <span className="truncate text-gray-700 font-medium text-sm">
+                      {item.location}
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -393,9 +405,10 @@ export default function Location() {
               onClick={() => goToPage(safePage - 1)}
               disabled={safePage === 1}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-medium transition-all
-                ${safePage === 1
-                  ? "border-gray-100 text-gray-300 cursor-not-allowed"
-                  : "border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-600 hover:bg-orange-50"
+                ${
+                  safePage === 1
+                    ? "border-gray-100 text-gray-300 cursor-not-allowed"
+                    : "border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-600 hover:bg-orange-50"
                 }`}
             >
               <FiChevronLeft size={14} />
@@ -406,7 +419,10 @@ export default function Location() {
             <div className="flex items-center gap-1">
               {pageNumbers.map((p, i) =>
                 p === "..." ? (
-                  <span key={`ellipsis-${i}`} className="w-8 text-center text-xs text-gray-400">
+                  <span
+                    key={`ellipsis-${i}`}
+                    className="w-8 text-center text-xs text-gray-400"
+                  >
                     …
                   </span>
                 ) : (
@@ -414,14 +430,15 @@ export default function Location() {
                     key={p}
                     onClick={() => goToPage(p as number)}
                     className={`w-8 h-8 rounded-xl text-xs font-semibold transition-all
-                      ${safePage === p
-                        ? "bg-orange-500 text-white shadow-sm"
-                        : "text-gray-500 hover:bg-orange-50 hover:text-orange-600"
+                      ${
+                        safePage === p
+                          ? "bg-orange-500 text-white shadow-sm"
+                          : "text-gray-500 hover:bg-orange-50 hover:text-orange-600"
                       }`}
                   >
                     {p}
                   </button>
-                )
+                ),
               )}
             </div>
 
@@ -430,9 +447,10 @@ export default function Location() {
               onClick={() => goToPage(safePage + 1)}
               disabled={safePage === totalPages}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-medium transition-all
-                ${safePage === totalPages
-                  ? "border-gray-100 text-gray-300 cursor-not-allowed"
-                  : "border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-600 hover:bg-orange-50"
+                ${
+                  safePage === totalPages
+                    ? "border-gray-100 text-gray-300 cursor-not-allowed"
+                    : "border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-600 hover:bg-orange-50"
                 }`}
             >
               Next

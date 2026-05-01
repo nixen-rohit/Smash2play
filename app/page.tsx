@@ -8,6 +8,8 @@ import HeroDetails from "@/components/HeroDetails";
 import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
 import Test from "@/components/test";
+import EventsSection from "@/components/EventsSection";
+
 const page = () => {
   return (
     <div className="min-h-screen w-full">
@@ -23,13 +25,16 @@ const page = () => {
       {/*  PARTNERSHIP MODELS */}
       <Carousel />
 
+      <EventsSection/>
+      <Test />
+
       {/* event section */}
 
       <Location />
       <Testimonial />
       {/* FUTURE SECTION (OPTIONAL BUT POWERFUL) */}
 
-      <Test />
+      
     </div>
   );
 };

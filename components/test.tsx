@@ -41,12 +41,10 @@ export default function Services() {
     <section className="w-full bg-black py-16 px-4 sm:px-8 lg:px-16">
       {/* Header */}
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 font-medium">
-          Services / Offerings
-        </p>
+         
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-xl">
-          Everything You Need —{" "}
-          <span className="text-gray-400">In One Place</span>
+         What We Handle
+
         </h2>
       </div>
 

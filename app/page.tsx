@@ -5,10 +5,14 @@ import { Hero } from "@/components/Hero";
 import NewHero from "@/components/NewHero";
 import Carousel from "@/components/Carousel";
 import HeroDetails from "@/components/HeroDetails";
-
+import Location from "@/components/Location";
+import Testimonial from "@/components/Testimonial";
+import Test  from "@/components/test"
 const page = () => {
   return (
     <div className="min-h-screen w-full">
+      <Testimonial />
+      <Location />
       <Hero />
       <HeroDetails />
       <ProblemSection />
@@ -16,6 +20,7 @@ const page = () => {
       <SolutionSection />
       <HowItsWorkSection />
       <Carousel />
+      <Test/>
     </div>
   );
 };

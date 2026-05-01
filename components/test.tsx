@@ -1,7 +1,8 @@
 // components/ServicesSection.tsx
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { FaArrowUp } from "react-icons/fa6";
+
 import Image from "next/image";
 
 const services = [
@@ -88,7 +89,7 @@ export default function Services() {
                 `}
               >
                 Learn More
-                <ArrowUpRight size={16} />
+                <FaArrowUp size={16} />
               </button>
             </div>
 
@@ -99,9 +100,7 @@ export default function Services() {
                   src={service.img}
                   alt={service.title}
                   fill
-                  className="object-cover rounded-2xl transform rotate-[-12deg] 
-                    group-hover:rotate-0 group-hover:scale-110 transition-all duration-700 ease-out
-                    shadow-xl grayscale-[20%] group-hover:grayscale-0"
+                  className="object-cover rounded-2xl transform rotate-[-12deg] group-hover:rotate-0 group-hover:scale-110 transition-all duration-700 ease-out shadow-xl grayscale-[20%] group-hover:grayscale-0"
                 />
                 {/* Gradient overlay to blend image with card background */}
                 <div

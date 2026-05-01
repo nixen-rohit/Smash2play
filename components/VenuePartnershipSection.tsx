@@ -1,8 +1,17 @@
 "use client";
 
-import { motion ,Variants} from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import { FaArrowUp, FaArrowRight, FaHandshake, FaChartLine, FaBuilding, FaTools, FaCog, FaMoneyBillWave } from "react-icons/fa";
+import {
+  FaArrowUp,
+  FaArrowRight,
+  FaHandshake,
+  FaChartLine,
+  FaBuilding,
+  FaTools,
+  FaCog,
+  FaMoneyBillWave,
+} from "react-icons/fa";
 
 // Types
 interface FeatureCard {
@@ -37,7 +46,11 @@ const whatYouGet: FeatureCard[] = [
     title: "In-House Construction",
     description: "End-to-end design & execution",
     icon: <FaTools className="w-6 h-6" />,
-    items: ["End-to-end design & execution", "High-quality turf, courts & lighting", "Fast & reliable delivery"],
+    items: [
+      "End-to-end design & execution",
+      "High-quality turf, courts & lighting",
+      "Fast & reliable delivery",
+    ],
     bg: "bg-(--card-bg)",
     img: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1000",
     dark: true,
@@ -46,9 +59,13 @@ const whatYouGet: FeatureCard[] = [
     title: "Complete Operations",
     description: "Daily management handled for you",
     icon: <FaCog className="w-6 h-6" />,
-    items: ["Booking system integration", "Staff hiring & maintenance", "Daily management handled"],
+    items: [
+      "Booking system integration",
+      "Staff hiring & maintenance",
+      "Daily management handled",
+    ],
     bg: "bg-(--card-bg)",
-    img: "https://images.unsplash.com/photo-1574623452334-1e0ac2b7ccb9?q=80&w=1000",
+    img: "/Img/Corporate.jpg",
     dark: true,
   },
   {
@@ -90,7 +107,6 @@ export default function VenuePartnershipSection() {
   return (
     <section className="w-full bg-(--dark-bg) text-(--dark-text) py-16 sm:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16">
-        
         {/* Header */}
         <motion.div
           initial="hidden"
@@ -104,10 +120,13 @@ export default function VenuePartnershipSection() {
             <span className="text-(--green)">Smash2Play</span>
           </h2>
           <p className="text-xl sm:text-2xl font-bold text-(--green) mt-2 mb-4">
-            We Don&apos;t Just Build Sports Venues. We Build Profitable Businesses.
+            We Don&apos;t Just Build Sports Venues. We Build Profitable
+            Businesses.
           </p>
           <p className="text-(--p) text-base sm:text-lg leading-relaxed">
-            Have land or planning to invest? We design, construct, and operate high-performing sports venues — so you don&apos;t have to figure it out yourself.
+            Have land or planning to invest? We design, construct, and operate
+            high-performing sports venues — so you don&apos;t have to figure it
+            out yourself.
           </p>
         </motion.div>
 
@@ -118,7 +137,9 @@ export default function VenuePartnershipSection() {
           viewport={{ once: true }}
           variants={fadeInVariants}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-(--dark-text)">What You Get</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-(--dark-text)">
+            What You Get
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {whatYouGet.map((feature) => (
               <motion.div
@@ -138,16 +159,23 @@ export default function VenuePartnershipSection() {
                     <div className="w-10 h-10 rounded-xl bg-(--green)/20 flex items-center justify-center text-(--green)">
                       {feature.icon}
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-(--dark-text)">{feature.title}</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-(--dark-text)">
+                      {feature.title}
+                    </h4>
                   </div>
-                  
-                  <p className={`text-sm mb-4 ${feature.dark ? "text-(--p)" : "text-gray-700"}`}>
+
+                  <p
+                    className={`text-sm mb-4 ${feature.dark ? "text-(--p)" : "text-gray-700"}`}
+                  >
                     {feature.description}
                   </p>
 
                   <ul className="space-y-2 mb-6 grow">
                     {feature.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-(--dark-text)/90">
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-(--dark-text)/90"
+                      >
                         <span className="text-(--green) mt-1">•</span>
                         <span>{item}</span>
                       </li>
@@ -162,7 +190,10 @@ export default function VenuePartnershipSection() {
                     `}
                   >
                     Learn More
-                    <FaArrowUp size={14} className="group-hover:translate-y-[-2px] transition-transform" />
+                    <FaArrowUp
+                      size={14}
+                      className="group-hover:translate-y-[-2px] transition-transform"
+                    />
                   </button>
                 </div>
 
@@ -191,7 +222,9 @@ export default function VenuePartnershipSection() {
           viewport={{ once: true }}
           variants={fadeInVariants}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-(--dark-text)">Partnership Models</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-(--dark-text)">
+            Partnership Models
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {partnershipModels.map((model, index) => (
               <motion.div
@@ -211,11 +244,15 @@ export default function VenuePartnershipSection() {
                   <div className="w-12 h-12 rounded-xl bg-(--green)/20 flex items-center justify-center">
                     {model.icon}
                   </div>
-                  <h4 className="text-lg font-bold text-(--dark-text)">{model.title}</h4>
+                  <h4 className="text-lg font-bold text-(--dark-text)">
+                    {model.title}
+                  </h4>
                 </div>
-                
+
                 <p className="text-(--p) text-sm mb-3">{model.description}</p>
-                <p className="text-(--green) font-semibold text-sm">{model.highlight}</p>
+                <p className="text-(--green) font-semibold text-sm">
+                  {model.highlight}
+                </p>
               </motion.div>
             ))}
           </div>

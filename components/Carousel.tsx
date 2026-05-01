@@ -97,6 +97,10 @@ export default function Carousel() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black text-white font-sans">
+                <div className="absolute inset-0 bg-linear-to-b from-[#050B0A] via-transparent to-transparent z-15" />
+
+                <div className="absolute inset-0 bg-linear-to-t from-[#050B0A] via-transparent to-transparent z-15" />
+
       {/* Header */}
 
       <h2 className="absolute top-10 left-10 z-100 text-white text-4xl md:text-5xl font-bold leading-tight max-w-xl">

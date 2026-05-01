@@ -19,19 +19,12 @@ const page = () => {
       <ProblemSection />
       <SolutionSection />
       <HowItsWorkSection />
-      {/* tick */}
-
-      {/* NEW SECTION */}
-      {/*  PARTNERSHIP MODELS */}
+      <VenuePartnershipSection />          
       <Carousel />
-
       <EventsSection/>
-      <VenuePartnershipSection />
-
- 
       <Location />
       <Testimonial />
-      {/* FUTURE SECTION (OPTIONAL BUT POWERFUL) */}
+      
 
       
     </div>

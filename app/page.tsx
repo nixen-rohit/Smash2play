@@ -9,7 +9,7 @@ import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
 import VenuePartnershipSection from "@/components/VenuePartnershipSection";
 import EventsSection from "@/components/EventsSection";
-import Footer from "@/components/layout/Footer";
+
 
  
 const page = () => {
@@ -21,7 +21,7 @@ const page = () => {
      
       
       
-      {/* <ProblemSection />
+       <ProblemSection />
       <SolutionSection />
       <HowItsWorkSection />
       <VenuePartnershipSection />          
@@ -29,8 +29,8 @@ const page = () => {
       <EventsSection/>
       <Location />
       <Testimonial />
-      <Footer/> 
-       */}
+      
+       
       
 
       

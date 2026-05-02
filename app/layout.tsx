@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full antialiased`}>
       <body className="h-screen w-full">
-        <Navbar/>
+        {/* <Navbar/> */}
         {children}</body>
     </html>
   );

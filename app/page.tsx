@@ -1,22 +1,26 @@
 import HowItsWorkSection from "@/components/HowItsWorkSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
-// import { Hero } from "@/components/Hero";
+
 import NewHero from "@/components/NewHero";
 import Carousel from "@/components/Carousel";
-// import HeroDetails from "@/components/HeroDetails";
+ 
 import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
 import VenuePartnershipSection from "@/components/VenuePartnershipSection";
 import EventsSection from "@/components/EventsSection";
+import Footer from "@/components/layout/Footer";
 
-
+import Test from "@/components/Test";
 const page = () => {
   return (
     <div className="min-h-screen w-full">
-      <NewHero />
-      {/* <Hero />
-      <HeroDetails /> */}
+
+      <Test/>
+      {/* <NewHero />
+     
+      
+      
       <ProblemSection />
       <SolutionSection />
       <HowItsWorkSection />
@@ -25,6 +29,7 @@ const page = () => {
       <EventsSection/>
       <Location />
       <Testimonial />
+      <Footer/> */}
       
       
 

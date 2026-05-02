@@ -252,8 +252,6 @@ export function Hero() {
       {/* Scroll space to enable animation */}
 
       <div className="h-[200vh]" />
-
-    
     </section>
   );
 }

@@ -11,17 +11,17 @@ import VenuePartnershipSection from "@/components/VenuePartnershipSection";
 import EventsSection from "@/components/EventsSection";
 import Footer from "@/components/layout/Footer";
 
-import Test from "@/components/Test";
+ 
 const page = () => {
   return (
     <div className="min-h-screen w-full">
 
-      <Test/>
-      {/* <NewHero />
+      
+       <NewHero />
      
       
       
-      <ProblemSection />
+      {/* <ProblemSection />
       <SolutionSection />
       <HowItsWorkSection />
       <VenuePartnershipSection />          
@@ -29,8 +29,8 @@ const page = () => {
       <EventsSection/>
       <Location />
       <Testimonial />
-      <Footer/> */}
-      
+      <Footer/> 
+       */}
       
 
       

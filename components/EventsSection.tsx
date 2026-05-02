@@ -182,9 +182,9 @@ const EventsSection = () => {
             institutions — delivering high-energy, well-organized experiences
             every time.
           </p>
-          <div style={{ height: "600px", position: "relative" }}>
+          <div className="h-[600px] relative">
             <CircularGallery
-              bend={3}
+              bend={1}
               textColor="#ffffff"
               borderRadius={0.05}
               scrollSpeed={2}
@@ -271,7 +271,7 @@ const EventsSection = () => {
       {/* Coaching Card */}
       <motion.div 
         whileHover={{ y: -5 }}
-        className="group relative bg-(--card-bg) border border-(--green)/20 p-8 rounded-[2rem] overflow-hidden transition-colors hover:border-(--green)/50"
+        className="group relative bg-(--card-bg) border border-(--green)/20 p-8 rounded-4xl overflow-hidden transition-colors hover:border-(--green)/50"
       >
         {/* Decorative background glow */}
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--green)/10 blur-[80px] group-hover:bg-(--green)/20 transition-all" />
@@ -304,7 +304,7 @@ const EventsSection = () => {
       {/* Events Card */}
       <motion.div 
         whileHover={{ y: -5 }}
-        className="group relative bg-(--card-bg) border border-(--green)/20 p-8 rounded-[2rem] overflow-hidden transition-colors hover:border-(--green)/50"
+        className="group relative bg-(--card-bg) border border-(--green)/20 p-8 rounded-4xl overflow-hidden transition-colors hover:border-(--green)/50"
       >
         {/* Decorative background glow */}
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--green)/10 blur-[80px] group-hover:bg-(--green)/20 transition-all" />

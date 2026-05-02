@@ -9,14 +9,19 @@ import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
 import VenuePartnershipSection from "@/components/VenuePartnershipSection";
 import EventsSection from "@/components/EventsSection";
-import Footer from "@/components/layout/Footer";
 
+
+ 
 const page = () => {
   return (
     <div className="min-h-screen w-full">
-      <NewHero />
 
-      <ProblemSection />
+      
+       <NewHero />
+     
+      
+      
+       <ProblemSection />
       <SolutionSection />
       <HowItsWorkSection />
       <VenuePartnershipSection />          
@@ -24,7 +29,10 @@ const page = () => {
       <EventsSection/>
       <Location />
       <Testimonial />
-      <Footer/> 
+      
+       
+      
+
       
     </div>
   );

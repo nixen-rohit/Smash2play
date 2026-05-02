@@ -35,12 +35,8 @@ export default function Hero({ progress }: { progress: number }) {
  
   const imageProgress = Math.max(0, Math.min(1, (progress - 0.2) / 0.8));
 
-  const centerWidth = isDesktop
-    ? 100 - imageProgress * 58
-    : 100 - imageProgress * 10;
-  const centerHeight = isDesktop
-    ? 100 - imageProgress * 30
-    : 100 - imageProgress * 50;
+  const centerWidth = isDesktop ? 100 - imageProgress * 58 : 100 - imageProgress * 10;
+  const centerHeight = isDesktop ? 100 - imageProgress * 30: 100 - imageProgress * 30;
 
   const sideWidth = imageProgress * 22;
   const sideOpacity = imageProgress;

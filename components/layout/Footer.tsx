@@ -2,20 +2,40 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { FaYoutube, FaInstagram, FaFacebookF } from "react-icons/fa6";
 
 export default function Footer() {
+  // Define the text to repeat
+  const brandText = "SMASH2PLAY";
+
   return (
     <footer className="relative bg-black text-white pt-12 pb-8 px-6 overflow-hidden">
       <div className="max-w-[1440px] mx-auto flex flex-col h-full min-h-[60vh] justify-between">
-        {/* --- Top Utility Bar --- */}
+        {/* --- Top Utility Bar (Empty as per original) --- */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] md:text-xs 2xl:text-sm font-[Helvetica] uppercase tracking-widest opacity-80"></div>
 
-        {/* --- Central Brand Name --- */}
-        <div className="flex justify-center pt-20">
-          <h2 className="text-[20vw] font-bold select-none text-white w-full text-center">
-            SMASH2PLAY
-          </h2>
+        {/* --- Framer Motion Marquee --- */}
+        <div className="relative flex overflow-hidden py-10 select-none">
+          <motion.div
+            className="flex whitespace-nowrap"
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{
+              duration: 20, // Adjust speed here (higher = slower)
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {/* Render the brand name multiple times to fill the width and allow looping */}
+            {[...Array(4)].map((_, i) => (
+              <h2
+                key={i}
+                className="text-[20vw] font-bold leading-none pr-20 text-white"
+              >
+                {brandText}
+              </h2>
+            ))}
+          </motion.div>
         </div>
 
         {/* --- Bottom Action Bar --- */}
@@ -43,7 +63,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Subtle Grainy Overlay (Optional, for that premium feel) */}
+      {/* Subtle Grainy Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
     </footer>
   );

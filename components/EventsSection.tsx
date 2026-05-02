@@ -1,7 +1,9 @@
 "use client";
-
+import CircularGallery from "@/components/ui/CircularGallery";
 import { motion } from "framer-motion";
 import { HiMiniTrophy } from "react-icons/hi2";
+import React, { useMemo } from "react";
+import PixelTransition from "@/components/ui/PixelTransition"; // Adjust path as needed
 import {
   FaUser,
   FaStar,
@@ -59,20 +61,49 @@ const EventsSection = () => {
     { title: "Five star Food", icon: <FaUtensils className="w-5 h-5" /> },
   ];
 
-  type EventImage = {
-    i: number;
-    img: string;
-  };
-
-  const eventsImg: EventImage[] = [
-    { i: 1, img: "/Img/Corporate.jpg" },
-    { i: 2, img: "/Img/Team.webp" },
-    { i: 3, img: "/Img/Trophy.jpg" },
-    { i: 4, img: "/Img/Trophy.jpg" },
+  // 1. Array of random images
+  const images = [
+    "/Img/ball.png",
+    "/Img/Corporate.jpg",
+    "/Img/cricket-turf.jpg",
+    "/Img/Team.webp",
   ];
 
+  // 2. Memoize a random image so it doesn't change on every re-render
+  // but stays consistent for this specific card instance.
+  const randomImg = useMemo(
+    () => images[Math.floor(Math.random() * images.length)],
+    [],
+  );
+
+  // 3. Your original card content
+  const CardContent = (
+    <div className="w-full h-full bg-linear-to-br from-(--green)/10 to-(--card-bg) p-6 flex flex-col justify-center items-center text-center border border-(--green)/10">
+      <div className="w-14 h-14 bg-(--green)/10 rounded-full flex items-center justify-center mb-4 text-(--green)">
+        <FaArrowRight size={22} className="-rotate-45" />
+      </div>
+      <p className="text-(--p) text-sm sm:text-base leading-relaxed font-medium">
+        &quot;You just show up and enjoy.&quot;
+      </p>
+    </div>
+  );
+
+  // 4. The Image content for the hover state
+  const HoverImage = (
+    <div className="w-full h-full">
+      <img
+        src={randomImg}
+        alt="Random Tech"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  );
+
   return (
-    <section id="services" className="bg-(--dark-bg) py-14 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden">
+    <section
+      id="services"
+      className="bg-(--dark-bg) py-14 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         {/* Header */}
         <motion.div
@@ -142,34 +173,21 @@ const EventsSection = () => {
             Trusted by Leading Companies & Banks
           </h2>
           <p className="text-(--p) max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
-            We&apos;ve successfully hosted events for top corporates and institutions
-            — delivering high-energy, well-organized experiences every time.
+            We&apos;ve successfully hosted events for top corporates and
+            institutions — delivering high-energy, well-organized experiences
+            every time.
           </p>
 
-          <section className="w-full py-8">
-            <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-              {eventsImg.map((item, index) => (
-                <motion.div
-                  key={item.i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.03 }}
-                  className="relative mb-4 break-inside-avoid overflow-hidden rounded-2xl h-50"
-                >
-                  <Image
-                    src={item.img}
-                    alt={`Event ${item.i}`}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                    sizes="(max-width:768px) 50vw, (max-width:1024px) 33vw, 25vw"
-                    priority={index < 2}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </section>
+          {/* images */}
+          <div style={{ height: "600px", position: "relative" }}>
+            <CircularGallery
+              bend={3}
+              textColor="#ffffff"
+              borderRadius={0.05}
+              scrollSpeed={2}
+              scrollEase={0.05}
+            />
+          </div>
         </motion.div>
 
         {/* What We Handle Card */}
@@ -187,9 +205,7 @@ const EventsSection = () => {
                     key={i}
                     className="flex items-center gap-3 p-3 rounded-xl bg-(--dark-bg) hover:bg-[#1a2526] transition-colors cursor-default"
                   >
-                    <div className="text-(--green) shrink-0">
-                      {item.icon}
-                    </div>
+                    <div className="text-(--green) shrink-0">{item.icon}</div>
                     <span className="font-medium text-base sm:text-lg text-(--dark-text)">
                       {item.title}
                     </span>
@@ -205,29 +221,30 @@ const EventsSection = () => {
                 </h4>
                 <ul className="space-y-3 text-(--p) text-sm sm:text-base">
                   <li className="flex items-start gap-2">
-                    <span className="text-(--green) mt-1">✓</span>{" "}
-                    End-to-end coordination
+                    <span className="text-(--green) mt-1">✓</span> End-to-end
+                    coordination
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-(--green) mt-1">✓</span> Verified
                     vendor network
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-(--green) mt-1">✓</span>{" "}
-                    Real-time timeline tracking
+                    <span className="text-(--green) mt-1">✓</span> Real-time
+                    timeline tracking
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="lg:col-span-1 bg-linear-to-br from-(--green)/10 to-(--card-bg) rounded-2xl p-6 border border-(--green)/10 flex flex-col justify-center items-center text-center">
-              <div className="w-14 h-14 bg-(--green)/10 rounded-full flex items-center justify-center mb-4 text-(--green)">
-                <FaArrowRight size={22} className="-rotate-45" />
-              </div>
-              <p className="text-(--p) text-sm sm:text-base leading-relaxed font-medium">
-                &quot;You just show up and enjoy.&quot;
-              </p>
-            </div>
+            <PixelTransition
+              firstContent={CardContent}
+              secondContent={HoverImage}
+              gridSize={12}
+              pixelColor="#22c55e" // Matching your green theme
+              animationStepDuration={0.4}
+              className="lg:col-span-1 !w-full !h-full rounded-2xl border border-(--green)/10"
+              aspectRatio="100%" // Makes it a square, adjust as needed
+            />
 
             <div className="lg:col-span-3 flex flex-col sm:flex-row justify-center gap-4 mt-6 pt-6 border-t border-(--green)/10">
               <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--green) hover:bg-(--green)/90 text-(--dark-bg) font-bold py-3.5 px-8 rounded-full transition-all transform hover:scale-[1.02]">

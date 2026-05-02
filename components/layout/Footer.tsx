@@ -13,8 +13,8 @@ export default function Footer() {
 
         {/* --- Central Brand Name --- */}
         <div className="flex justify-center pt-20">
-          <h2 className="text-[25vw] leading-[0.8] font-[Formula] select-none text-white w-full text-center">
-            Smash2play
+          <h2 className="text-[20vw] font-bold select-none text-white w-full text-center">
+            SMASH2PLAY
           </h2>
         </div>
 
@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Copyright Section */}
           <div className="text-[12px] uppercase tracking-widest text-center lg:text-right">
             <p>
-              © 2026 by CALLORIES. Powered and secured by{" "}
+              © 2026 by SMASH2PLAY. Powered and secured by{" "}
               <span className="underline cursor-pointer">PELTOWN</span>
             </p>
           </div>

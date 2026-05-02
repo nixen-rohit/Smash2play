@@ -4,24 +4,19 @@ import SolutionSection from "@/components/SolutionSection";
 
 import NewHero from "@/components/NewHero";
 import Carousel from "@/components/Carousel";
- 
+
 import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
 import VenuePartnershipSection from "@/components/VenuePartnershipSection";
 import EventsSection from "@/components/EventsSection";
 import Footer from "@/components/layout/Footer";
 
- 
 const page = () => {
   return (
     <div className="min-h-screen w-full">
+      <NewHero />
 
-      
-       <NewHero />
-     
-      
-      
-      {/* <ProblemSection />
+      <ProblemSection />
       <SolutionSection />
       <HowItsWorkSection />
       <VenuePartnershipSection />          
@@ -30,9 +25,6 @@ const page = () => {
       <Location />
       <Testimonial />
       <Footer/> 
-       */}
-      
-
       
     </div>
   );

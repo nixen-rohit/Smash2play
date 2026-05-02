@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
-
+ 
 const sideImages = [
   {
     src: "/Img/hero-badminton.jpg",
@@ -27,13 +26,13 @@ const sideImages = [
 
 // Add progress as a prop
 export default function Hero({ progress }: { progress: number }) {
-  const words = ["PLAY", "TRAIN", "COMPETE", "All in One Place"];
-  const indentSteps = ["5vw", "15vw", "25vw", "35vw"];
+ 
+  
 
   const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
 
   // Sync internal logic with passed progress
-  const textOpacity = Math.max(0, 1 - progress / 0.2);
+ 
   const imageProgress = Math.max(0, Math.min(1, (progress - 0.2) / 0.8));
 
   const centerWidth = isDesktop
@@ -107,21 +106,7 @@ export default function Hero({ progress }: { progress: number }) {
           >
             <source src="/Video/hero.mp4" type="video/mp4" />
           </video>
-
-          <div
-            className="absolute inset-0 flex items-center justify-center"
-            style={{ opacity: textOpacity }}
-          >
-            <h1 className="font-bold tracking-tighter text-white flex flex-col gap-5">
-              {words.map((word, i) => (
-                <div key={i} style={{ paddingLeft: indentSteps[i] }}>
-                  <span className="text-[clamp(1.8rem,8vw,6rem)] leading-none">
-                    {word}
-                  </span>
-                </div>
-              ))}
-            </h1>
-          </div>
+ 
         </div>
 
         {/* Right Column */}

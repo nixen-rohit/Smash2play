@@ -123,13 +123,34 @@ const NewHero = () => {
         </motion.div>
 
         {/* Layer 2: The Bento Hero Component */}
-        <motion.div
-          style={{ y: heroY }}
-          className="absolute inset-0 z-20 bg-black overflow-hidden"
-        >
-          {/* We pass the progress specifically for the Bento expansion */}
-          <Hero progress={heroProgress} />
-        </motion.div>
+<motion.div
+  style={{ y: heroY }}
+  initial={{
+    width: "70%",
+    height: "420px", // keeps the trending/video section height
+    left: "50%",
+    x: "-50%",
+    bottom: "2rem", // starts near bottom like a trending hero card
+    borderRadius: "24px",
+  }}
+  animate={{
+    width: "100%",
+    height: "100vh",
+    left: 0,
+    x: 0,
+    bottom: 0,
+    borderRadius: "0px",
+  }}
+  transition={{
+    duration: 1.4,
+    ease: [0.22, 1, 0.36, 1], // smoother cinematic expansion
+    delay: 0.3,
+  }}
+  className="absolute z-20 bg-black overflow-hidden"
+>
+  {/* Bottom trending hero / video expands into fullscreen */}
+  <Hero progress={heroProgress} />
+</motion.div>
       </div>
 
       {/* 3. Spacer to handle the transition out */}

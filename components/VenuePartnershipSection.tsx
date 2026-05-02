@@ -264,7 +264,7 @@ export default function VenuePartnershipSection() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInVariants}
-          className="flex flex-col sm:flex-row justify-center gap-4 pt-8 border-t border-(--green)/20"
+          className="flex flex-col sm:flex-row justify-center gap-4 pt-8 "
         >
           <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--green) hover:brightness-110 text-(--dark-bg) font-bold py-4 px-8 rounded-full transition-all transform hover:scale-[1.02] hover:shadow-lg hover:shadow-(--green)/20 focus:outline-none focus:ring-2 focus:ring-(--green) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">
             Partner With Smash2Play <FaArrowRight size={18} />

@@ -1,9 +1,8 @@
 "use client";
 import CircularGallery from "@/components/ui/CircularGallery";
 import { motion } from "framer-motion";
-import { HiMiniTrophy } from "react-icons/hi2";
-import React, { useMemo } from "react";
-import PixelTransition from "@/components/ui/PixelTransition"; // Adjust path as needed
+import React, { useState, useEffect, useCallback } from "react";
+import PixelTransition from "@/components/ui/PixelTransition";
 import {
   FaUser,
   FaStar,
@@ -16,15 +15,32 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 
+const images = [
+  "/Img/ball.png",
+  "/Img/Corporate.jpg",
+  "/Img/cricket-turf.jpg",
+  "/Img/Team.webp",
+];
+
 const EventsSection = () => {
   const fadeInVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
+
+  const [randomImg, setRandomImg] = useState(images[0]);
+
+  useEffect(() => {
+    setRandomImg(images[Math.floor(Math.random() * images.length)]);
+  }, []);
+
+  // Pick a DIFFERENT image on every hover entry
+  const handleHoverStart = useCallback(() => {
+    setRandomImg((prev) => {
+      const others = images.filter((img) => img !== prev);
+      return others[Math.floor(Math.random() * others.length)];
+    });
+  }, []);
 
   const services = [
     {
@@ -61,22 +77,6 @@ const EventsSection = () => {
     { title: "Five star Food", icon: <FaUtensils className="w-5 h-5" /> },
   ];
 
-  // 1. Array of random images
-  const images = [
-    "/Img/ball.png",
-    "/Img/Corporate.jpg",
-    "/Img/cricket-turf.jpg",
-    "/Img/Team.webp",
-  ];
-
-  // 2. Memoize a random image so it doesn't change on every re-render
-  // but stays consistent for this specific card instance.
-  const randomImg = useMemo(
-    () => images[Math.floor(Math.random() * images.length)],
-    [],
-  );
-
-  // 3. Your original card content
   const CardContent = (
     <div className="w-full h-full bg-linear-to-br from-(--green)/10 to-(--card-bg) p-6 flex flex-col justify-center items-center text-center border border-(--green)/10">
       <div className="w-14 h-14 bg-(--green)/10 rounded-full flex items-center justify-center mb-4 text-(--green)">
@@ -88,12 +88,14 @@ const EventsSection = () => {
     </div>
   );
 
-  // 4. The Image content for the hover state
+  // Re-reads randomImg from state on every render — always up to date
   const HoverImage = (
     <div className="w-full h-full">
-      <img
+      <Image
+        width={500}
+        height={500}
         src={randomImg}
-        alt="Random Tech"
+        alt="Event highlight"
         className="w-full h-full object-cover"
       />
     </div>
@@ -105,7 +107,6 @@ const EventsSection = () => {
       className="bg-(--dark-bg) py-14 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
-        {/* Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -123,7 +124,6 @@ const EventsSection = () => {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
@@ -158,7 +158,6 @@ const EventsSection = () => {
           ))}
         </div>
 
-        {/* Trust & Visual Highlight */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -177,8 +176,6 @@ const EventsSection = () => {
             institutions — delivering high-energy, well-organized experiences
             every time.
           </p>
-
-          {/* images */}
           <div style={{ height: "600px", position: "relative" }}>
             <CircularGallery
               bend={3}
@@ -190,10 +187,8 @@ const EventsSection = () => {
           </div>
         </motion.div>
 
-        {/* What We Handle Card */}
         <div className="relative bg-(--card-bg) rounded-4xl p-5 sm:p-8 md:p-12 border border-(--green)/20 overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-(--green)/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10">
             <div className="lg:col-span-1">
               <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-(--dark-text)">
@@ -236,15 +231,18 @@ const EventsSection = () => {
               </div>
             </div>
 
-            <PixelTransition
-              firstContent={CardContent}
-              secondContent={HoverImage}
-              gridSize={12}
-              pixelColor="#22c55e" // Matching your green theme
-              animationStepDuration={0.4}
-              className="lg:col-span-1 !w-full !h-full rounded-2xl border border-(--green)/10"
-              aspectRatio="100%" // Makes it a square, adjust as needed
-            />
+            {/* onMouseEnter fires BEFORE PixelTransition's own hover, so randomImg is fresh when the animation runs */}
+            <div className="lg:col-span-1" onMouseEnter={handleHoverStart}>
+              <PixelTransition
+                firstContent={CardContent}
+                secondContent={HoverImage}
+                gridSize={12}
+                pixelColor="#bef365"
+                animationStepDuration={0.4}
+                className="w-full! h-full! rounded-2xl border border-(--green)/10"
+                aspectRatio="100%"
+              />
+            </div>
 
             <div className="lg:col-span-3 flex flex-col sm:flex-row justify-center gap-4 mt-6 pt-6 border-t border-(--green)/10">
               <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--green) hover:bg-(--green)/90 text-(--dark-bg) font-bold py-3.5 px-8 rounded-full transition-all transform hover:scale-[1.02]">
@@ -257,7 +255,6 @@ const EventsSection = () => {
           </div>
         </div>
 
-        {/* Bonus: Coaching & Tournaments */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -283,7 +280,6 @@ const EventsSection = () => {
               )}
             </div>
           </div>
-
           <div className="bg-(--card-bg) border border-(--green)/10 p-6 rounded-2xl">
             <h3 className="text-xl font-bold mb-2 text-(--dark-text)">
               Events & Tournaments

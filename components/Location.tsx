@@ -213,7 +213,7 @@ export default function Location() {
   return (
     <div
       id="venues"
-      className="flex flex-col lg:flex-row h-auto lg:h-screen bg-(--white-bg) p-4 lg:p-6 gap-4 lg:gap-6 font-sans overflow-hidden"
+      className="flex flex-col lg:flex-row h-auto lg:h-screen bg-(--dark-bg) p-4 lg:p-6 gap-4 lg:gap-6 font-sans overflow-hidden"
     >
       {/* LEFT PANEL */}
       <motion.div
@@ -223,7 +223,7 @@ export default function Location() {
       >
         {/* HEADER */}
         <header className="mb-6">
-          <h1 className="text-2xl lg:text-4xl font-bold text-(--white-text) tracking-tight">
+          <h1 className="text-2xl lg:text-4xl font-bold text-(--dark-text) tracking-tight">
             VENUES
           </h1>
           <p className="font-semibold text-(--p)">
@@ -241,7 +241,7 @@ export default function Location() {
             <button
               key={f}
               onClick={() => handleQuickFilter(f)}
-              className={`px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium whitespace-nowrap transition-all
+              className={`px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium darkspace-nowrap transition-all
                 ${
                   quickFilter === f && !hasModalFilter
                     ? "border-(--highlight) text-(--highlight) bg-(--highlight)/10"
@@ -256,7 +256,7 @@ export default function Location() {
           <div className="relative">
             <button
               onClick={openFilterModal}
-              className={`flex items-center gap-1.5 px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium whitespace-nowrap transition-all
+              className={`flex items-center gap-1.5 px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium darkspace-nowrap transition-all
                 ${
                   hasModalFilter
                     ? "border-(--highlight) text-(--highlight) bg-(--highlight)/10"

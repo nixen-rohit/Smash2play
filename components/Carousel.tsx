@@ -107,7 +107,7 @@ export default function Carousel() {
 
       {/* Header */}
 
-      <h2 className="absolute top-10 left-10 z-100 text-white text-4xl md:text-5xl font-bold leading-tight max-w-xl">
+      <h2 className="absolute top-10 left-40 z-100 text-white text-4xl md:text-5xl font-bold leading-tight max-w-xl">
         Everything You Need —{" "}
         <span className="text-gray-400">In One Place</span>
       </h2>
@@ -221,7 +221,7 @@ export default function Carousel() {
               transition={{ duration: 0.4 }}
               className="max-w-2xl"
             >
-              <span className="font-bold tracking-[10px] text-orange-500 uppercase">
+              <span className="font-bold tracking-[10px] text-(--highlight) uppercase">
                 {activeSlide.author}
               </span>
               <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">

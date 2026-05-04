@@ -19,7 +19,7 @@ interface FeatureCard {
   items: string[];
   bg: string;
   img: string;
-  white: boolean;
+  dark: boolean;
 }
 
 interface PartnershipModel {
@@ -51,7 +51,7 @@ const whatYouGet: FeatureCard[] = [
     ],
     bg: "bg-(--dark-bg)/10",
     img: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1000",
-    white: true,
+    dark: true,
   },
   {
     title: "Complete Operations",
@@ -64,7 +64,7 @@ const whatYouGet: FeatureCard[] = [
     ],
     bg: "bg-(--dark-bg)/10",
     img: "/Img/Corporate.jpg",
-    white: true,
+    dark: true,
   },
   {
     title: "Proven Revenue Model",
@@ -73,7 +73,7 @@ const whatYouGet: FeatureCard[] = [
     items: ["Pay & play bookings", "Coaching programs", "Tournaments & events"],
     bg: "bg-(--dark-bg)/10",
     img: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1000",
-    white: true,
+    dark: true,
   },
 ];
 
@@ -83,27 +83,27 @@ const partnershipModels: PartnershipModel[] = [
     description: "You provide land. We build & operate.",
     highlight: "→ You earn passive income like rent",
     icon: <FaHandshake className="w-8 h-8 text-(--highlight)" />,
-    bgGradient: "from-(--card-bg) to-(--white-bg)",
+    bgGradient: "from-(--card-bg) to-(--dark-bg)",
   },
   {
     title: "Investment Partnership",
     description: "Co-invest and grow together.",
     highlight: "→ Share profits",
     icon: <FaChartLine className="w-8 h-8 text-(--highlight)" />,
-    bgGradient: "from-(--card-bg) to-(--white-bg)",
+    bgGradient: "from-(--card-bg) to-(--dark-bg)",
   },
   {
     title: "Build & Manage",
     description: "You invest. We construct & run operations.",
     highlight: "→ Zero operational headache",
     icon: <FaBuilding className="w-8 h-8 text-(--highlight)" />,
-    bgGradient: "from-(--card-bg) to-(--white-bg)",
+    bgGradient: "from-(--card-bg) to-(--dark-bg)",
   },
 ];
 
 export default function VenuePartnershipSection() {
   return (
-    <section className="w-full bg-(--white-bg) text-(--white-text) py-16 sm:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden">
+    <section className="w-full bg-(--dark-bg) text-(--dark-text) py-16 sm:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
         <motion.div
@@ -113,7 +113,7 @@ export default function VenuePartnershipSection() {
           variants={fadeInVariants}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-(--white-text) leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-(--dark-text) leading-tight mb-4">
             Build Your Own Sports Venue With{" "}
             <span className="text-(--highlight)">Smash2Play</span>
           </h2>
@@ -135,7 +135,7 @@ export default function VenuePartnershipSection() {
           viewport={{ once: true }}
           variants={fadeInVariants}
         >
-          <h3 className="text-2xl sm:text-3xl font-black mb-8 text-center text-(--white-text)">
+          <h3 className="text-2xl sm:text-3xl font-black mb-8 text-center text-(--dark-text)">
             What You Get
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -157,13 +157,13 @@ export default function VenuePartnershipSection() {
                     <div className="w-10 h-10 rounded-xl bg-(--highlight)/20 flex items-center justify-center text-(--highlight)">
                       {feature.icon}
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-(--white-text)">
+                    <h4 className="text-lg sm:text-xl font-bold text-(--dark-text)">
                       {feature.title}
                     </h4>
                   </div>
 
                   <p
-                    className={`text-sm mb-4 ${feature.white ? "text-(--p)" : "text-gray-700"}`}
+                    className={`text-sm mb-4 ${feature.dark ? "text-(--p)" : "text-gray-700"}`}
                   >
                     {feature.description}
                   </p>
@@ -172,7 +172,7 @@ export default function VenuePartnershipSection() {
                     {feature.items.map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 text-sm text-(--white-text)/90"
+                        className="flex items-start gap-2 text-sm text-(--dark-text)/90"
                       >
                         <span className="text-(--highlight) mt-1">•</span>
                         <span>{item}</span>
@@ -206,7 +206,7 @@ export default function VenuePartnershipSection() {
           viewport={{ once: true }}
           variants={fadeInVariants}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-(--white-text)">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-(--dark-text)">
             Partnership Models
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -227,7 +227,7 @@ export default function VenuePartnershipSection() {
                   <div className="w-12 h-12 rounded-xl bg-(--highlight)/20 flex items-center justify-center">
                     {model.icon}
                   </div>
-                  <h4 className="text-lg font-bold text-(--white-text)">
+                  <h4 className="text-lg font-bold text-(--dark-text)">
                     {model.title}
                   </h4>
                 </div>
@@ -249,10 +249,10 @@ export default function VenuePartnershipSection() {
           variants={fadeInVariants}
           className="flex flex-col sm:flex-row justify-center gap-4 pt-8 "
         >
-          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--highlight) hover:brightness-110 text-(--white-bg) font-bold py-4 px-8 rounded-full transition-all transform hover:scale-[1.02] hover:shadow-lg hover:shadow-(--highlight)/20 focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--white-bg)">
+          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--highlight) hover:brightness-110 text-(--dark-bg) font-bold py-4 px-8 rounded-full transition-all transform hover:scale-[1.02] hover:shadow-lg hover:shadow-(--highlight)/20 focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">
             Partner With Smash2Play <FaArrowRight size={18} />
           </button>
-          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-(--highlight)/50 hover:border-(--highlight) hover:bg-(--highlight)/10 text-(--highlight) hover:text-(--white-text) font-bold py-4 px-8 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--white-bg)">
+          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-(--highlight)/50 hover:border-(--highlight) hover:bg-(--highlight)/10 text-(--highlight) hover:text-(--dark-text) font-bold py-4 px-8 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">
             Book a Consultation <FaArrowRight size={18} />
           </button>
         </motion.div>

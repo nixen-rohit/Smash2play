@@ -95,7 +95,7 @@ export default function SolutionSection() {
             <span>The Complete Ecosystem</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-(--dark-text) tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-(--white-text) tracking-tight mb-6">
             Meet <span className="text-(--highlight)">Smash2Play</span>
           </h2>
 
@@ -122,14 +122,14 @@ export default function SolutionSection() {
                 scale: 1.02,
                 borderColor: "var(--highlight)",
               }}
-              className="group relative rounded-3xl p-6 lg:p-8 bg-(--dark-bg)/10 backdrop-blur-xs border border-(--highlight)/10 transition-colors duration-300 flex flex-col h-full"
+              className="group relative rounded-3xl p-6 lg:p-8 bg-(--white-bg)/10 backdrop-blur-xs border border-(--highlight)/10 transition-colors duration-300 flex flex-col h-full"
             >
               {/* Icon Container */}
               <div className="w-16 h-16 rounded-2xl bg-(--highlight)/10 border border-(--highlight)/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-(--highlight)/20 transition-all duration-500">
                 {pillar.icon}
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-bold text-(--dark-text) mb-3">
+              <h3 className="text-xl lg:text-2xl font-bold text-(--white-text) mb-3">
                 {pillar.title}
               </h3>
 

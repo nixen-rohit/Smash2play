@@ -43,13 +43,13 @@ const problems: Problem[] = [
       "The lack of digital infrastructure makes booking and tracking progress unnecessarily manual.",
     icon: LuClipboardX,
   },
-   {
-  id: 5,
-  title: "No community",
-  description:
-    "Without community, athletes miss out on motivation, collaboration, and opportunities to grow together.",
-  icon: HiUserGroup,
-}
+  {
+    id: 5,
+    title: "No community",
+    description:
+      "Without community, athletes miss out on motivation, collaboration, and opportunities to grow together.",
+    icon: HiUserGroup,
+  },
 ];
 
 const ProblemSection: React.FC = () => {
@@ -70,7 +70,7 @@ const ProblemSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-20 bg-(--(--white-text)-bg) overflow-hidden"
+      className="relative py-20 bg-(--dark-bg) overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
@@ -78,14 +78,14 @@ const ProblemSection: React.FC = () => {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="bg-(--highlight) text-black px-4 py-1.5 rounded-full text-xs font-bold mb-6 inline-block"
+            className="bg-(--highlight) text-(--dark-text) px-4 py-1.5 rounded-full text-xs font-bold mb-6 inline-block"
           >
             Problem Analysis
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold text-(--(--white-text)-text) tracking-tight leading-tight mb-6"
+            className="text-5xl md:text-6xl font-bold text-(--dark-text) tracking-tight leading-tight mb-6"
           >
             Why the Current <br /> System is Broken
           </motion.h2>
@@ -118,13 +118,13 @@ const ProblemSection: React.FC = () => {
                       initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
-                      className="bg-(--dark-bg)/10 backdrop-blur-xs rounded-3xl p-8 border border-(--white-text)/5 hover:border-(--highlight)/30 transition-colors group"
+                      className="bg-(--dark-bg)/10 backdrop-blur-xs rounded-3xl p-8 border border-(--dark-text)/5 hover:border-(--highlight)/30 transition-colors group"
                     >
                       <div className="flex items-center gap-4 mb-4  ">
-                        <div className="w-12 h-12 rounded-xl bg-[#0a0f11] flex items-center justify-center text-(--highlight) border border-(--white-text)/10 group-hover:scale-110 transition-transform">
+                        <div className="w-12 h-12 rounded-xl bg-[#0a0f11] flex items-center justify-center text-(--highlight) border border-(--dark-text)/10 group-hover:scale-110 transition-transform">
                           <item.icon size={24} />
                         </div>
-                        <h4 className="text-xl font-bold text-(--white-text)">
+                        <h4 className="text-xl font-bold text-(--dark-text)">
                           0{item.id}. {item.title}
                         </h4>
                       </div>

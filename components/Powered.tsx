@@ -18,8 +18,9 @@ const Powered = () => {
             <div className="absolute inset-0 bg-zinc-800 flex items-center justify-center text-zinc-500">
               {/* Replace with your actual image path */}
               <Image
-                src="/Img/callories.png"
+                src="/Img/Powered.jpg"
                 alt="Fitness Program"
+                loading="eager"
                 width={600}
                 height={600}
                 className="object-contain w-full h-full"
@@ -28,7 +29,7 @@ const Powered = () => {
           </div>
 
           {/* Text Content */}
-          <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative">
+          <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-(--white-text) relative">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Want more than <br /> just play?
             </h2>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 // Types & Data
 interface SlideItem {
   id: number;
@@ -96,7 +97,10 @@ export default function Carousel() {
   const lastSlide = items[items.length - 1];
 
   return (
-    <div id="sports" className="relative h-screen w-full overflow-hidden bg-black text-white font-sans">
+    <div
+      id="sports"
+      className="relative h-screen w-full overflow-hidden bg-black text-white font-sans"
+    >
       <div className="absolute inset-0 bg-linear-to-b from-[#050B0A] via-transparent to-transparent z-15" />
 
       <div className="absolute inset-0 bg-linear-to-t from-[#050B0A] via-transparent to-transparent z-15" />
@@ -111,7 +115,9 @@ export default function Carousel() {
       {/* 1. BACKGROUND LAYER */}
       <div className="absolute inset-0 z-0">
         {direction === "prev" ? (
-          <img
+          <Image
+            width={500}
+            height={500}
             src={lastSlide.image}
             className="w-full h-full object-cover opacity-50"
             alt="incoming-prev"
@@ -121,7 +127,9 @@ export default function Carousel() {
             {!isAnimating && activeSlide.CustomBg ? (
               activeSlide.CustomBg
             ) : (
-              <img
+              <Image
+                width={500}
+                height={500}
                 src={activeSlide.image}
                 className="w-full h-full object-cover opacity-50"
                 alt="current"
@@ -157,7 +165,13 @@ export default function Carousel() {
               ease: [0.4, 0, 0.2, 1],
             }}
           >
-            <img src={nextSlide.image} className="w-full h-full object-cover" />
+            <Image
+              width={500}
+              height={500}
+              src={nextSlide.image}
+              alt="slider image"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         )}
 
@@ -184,7 +198,10 @@ export default function Carousel() {
               ease: [0.4, 0, 0.2, 1],
             }}
           >
-            <img
+            <Image
+            alt="slider image"
+              width={500}
+              height={500}
               src={activeSlide.image}
               className="w-full h-full object-cover"
             />
@@ -244,7 +261,13 @@ export default function Carousel() {
               className="relative shrink-0 overflow-hidden rounded-3xl cursor-pointer"
               onClick={moveNext}
             >
-              <img src={item.image} className="h-full w-full object-cover" />
+              <Image
+                width={500}
+                height={500}
+                src={item.image}
+                alt="slider image"
+                className="h-full w-full object-cover"
+              />
             </motion.div>
           ))}
         </AnimatePresence>

@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaMapMarkerAlt } from "react-icons/fa";
+
 import {
   FiSliders,
   FiX,
@@ -369,7 +370,9 @@ export default function Location() {
                       : "border-transparent hover:border-(--highlight)/20"
                   }`}
               >
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   src={item.image}
                   className="w-28 h-24 lg:w-60 lg:h-32 object-cover rounded-xl lg:rounded-2xl shrink-0 opacity-90 hover:opacity-100 transition-opacity"
                   alt={item.title}

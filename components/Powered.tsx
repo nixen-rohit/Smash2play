@@ -12,7 +12,7 @@ const Powered = () => {
         </h2>
 
         {/* --- Callories Fitness Program Card --- */}
-        <div className="bg-black rounded-[40px] overflow-hidden flex flex-col md:flex-row items-center p-4 md:p-8 border border-white/10">
+        <div className="bg-(--dark-bg)/10 rounded-[40px] overflow-hidden flex flex-col md:flex-row items-center p-4 md:p-8 border-2 border-(--highlight)/10">
           {/* Image Container */}
           <div className="w-full md:w-1/2 relative h-[300px] md:h-[400px] rounded-[30px] overflow-hidden">
             <div className="absolute inset-0 bg-zinc-800 flex items-center justify-center text-zinc-500">
@@ -44,7 +44,7 @@ const Powered = () => {
             >
               Explore Callories
               <div className="ml-4 rounded-full p-1 ">
-                <FaArrowUpRightFromSquare size={18} className="text-black" />
+                <FaArrowUpRightFromSquare size={18} className="text-(--dark-bg)" />
               </div>
             </Link>
           </div>

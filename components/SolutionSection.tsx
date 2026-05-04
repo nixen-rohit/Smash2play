@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { FaDumbbell, FaTrophy, FaUsers, FaArrowRight } from "react-icons/fa";
+import { FaDumbbell, FaTrophy, FaUsers } from "react-icons/fa";
 import { FaFutbol } from "react-icons/fa6";
 import { FiCheckCircle } from "react-icons/fi";
 
@@ -11,25 +11,25 @@ const pillars = [
     title: "Play",
     description: "Book badminton, cricket, football & pickleball",
     subtext: "Easy booking. Premium experience",
-    icon: <FaFutbol className="w-8 h-8 text-(--green)" />,
+    icon: <FaFutbol className="w-8 h-8 text-(--highlight)" />,
   },
   {
     title: "Train",
     description: "Structured coaching for all levels",
     subtext: "From beginners to competitive players",
-    icon: <FaDumbbell className="w-8 h-8 text-(--green)" />,
+    icon: <FaDumbbell className="w-8 h-8 text-(--highlight)" />,
   },
   {
     title: "Compete",
     description: "Tournaments & leagues",
     subtext: "Play with the best, grow your game",
-    icon: <FaTrophy className="w-8 h-8 text-(--green)" />,
+    icon: <FaTrophy className="w-8 h-8 text-(--highlight)" />,
   },
   {
     title: "Community",
     description: "Play with friends or meet new players",
     subtext: "Sports becomes consistent and social",
-    icon: <FaUsers className="w-8 h-8 text-(--green)" />,
+    icon: <FaUsers className="w-8 h-8 text-(--highlight)" />,
   },
 ];
 
@@ -45,23 +45,23 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     scale: 0.8,
     y: 40,
     // This creates the "stacked" starting point
-    x: 0 
+    x: 0,
   },
   visible: {
     opacity: 1,
     scale: 1,
     y: 0,
     x: 0,
-    transition: { 
-      type: "spring", 
-      stiffness: 100, 
+    transition: {
+      type: "spring",
+      stiffness: 100,
       damping: 15,
-      duration: 0.8 
+      duration: 0.8,
     },
   },
 };
@@ -71,8 +71,8 @@ export default function SolutionSection() {
     <section className="py-24 bg-(--dark-bg) overflow-hidden relative">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-(--green)/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-(--green)/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-(--highlight)/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-(--highlight)/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -89,14 +89,14 @@ export default function SolutionSection() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--green)/10 border border-(--green)/20 text-(--green) font-semibold text-sm mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--highlight)/10 border border-(--highlight)/20 text-(--highlight) font-semibold text-sm mb-6"
           >
             <FiCheckCircle className="w-4 h-4" />
             <span>The Complete Ecosystem</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-(--dark-text) tracking-tight mb-6">
-            Meet <span className="text-(--green)">Smash2Play</span>
+            Meet <span className="text-(--highlight)">Smash2Play</span>
           </h2>
 
           <p className="text-xl text-(--p) leading-relaxed">
@@ -117,16 +117,15 @@ export default function SolutionSection() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ 
-                y: -12, 
+              whileHover={{
+                y: -12,
                 scale: 1.02,
-                borderColor: "var(--green)",
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                borderColor: "var(--highlight)",
               }}
-              className="group relative rounded-3xl p-6 lg:p-8 bg-(--card-bg) border border-(--green)/10 transition-colors duration-300 flex flex-col h-full"
+              className="group relative rounded-3xl p-6 lg:p-8 bg-(--card-bg) border border-(--highlight)/10 transition-colors duration-300 flex flex-col h-full"
             >
               {/* Icon Container */}
-              <div className="w-16 h-16 rounded-2xl bg-(--green)/10 border border-(--green)/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-(--green)/20 transition-all duration-500">
+              <div className="w-16 h-16 rounded-2xl bg-(--highlight)/10 border border-(--highlight)/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-(--highlight)/20 transition-all duration-500">
                 {pillar.icon}
               </div>
 
@@ -138,11 +137,9 @@ export default function SolutionSection() {
                 {pillar.description}
               </p>
 
-              <p className="text-(--green)/90 text-sm leading-relaxed mb-3">
+              <p className="text-(--highlight)/90 text-sm leading-relaxed mb-3">
                 {pillar.subtext}
               </p>
-
-              
             </motion.div>
           ))}
         </motion.div>

@@ -111,7 +111,7 @@ export default function TestimonialSlider() {
         <div className="relative mb-10 sm:mb-12">
           {/* Centered text */}
           <div className="text-center">
-            <p className="text-(--green)/80 text-xs sm:text-sm font-medium tracking-wide uppercase mb-2">
+            <p className="text-(--highlight)/80 text-xs sm:text-sm font-medium tracking-wide uppercase mb-2">
               Testimonial
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-text) leading-tight">
@@ -124,14 +124,14 @@ export default function TestimonialSlider() {
             <button
               onClick={prevSlide}
               aria-label="Previous"
-              className="bg-(--card-bg) shadow-md border border-(--green)/20 p-2.5 sm:p-3 rounded-full text-(--dark-text) hover:bg-(--green)/10 hover:border-(--green)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--green)/50"
+              className="bg-(--card-bg) shadow-md border border-(--highlight)/20 p-2.5 sm:p-3 rounded-full text-(--dark-text) hover:bg-(--highlight)/10 hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
             >
               <LuChevronLeft size={22} />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next"
-              className="bg-(--card-bg) shadow-md border border-(--green)/20 p-2.5 sm:p-3 rounded-full text-(--dark-text) hover:bg-(--green)/10 hover:border-(--green)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--green)/50"
+              className="bg-(--card-bg) shadow-md border border-(--highlight)/20 p-2.5 sm:p-3 rounded-full text-(--dark-text) hover:bg-(--highlight)/10 hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
             >
               <LuChevronRight size={22} />
             </button>
@@ -146,10 +146,7 @@ export default function TestimonialSlider() {
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {Array.from({ length: totalPages }).map((_, pageIndex) => (
-              <div
-                key={pageIndex}
-                className="w-full shrink-0 px-1 sm:px-4"
-              >
+              <div key={pageIndex} className="w-full shrink-0 px-1 sm:px-4">
                 <div
                   className={`grid gap-4 sm:gap-6 lg:gap-8 ${
                     itemsPerPage === 1
@@ -167,14 +164,14 @@ export default function TestimonialSlider() {
                     .map((item) => (
                       <div
                         key={item.id}
-                        className="group h-full bg-(--card-bg) border border-(--green)/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-(--green)/5   hover:border-(--green)/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
+                        className="group h-full bg-(--card-bg) border border-(--highlight)/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-(--highlight)/5   hover:border-(--highlight)/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
                       >
                         {/* Top */}
                         <div>
                           <div className="flex justify-center mb-5 sm:mb-7">
                             <FaQuoteRight
                               size={36}
-                              className="text-(--green)/20 group-hover:text-(--green)/40 transition sm:w-12 sm:h-12"
+                              className="text-(--highlight)/20 group-hover:text-(--highlight)/40 transition sm:w-12 sm:h-12"
                             />
                           </div>
                           <p className="text-(--p) text-base sm:text-lg leading-relaxed font-medium text-center mb-5 sm:mb-7">
@@ -190,8 +187,8 @@ export default function TestimonialSlider() {
                               size={22}
                               className={`transition-all sm:w-7 sm:h-7 ${
                                 i < item.stars
-                                  ? "text-(--green) fill-(--green)"
-                                  : "text-(--green)/20"
+                                  ? "text-(--highlight) fill-(--highlight)"
+                                  : "text-(--highlight)/20"
                               }`}
                             />
                           ))}
@@ -213,14 +210,14 @@ export default function TestimonialSlider() {
           <button
             onClick={prevSlide}
             aria-label="Previous"
-            className="bg-(--card-bg) shadow-md border border-(--green)/20 p-2.5 rounded-full text-(--dark-text) hover:bg-(--green)/10 hover:border-(--green)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--green)/50"
+            className="bg-(--card-bg) shadow-md border border-(--highlight)/20 p-2.5 rounded-full text-(--dark-text) hover:bg-(--highlight)/10 hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
           >
             <LuChevronLeft size={20} />
           </button>
           <button
             onClick={nextSlide}
             aria-label="Next"
-            className="bg-(--card-bg) shadow-md border border-(--green)/20 p-2.5 rounded-full text-(--dark-text) hover:bg-(--green)/10 hover:border-(--green)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--green)/50"
+            className="bg-(--card-bg) shadow-md border border-(--highlight)/20 p-2.5 rounded-full text-(--dark-text) hover:bg-(--highlight)/10 hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
           >
             <LuChevronRight size={20} />
           </button>
@@ -233,10 +230,10 @@ export default function TestimonialSlider() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to page ${index + 1}`}
-              className={`h-1.5 transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-(--green)/50 ${
+              className={`h-1.5 transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-(--highlight)/50 ${
                 currentIndex === index
-                  ? "w-8 bg-(--green)"
-                  : "w-4 bg-(--green)/30 hover:bg-(--green)/50"
+                  ? "w-8 bg-(--highlight)"
+                  : "w-4 bg-(--highlight)/30 hover:bg-(--highlight)/50"
               }`}
             />
           ))}

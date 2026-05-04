@@ -43,8 +43,8 @@ const HowItsWorkSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3 mb-12"
           >
-            <div className="w-8 h-8 rounded-full bg-(--green)" />
-            <span className="text-sm font-bold tracking-tight text-(--green)">
+            <div className="w-8 h-8 rounded-full bg-(--highlight)" />
+            <span className="text-sm font-bold tracking-tight text-(--highlight)">
               How It Works
             </span>
           </motion.div>
@@ -67,7 +67,7 @@ const HowItsWorkSection = () => {
                 transition={{ repeat: Infinity, duration: 2 }}
                 className="hidden md:flex shrink-0"
               >
-                <HiArrowLongRight className="text-(--green) text-5xl lg:text-7xl font-light" />
+                <HiArrowLongRight className="text-(--highlight) text-5xl lg:text-7xl font-light" />
               </motion.div>
             </div>
 
@@ -79,38 +79,38 @@ const HowItsWorkSection = () => {
         </div>
 
         {/* Right Side: Step Cards Grid */}
-       <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-  {steps.map((step, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ y: -5 }}
-      className="bg-[#141C1F] p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] border border-white/5 group"
-    >
-      {/* Corner Icon */}
-      <div className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-6 md:right-6 text-(--green)/20 group-hover:text-(--green) transition-colors duration-500">
-        <PiTennisBallFill className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
-      </div>
+        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="bg-[#141C1F] p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] border border-white/5 group"
+            >
+              {/* Corner Icon */}
+              <div className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-6 md:right-6 text-(--highlight)/20 group-hover:text-(--highlight) transition-colors duration-500">
+                <PiTennisBallFill className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+              </div>
 
-      <div className="pr-8 sm:pr-10">
-        <h4 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 tracking-tight leading-snug">
-          {step.title}
-        </h4>
-        <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-          {step.description}
-        </p>
-      </div>
+              <div className="pr-8 sm:pr-10">
+                <h4 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 tracking-tight leading-snug">
+                  {step.title}
+                </h4>
+                <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                  {step.description}
+                </p>
+              </div>
 
-      <div className="mt-5 md:mt-6 pt-4 border-t border-white/5">
-        <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-(--green) font-bold wrap-break-word">
-          {step.accent}
-        </span>
-      </div>
-    </motion.div>
-  ))}
-</div>
+              <div className="mt-5 md:mt-6 pt-4 border-t border-white/5">
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-(--highlight) font-bold wrap-break-word">
+                  {step.accent}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

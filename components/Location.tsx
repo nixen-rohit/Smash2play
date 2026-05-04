@@ -11,6 +11,8 @@ import {
   FiChevronRight,
 } from "react-icons/fi";
 
+import Image from "next/image";
+
 // --- MOCK DATA ---
 const listings = [
   {
@@ -198,10 +200,6 @@ export default function Location() {
 
   const pageNumbers = getPageNumbers(safePage, totalPages);
 
-  // Range label e.g. "1 – 4 of 12"
-  const rangeStart = (safePage - 1) * PAGE_SIZE + 1;
-  const rangeEnd = Math.min(safePage * PAGE_SIZE, filteredListings.length);
-
   const containerVars = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.07 } },
@@ -212,12 +210,15 @@ export default function Location() {
   };
 
   return (
-    <div id="venues" className="flex flex-col lg:flex-row h-auto lg:h-screen bg-(--dark-bg) p-4 lg:p-6 gap-4 lg:gap-6 font-sans overflow-hidden">
+    <div
+      id="venues"
+      className="flex flex-col lg:flex-row h-auto lg:h-screen bg-(--dark-bg) p-4 lg:p-6 gap-4 lg:gap-6 font-sans overflow-hidden"
+    >
       {/* LEFT PANEL */}
       <motion.div
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="w-full lg:w-1/2 bg-(--card-bg) rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--green)/10"
+        className="w-full lg:w-1/2 bg-(--card-bg) rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--highlight)/10"
       >
         {/* HEADER */}
         <header className="mb-6">
@@ -242,8 +243,8 @@ export default function Location() {
               className={`px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium whitespace-nowrap transition-all
                 ${
                   quickFilter === f && !hasModalFilter
-                    ? "border-(--green) text-(--green) bg-(--green)/10"
-                    : "border-(--green)/20 text-(--p) hover:border-(--green)/40 hover:bg-(--green)/5"
+                    ? "border-(--highlight) text-(--highlight) bg-(--highlight)/10"
+                    : "border-(--highlight)/20 text-(--p) hover:border-(--highlight)/40 hover:bg-(--highlight)/5"
                 }`}
             >
               {f}
@@ -257,14 +258,14 @@ export default function Location() {
               className={`flex items-center gap-1.5 px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium whitespace-nowrap transition-all
                 ${
                   hasModalFilter
-                    ? "border-(--green) text-(--green) bg-(--green)/10"
-                    : "border-(--green)/20 text-(--p) hover:border-(--green)/40 hover:bg-(--green)/5"
+                    ? "border-(--highlight) text-(--highlight) bg-(--highlight)/10"
+                    : "border-(--highlight)/20 text-(--p) hover:border-(--highlight)/40 hover:bg-(--highlight)/5"
                 }`}
             >
               <FiSliders size={13} />
               Filter
               {hasModalFilter && (
-                <span className="ml-1 bg-(--green) text-(--dark-bg) text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none">
+                <span className="ml-1 bg-(--highlight) text-(--dark-bg) text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none">
                   {checkedLocations.length}
                 </span>
               )}
@@ -279,15 +280,15 @@ export default function Location() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.97 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 z-50 bg-(--card-bg) rounded-2xl shadow-2xl border border-(--green)/20 w-64"
+                  className="absolute top-full left-0 mt-2 z-50 bg-(--card-bg) rounded-2xl shadow-2xl border border-(--highlight)/20 w-64"
                 >
-                  <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-(--green)/20">
+                  <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-(--highlight)/20">
                     <span className="font-semibold text-(--dark-text) text-sm">
                       Filter by Location
                     </span>
                     <button
                       onClick={() => setShowFilterModal(false)}
-                      className="text-(--p) hover:text-(--dark-text) transition-colors p-0.5 rounded-full hover:bg-(--green)/10"
+                      className="text-(--p) hover:text-(--dark-text) transition-colors p-0.5 rounded-full hover:bg-(--highlight)/10"
                     >
                       <FiX size={15} />
                     </button>
@@ -300,11 +301,11 @@ export default function Location() {
                         <label
                           key={loc}
                           onClick={() => toggleTemp(loc)}
-                          className="flex items-center gap-3 px-2 py-2.5 rounded-xl cursor-pointer hover:bg-(--green)/5 transition-colors group"
+                          className="flex items-center gap-3 px-2 py-2.5 rounded-xl cursor-pointer hover:bg-(--highlight)/5 transition-colors group"
                         >
                           <span
                             className={`w-[18px] h-[18px] rounded-[5px] border-2 flex items-center justify-center shrink-0 transition-all
-                              ${checked ? "bg-(--green) border-(--green)" : "border-(--green)/30 group-hover:border-(--green)/50"}`}
+                              ${checked ? "bg-(--highlight) border-(--highlight)" : "border-(--highlight)/30 group-hover:border-(--highlight)/50"}`}
                           >
                             {checked && (
                               <FiCheck
@@ -322,16 +323,16 @@ export default function Location() {
                     })}
                   </div>
 
-                  <div className="flex gap-2 px-4 py-3 border-t border-(--green)/20">
+                  <div className="flex gap-2 px-4 py-3 border-t border-(--highlight)/20">
                     <button
                       onClick={() => setTempChecked([])}
-                      className="flex-1 py-2 rounded-xl border border-(--green)/20 text-xs font-medium text-(--p) hover:bg-(--green)/5 transition-all"
+                      className="flex-1 py-2 rounded-xl border border-(--highlight)/20 text-xs font-medium text-(--p) hover:bg-(--highlight)/5 transition-all"
                     >
                       Clear
                     </button>
                     <button
                       onClick={applyFilter}
-                      className="flex-1 py-2 rounded-xl bg-(--green) text-(--dark-bg) text-xs font-semibold hover:brightness-110 active:scale-95 transition-all"
+                      className="flex-1 py-2 rounded-xl bg-(--highlight) text-(--dark-bg) text-xs font-semibold hover:brightness-110 active:scale-95 transition-all"
                     >
                       Apply
                       {tempChecked.length > 0 ? ` (${tempChecked.length})` : ""}
@@ -360,13 +361,12 @@ export default function Location() {
               <motion.div
                 key={item.id}
                 variants={itemVars}
-                
                 onClick={() => setSelectedId(item.id)}
                 className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--dark-bg)/50 rounded-3xl lg:rounded-4xl border transition-all cursor-pointer
                   ${
                     selectedId === item.id
-                      ? "border-(--green) bg-(--green)/5"
-                      : "border-transparent hover:border-(--green)/20"
+                      ? "border-(--highlight) bg-(--highlight)/5"
+                      : "border-transparent hover:border-(--highlight)/20"
                   }`}
               >
                 <img
@@ -376,7 +376,7 @@ export default function Location() {
                 />
                 <div className="flex-1 flex flex-col justify-between py-1 min-w-0">
                   <div>
-                    <span className="text-[10px] font-bold uppercase text-(--green) tracking-wider">
+                    <span className="text-[10px] font-bold uppercase text-(--highlight) tracking-wider">
                       {item.type}
                     </span>
                     <h3 className="font-bold text-(--dark-text) leading-snug mt-1 text-sm lg:text-base">
@@ -384,7 +384,7 @@ export default function Location() {
                     </h3>
                   </div>
                   <div className="flex items-center gap-1 text-xs text-(--p)">
-                    <FaMapMarkerAlt className="text-(--green) text-xl shrink-0" />
+                    <FaMapMarkerAlt className="text-(--highlight) text-xl shrink-0" />
                     <span className="truncate text-(--dark-text)/90 font-medium text-sm">
                       {item.location}
                     </span>
@@ -397,7 +397,7 @@ export default function Location() {
 
         {/* PAGINATION */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-between pt-4 mt-2 border-t border-(--green)/20 shrink-0">
+          <div className="flex items-center justify-between pt-4 mt-2 border-t border-(--highlight)/20 shrink-0">
             {/* Previous */}
             <button
               onClick={() => goToPage(safePage - 1)}
@@ -405,8 +405,8 @@ export default function Location() {
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-medium transition-all
                 ${
                   safePage === 1
-                    ? "border-(--green)/10 text-(--p)/50 cursor-not-allowed"
-                    : "border-(--green)/20 text-(--p) hover:border-(--green) hover:text-(--green) hover:bg-(--green)/5"
+                    ? "border-(--highlight)/10 text-(--p)/50 cursor-not-allowed"
+                    : "border-(--highlight)/20 text-(--p) hover:border-(--highlight) hover:text-(--highlight) hover:bg-(--highlight)/5"
                 }`}
             >
               <FiChevronLeft size={14} />
@@ -430,8 +430,8 @@ export default function Location() {
                     className={`w-8 h-8 rounded-xl text-xs font-semibold transition-all
                       ${
                         safePage === p
-                          ? "bg-(--green) text-(--dark-bg) shadow-sm"
-                          : "text-(--p) hover:bg-(--green)/10 hover:text-(--green)"
+                          ? "bg-(--highlight) text-(--dark-bg) shadow-sm"
+                          : "text-(--p) hover:bg-(--highlight)/10 hover:text-(--highlight)"
                       }`}
                   >
                     {p}
@@ -447,8 +447,8 @@ export default function Location() {
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-medium transition-all
                 ${
                   safePage === totalPages
-                    ? "border-(--green)/10 text-(--p)/50 cursor-not-allowed"
-                    : "border-(--green)/20 text-(--p) hover:border-(--green) hover:text-(--green) hover:bg-(--green)/5"
+                    ? "border-(--highlight)/10 text-(--p)/50 cursor-not-allowed"
+                    : "border-(--highlight)/20 text-(--p) hover:border-(--highlight) hover:text-(--highlight) hover:bg-(--highlight)/5"
                 }`}
             >
               Next
@@ -462,7 +462,7 @@ export default function Location() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="w-full lg:flex-1 h-[320px] lg:h-auto relative rounded-4xl lg:rounded-[2.5rem] overflow-hidden shadow-sm border border-(--green)/10"
+        className="w-full lg:flex-1 h-[320px] lg:h-auto relative rounded-4xl lg:rounded-[2.5rem] overflow-hidden shadow-sm border border-(--highlight)/10"
       >
         <iframe
           key={mapSrc}

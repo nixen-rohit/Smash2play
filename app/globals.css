@@ -6,8 +6,8 @@
 }
 
 :root {
-  --dark-bg: #040b0b;   
-  --green: #bef365;  /* highlight */
+  --dark-bg: #040b0b;
+  --highlight: #006eeb; /* highlight */
   --dark-text: #fefffe;
 
   --white-bg: #fefffe;
@@ -18,7 +18,6 @@
   --p: #7d8490; /* pargaraph*/
 }
 
-
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -26,7 +25,7 @@ html {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--green) var(--card-bg);
+  scrollbar-color: var(--highlight) var(--card-bg);
 }
 
 /* Chrome, Edge, Safari */
@@ -41,22 +40,14 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    var(--green),
-    #9edb42
-  );
+  background: linear-gradient(180deg, var(--highlight), #9edb42);
   border-radius: 10px;
   border: 2px solid var(--card-bg);
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    #d7ff9b,
-    var(--green)
-  );
+  background: linear-gradient(180deg, #d7ff9b, var(--highlight));
 }
 
 ::-webkit-scrollbar-corner {

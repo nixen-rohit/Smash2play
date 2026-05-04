@@ -45,7 +45,7 @@ const Hero = () => {
     <section
       ref={containerRef}
       // Height controls how "long" the user scrolls to finish the animation
-      className="relative h-[300vh] bg-[#050B0A] text-white"
+      className="relative h-[300vh] bg-(--white-bg) text-(--white-text)"
     >
       {/* Sticky container ensures everything stays in viewport while scrolling */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
@@ -100,22 +100,22 @@ const Hero = () => {
 
           {/* Text Content */}
           <div className="max-w-4xl relative z-30">
-            <motion.p className="text-[#BEF264] text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-6">
+            <motion.p className="text-(--highlight) text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-6">
               Trusted by 1000+ players across Delhi NCR
             </motion.p>
             <h2 className="text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter mb-8">
               Play. Train. Compete. <br />
-              <span className="text-[#BEF264]">All in One Place.</span>
+              <span className="text-(--highlight)">All in One Place.</span>
             </h2>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
               Book premium sports venues, train with expert coaches, or host
               unforgettable game events.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#BEF264] text-black px-10 py-5 rounded-sm font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
+              <button className="bg-(--highlight) text-black px-10 py-5 rounded-sm font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
                 Book a Slot
               </button>
-              <button className="border border-white/20 px-10 py-5 rounded-sm font-black uppercase text-xs tracking-widest hover:bg-white/5 transition">
+              <button className="border border-(--highlight) px-10 py-5 rounded-sm font-black uppercase text-xs tracking-widest hover:bg-white/5 transition">
                 Explore Venues
               </button>
             </div>
@@ -123,34 +123,34 @@ const Hero = () => {
         </motion.div>
 
         {/* Layer 2: The Bento Hero Component */}
-<motion.div
-  style={{ y: heroY }}
-  initial={{
-    width: "70%",
-    height: "420px", // keeps the trending/video section height
-    left: "50%",
-    x: "-50%",
-    bottom: "2rem", // starts near bottom like a trending hero card
-    borderRadius: "24px",
-  }}
-  animate={{
-    width: "100%",
-    height: "100vh",
-    left: 0,
-    x: 0,
-    bottom: 0,
-    borderRadius: "0px",
-  }}
-  transition={{
-    duration: 1.4,
-    ease: [0.22, 1, 0.36, 1], // smoother cinematic expansion
-    delay: 0.3,
-  }}
-  className="absolute z-20 bg-black overflow-hidden"
->
-  {/* Bottom trending hero / video expands into fullscreen */}
-  <HeroVideo progress={heroProgress} />
-</motion.div>
+        <motion.div
+          style={{ y: heroY }}
+          initial={{
+            width: "70%",
+            height: "420px", // keeps the trending/video section height
+            left: "50%",
+            x: "-50%",
+            bottom: "2rem", // starts near bottom like a trending hero card
+            borderRadius: "24px",
+          }}
+          animate={{
+            width: "100%",
+            height: "100vh",
+            left: 0,
+            x: 0,
+            bottom: 0,
+            borderRadius: "0px",
+          }}
+          transition={{
+            duration: 1.4,
+            ease: [0.22, 1, 0.36, 1], // smoother cinematic expansion
+            delay: 0.3,
+          }}
+          className="absolute z-20 bg-black overflow-hidden"
+        >
+          {/* Bottom trending hero / video expands into fullscreen */}
+          <HeroVideo progress={heroProgress} />
+        </motion.div>
       </div>
 
       {/* 3. Spacer to handle the transition out */}

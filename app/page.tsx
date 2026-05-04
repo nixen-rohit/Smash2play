@@ -18,8 +18,8 @@ const page = () => {
       <ProblemSection />
       <SolutionSection />
       <HowItsWorkSection />
-      <VenuePartnershipSection />
       <Carousel />
+      <VenuePartnershipSection />
       <EventsSection />
       <Location />
       <Testimonial />

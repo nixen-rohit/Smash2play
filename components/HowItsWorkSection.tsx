@@ -34,7 +34,7 @@ const HowItsWorkSection = () => {
   ];
 
   return (
-    <section className="bg-(--dark-bg) text-white py-24 px-6 md:px-20 min-h-screen flex items-center">
+    <section className="bg-(--dark-bg) text-white py-20 px-6 md:px-20 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Left Side: Branding & Title */}
         <div className="lg:col-span-5 flex flex-col justify-center">
@@ -53,63 +53,64 @@ const HowItsWorkSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
+            className="w-full"
           >
-            <h3 className="text-xl md:text-2xl font-medium text-gray-400 mb-4 leading-relaxed max-w-md">
-              Smash2Play is the ultimate destination for athletes, combining
-              top-tier facilities with a vibrant community.
-            </h3>
-
-            <div className="mt-16 flex items-center gap-8">
-              <h2 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tighter">
-                WHY <br /> SMASH2PLAY <br /> WORKS —
+            <div className="  flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight md:leading-[1.1] tracking-tight md:tracking-tighter">
+                WHY <br className="hidden sm:block" />
+                SMASH2PLAY <br className="hidden sm:block" />
+                WORKS —
               </h2>
+
               <motion.div
                 animate={{ x: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="hidden md:block"
+                className="hidden md:flex shrink-0"
               >
-                <HiArrowLongRight className="text-(--green) text-7xl font-light" />
+                <HiArrowLongRight className="text-(--green) text-5xl lg:text-7xl font-light" />
               </motion.div>
             </div>
+
+            <h3 className="mt-8 md:mt-12 text-base sm:text-lg md:text-2xl font-medium text-gray-400 leading-relaxed max-w-full sm:max-w-lg md:max-w-md">
+              Smash2Play is the ultimate destination for athletes, combining
+              top-tier facilities with a vibrant community.
+            </h3>
           </motion.div>
         </div>
 
         {/* Right Side: Step Cards Grid */}
-        <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-[#141C1F] p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[320px] border border-white/5 group"
-            >
-              {/* Corner Icon */}
-              <div className="absolute top-6 right-6 text-(--green)/20 group-hover:text-(--green) transition-colors duration-500">
-                <PiTennisBallFill size={28} />
-              </div>
+       <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+  {steps.map((step, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      whileHover={{ y: -5 }}
+      className="bg-[#141C1F] p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] border border-white/5 group"
+    >
+      {/* Corner Icon */}
+      <div className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-6 md:right-6 text-(--green)/20 group-hover:text-(--green) transition-colors duration-500">
+        <PiTennisBallFill className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+      </div>
 
-              <div>
-                <span className="text-gray-500 font-bold text-lg block mb-12">
-                  Step {index + 1}
-                </span>
-                <h4 className="text-2xl font-bold mb-4 tracking-tight leading-snug">
-                  {step.title}
-                </h4>
-                <p className="text-gray-400 leading-relaxed text-sm">
-                  {step.description}
-                </p>
-              </div>
+      <div className="pr-8 sm:pr-10">
+        <h4 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 tracking-tight leading-snug">
+          {step.title}
+        </h4>
+        <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+          {step.description}
+        </p>
+      </div>
 
-              <div className="mt-6 pt-4 border-t border-white/5">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-(--green) font-bold">
-                  {step.accent}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+      <div className="mt-5 md:mt-6 pt-4 border-t border-white/5">
+        <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-(--green) font-bold wrap-break-word">
+          {step.accent}
+        </span>
+      </div>
+    </motion.div>
+  ))}
+</div>
       </div>
     </section>
   );

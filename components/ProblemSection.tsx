@@ -5,6 +5,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { LuMapPin, LuClock4, LuClipboardX } from "react-icons/lu";
 import { FaUserTimes } from "react-icons/fa";
 import { IconType } from "react-icons";
+import { HiUserGroup } from "react-icons/hi2";
 
 interface Problem {
   id: number;
@@ -42,6 +43,13 @@ const problems: Problem[] = [
       "The lack of digital infrastructure makes booking and tracking progress unnecessarily manual.",
     icon: LuClipboardX,
   },
+   {
+  id: 5,
+  title: "No community",
+  description:
+    "Without community, athletes miss out on motivation, collaboration, and opportunities to grow together.",
+  icon: HiUserGroup,
+}
 ];
 
 const ProblemSection: React.FC = () => {
@@ -62,7 +70,7 @@ const ProblemSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-24 bg-[#0a0f11] overflow-hidden"
+      className="relative py-20 bg-black overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
@@ -86,21 +94,21 @@ const ProblemSection: React.FC = () => {
         {/* Timeline Container */}
         <div className="relative">
           {/* The Vertical Line (Desktop Only) */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-1/2">
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0  w-0.5 bg-white/10 -translate-x-1/2">
             <motion.div
               style={{ scaleY, originY: 0 }}
               className="absolute top-0 left-0 w-full h-full bg-[#bef365] shadow-[0_0_15px_#bef365]"
             />
           </div>
 
-          <div className="space-y-24 md:space-y-0">
+          <div className="space-y-20 md:space-y-0">
             {problems.map((item, index) => {
               const isEven = index % 2 === 0;
 
               return (
                 <div
                   key={item.id}
-                  className="relative flex flex-col md:flex-row items-center justify-between md:mb-32"
+                  className="relative flex flex-col md:flex-row items-center justify-between md:mb-12"
                 >
                   {/* Left Side Content */}
                   <div

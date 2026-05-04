@@ -3,14 +3,12 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import {
-  FaArrowUp,
   FaArrowRight,
   FaHandshake,
   FaChartLine,
   FaBuilding,
   FaTools,
   FaCog,
-  FaMoneyBillWave,
 } from "react-icons/fa";
 
 // Types
@@ -181,20 +179,6 @@ export default function VenuePartnershipSection() {
                       </li>
                     ))}
                   </ul>
-
-                  <button
-                    className={`
-                      mt-auto flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest
-                      w-fit transition-all duration-300 group-hover:gap-3
-                      ${feature.dark ? "text-(--green)" : "text-gray-900"}
-                    `}
-                  >
-                    Learn More
-                    <FaArrowUp
-                      size={14}
-                      className="group-hover:translate-y-[-2px] transition-transform"
-                    />
-                  </button>
                 </div>
 
                 {/* Image Layer - Same animation style as reference */}

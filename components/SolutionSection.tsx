@@ -138,20 +138,11 @@ export default function SolutionSection() {
                 {pillar.description}
               </p>
 
-              <p className="text-(--green)/90 text-sm leading-relaxed mb-6">
+              <p className="text-(--green)/90 text-sm leading-relaxed mb-3">
                 {pillar.subtext}
               </p>
 
-              {/* Hover CTA - Pushed to bottom */}
-              <div className="mt-auto opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                <span className="inline-flex items-center gap-1.5 text-(--green) text-sm font-bold uppercase tracking-wider">
-                  Learn more{" "}
-                  <FaArrowRight
-                    size={14}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </span>
-              </div>
+              
             </motion.div>
           ))}
         </motion.div>

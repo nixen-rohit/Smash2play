@@ -1,7 +1,7 @@
 "use client";
 import CircularGallery from "@/components/ui/CircularGallery";
 import { motion } from "framer-motion";
-import React, { useState, useEffect, useCallback } from "react";
+import  { useState, useEffect, useCallback } from "react";
 import PixelTransition from "@/components/ui/PixelTransition";
 import {
   FaUser,

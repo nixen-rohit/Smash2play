@@ -10,7 +10,7 @@ export default function Footer() {
   const brandText = "SMASH2PLAY";
 
   return (
-    <footer className="relative bg-black text-white pt-12 pb-8 px-6 overflow-hidden">
+    <footer className="relative bg-(--dark-bg) text-white pt-12 pb-8 px-6 overflow-hidden">
       <div className="max-w-[1440px] mx-auto flex flex-col h-full min-h-[60vh] justify-between">
         {/* --- Top Utility Bar (Empty as per original) --- */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] md:text-xs 2xl:text-sm font-[Helvetica] uppercase tracking-widest opacity-80"></div>

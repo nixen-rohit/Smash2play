@@ -24,7 +24,6 @@ const page = () => {
       <Testimonial />
       <Powered/>
       <Footer />
-
     </div>
   );
 };

@@ -181,8 +181,7 @@ const EventsSection = () => {
           </p>
           <div className="h-[600px] relative">
             <CircularGallery
-              bend={1}
-              textColor="#ffffff"
+              bend={1}              
               borderRadius={0.05}
               scrollSpeed={2}
               scrollEase={0.05}
@@ -241,7 +240,7 @@ const EventsSection = () => {
                 firstContent={CardContent}
                 secondContent={HoverImage}
                 gridSize={12}
-                pixelColor="#bef365"
+                pixelColor="#006eeb"
                 animationStepDuration={0.4}
                 autoPlay={true}
                 autoPlayInterval={3000}

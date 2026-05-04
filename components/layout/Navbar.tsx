@@ -8,7 +8,6 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Link from "next/link";
- 
 
 import {
   FaWhatsapp,
@@ -19,10 +18,10 @@ import {
 } from "react-icons/fa6";
 const navTabs = [
   { name: "HOME", href: "#home" },
-  { name: "VENUES", href: "#venues" },
   { name: "SERVICES", href: "#services" },
-  { name: "SPORTS", href: "#sports" },  
-  { name: "Contact", href: "#contact" },
+  { name: "PARTNERSHIP", href: "#partnership" },
+  { name: "SPORTS", href: "#sports" },
+  { name: "VENUES", href: "#venues" },
 ];
 
 export default function Header() {
@@ -84,7 +83,6 @@ export default function Header() {
               </Link>
             ))}
           </nav>
- 
 
           {/* --- Mobile/Tablet Menu Toggle --- */}
           <button
@@ -150,7 +148,6 @@ export default function Header() {
           icon={<FaCalendarCheck />}
           label="Book Trial"
         />
-        
       </div>
     </>
   );
@@ -185,5 +182,3 @@ function FloatingIcon({
     </motion.a>
   );
 }
-
- 

@@ -1,7 +1,7 @@
 "use client";
 import CircularGallery from "@/components/ui/CircularGallery";
 import { motion } from "framer-motion";
-import  { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import PixelTransition from "@/components/ui/PixelTransition";
 import {
   FaUser,
@@ -22,27 +22,16 @@ const images = [
   "/Img/Team.webp",
 ];
 
-
- 
- 
 const EventsSection = () => {
   const fadeInVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const [randomImg, setRandomImg] = useState(images[0]);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
-  useEffect(() => {
-    setRandomImg(images[Math.floor(Math.random() * images.length)]);
-  }, []);
-
-  // Pick a DIFFERENT image on every hover entry
-  const handleHoverStart = useCallback(() => {
-    setRandomImg((prev) => {
-      const others = images.filter((img) => img !== prev);
-      return others[Math.floor(Math.random() * others.length)];
-    });
+  const handleCycleStart = useCallback(() => {
+    setCurrentImgIndex((prev) => (prev + 1) % images.length);
   }, []);
 
   const services = [
@@ -91,21 +80,29 @@ const EventsSection = () => {
     </div>
   );
 
-  // Re-reads randomImg from state on every render — always up to date
   const HoverImage = (
     <div className="w-full h-full">
       <Image
         width={500}
         height={500}
-        src={randomImg}
+        src={images[currentImgIndex]}
         alt="Event highlight"
         className="w-full h-full object-cover"
       />
     </div>
   );
 
-  const coachingTags = ["Beginner", "Intermediate", "Advanced", "Adult batches"];
-  const eventTags = ["Corporate tournaments", "Weekend leagues", "Community events"];
+  const coachingTags = [
+    "Beginner",
+    "Intermediate",
+    "Advanced",
+    "Adult batches",
+  ];
+  const eventTags = [
+    "Corporate tournaments",
+    "Weekend leagues",
+    "Community events",
+  ];
 
   return (
     <section
@@ -237,14 +234,16 @@ const EventsSection = () => {
               </div>
             </div>
 
-            {/* onMouseEnter fires BEFORE PixelTransition's own hover, so randomImg is fresh when the animation runs */}
-            <div className="lg:col-span-1" onMouseEnter={handleHoverStart}>
+            <div className="lg:col-span-1">
               <PixelTransition
                 firstContent={CardContent}
                 secondContent={HoverImage}
                 gridSize={12}
                 pixelColor="#bef365"
                 animationStepDuration={0.4}
+                autoPlay={true}
+                autoPlayInterval={3000}
+                 onCycleStart={handleCycleStart}  // <-- add this
                 className="w-full! h-full! rounded-2xl border border-(--green)/10"
                 aspectRatio="100%"
               />
@@ -261,79 +260,84 @@ const EventsSection = () => {
           </div>
         </div>
 
-      <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeInVariants}
-      className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4"
-    >
-      {/* Coaching Card */}
-      <motion.div 
-        whileHover={{ y: -5 }}
-        className="group relative bg-(--card-bg) border border-(--green)/20 p-8 rounded-4xl overflow-hidden transition-colors hover:border-(--green)/50"
-      >
-        {/* Decorative background glow */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--green)/10 blur-[80px] group-hover:bg-(--green)/20 transition-all" />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInVariants}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4"
+        >
+          {/* Coaching Card */}
+          <motion.div
+            whileHover={{ y: -5 }}
+            className="group relative bg-(--card-bg) border border-(--green)/20 p-8 rounded-4xl overflow-hidden transition-colors hover:border-(--green)/50"
+          >
+            {/* Decorative background glow */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--green)/10 blur-[80px] group-hover:bg-(--green)/20 transition-all" />
 
-        <div className="relative z-10">
-          <span className="text-(--green) text-xs font-bold uppercase tracking-widest mb-4 block">
-            Expert Training
-          </span>
-          <h3 className="text-3xl font-bold mb-3 text-(--dark-text) tracking-tight">
-            Coaching Programs
-          </h3>
-          <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
-            Elevate your game with structured modules designed for every skill level. 
-            <span className="block font-semibold mt-1 text-(--dark-text)">Train Like a Pro.</span>
-          </p>
-          
-          <div className="flex flex-wrap gap-2">
-            {coachingTags.map((tag) => (
-              <span
-                key={tag}
-                className="px-4 py-1.5 bg-(--green)/10 text-(--green) text-[11px] font-bold uppercase rounded-full border border-(--green)/10 group-hover:bg-(--green) group-hover:text-black transition-colors"
-              >
-                {tag}
+            <div className="relative z-10">
+              <span className="text-(--green) text-xs font-bold uppercase tracking-widest mb-4 block">
+                Expert Training
               </span>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+              <h3 className="text-3xl font-bold mb-3 text-(--dark-text) tracking-tight">
+                Coaching Programs
+              </h3>
+              <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
+                Elevate your game with structured modules designed for every
+                skill level.
+                <span className="block font-semibold mt-1 text-(--dark-text)">
+                  Train Like a Pro.
+                </span>
+              </p>
 
-      {/* Events Card */}
-      <motion.div 
-        whileHover={{ y: -5 }}
-        className="group relative bg-(--card-bg) border border-(--green)/20 p-8 rounded-4xl overflow-hidden transition-colors hover:border-(--green)/50"
-      >
-        {/* Decorative background glow */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--green)/10 blur-[80px] group-hover:bg-(--green)/20 transition-all" />
+              <div className="flex flex-wrap gap-2">
+                {coachingTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-1.5 bg-(--green)/10 text-(--green) text-[11px] font-bold uppercase rounded-full border border-(--green)/10 group-hover:bg-(--green) group-hover:text-black transition-colors"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
 
-        <div className="relative z-10">
-          <span className="text-(--green) text-xs font-bold uppercase tracking-widest mb-4 block">
-            Competitive Play
-          </span>
-          <h3 className="text-3xl font-bold mb-3 text-(--dark-text) tracking-tight">
-            Events & Tournaments
-          </h3>
-          <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
-            From corporate showdowns to community matchups.
-            <span className="block font-semibold mt-1 text-(--dark-text)">Compete. Connect. Celebrate.</span>
-          </p>
-          
-          <div className="flex flex-wrap gap-2">
-            {eventTags.map((tag) => (
-              <span
-                key={tag}
-                className="px-4 py-1.5 bg-(--green)/10 text-(--green) text-[11px] font-bold uppercase rounded-full border border-(--green)/10 group-hover:bg-(--green) group-hover:text-black transition-colors"
-              >
-                {tag}
+          {/* Events Card */}
+          <motion.div
+            whileHover={{ y: -5 }}
+            className="group relative bg-(--card-bg) border border-(--green)/20 p-8 rounded-4xl overflow-hidden transition-colors hover:border-(--green)/50"
+          >
+            {/* Decorative background glow */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--green)/10 blur-[80px] group-hover:bg-(--green)/20 transition-all" />
+
+            <div className="relative z-10">
+              <span className="text-(--green) text-xs font-bold uppercase tracking-widest mb-4 block">
+                Competitive Play
               </span>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
+              <h3 className="text-3xl font-bold mb-3 text-(--dark-text) tracking-tight">
+                Events & Tournaments
+              </h3>
+              <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
+                From corporate showdowns to community matchups.
+                <span className="block font-semibold mt-1 text-(--dark-text)">
+                  Compete. Connect. Celebrate.
+                </span>
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {eventTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-1.5 bg-(--green)/10 text-(--green) text-[11px] font-bold uppercase rounded-full border border-(--green)/10 group-hover:bg-(--green) group-hover:text-black transition-colors"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

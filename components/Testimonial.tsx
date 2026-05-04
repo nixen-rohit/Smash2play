@@ -105,7 +105,7 @@ export default function TestimonialSlider() {
   }, [nextSlide]);
 
   return (
-    <section className="bg-(--dark-bg) py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-(--white-bg) py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="relative mb-10 sm:mb-12">
@@ -114,7 +114,7 @@ export default function TestimonialSlider() {
             <p className="text-(--highlight)/80 text-xs sm:text-sm font-medium tracking-wide uppercase mb-2">
               Testimonial
             </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-text) leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--white-text) leading-tight">
               Transformative Client Experiences
             </h2>
           </div>
@@ -124,14 +124,14 @@ export default function TestimonialSlider() {
             <button
               onClick={prevSlide}
               aria-label="Previous"
-              className="bg-(--card-bg) shadow-md border border-(--highlight)/20 p-2.5 sm:p-3 rounded-full text-(--dark-text) hover:bg-(--highlight)/10 hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
+              className="  shadow-md border border-(--highlight)/20 p-2.5 sm:p-3 rounded-full text-(--white-text)  bg-(--highlight)/10 hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
             >
               <LuChevronLeft size={22} />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next"
-              className="bg-(--card-bg) shadow-md border border-(--highlight)/20 p-2.5 sm:p-3 rounded-full text-(--dark-text) hover:bg-(--highlight)/10 hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
+              className="  shadow-md border border-(--highlight)/20 p-2.5 sm:p-3 rounded-full text-(--white-text)  bg-(--highlight)/10 hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
             >
               <LuChevronRight size={22} />
             </button>
@@ -164,7 +164,7 @@ export default function TestimonialSlider() {
                     .map((item) => (
                       <div
                         key={item.id}
-                        className="group h-full bg-(--card-bg) border border-(--highlight)/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-(--highlight)/5   hover:border-(--highlight)/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
+                        className="group h-full bg-(--dark-bg)/10 backdrop-blur-xs border border-(--highlight)/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-(--white)/5   hover:border-(--highlight)/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
                       >
                         {/* Top */}
                         <div>
@@ -200,9 +200,7 @@ export default function TestimonialSlider() {
             ))}
           </div>
 
-          {/* Gradient edges — hidden on mobile to avoid clipping */}
-          <div className="pointer-events-none hidden sm:block absolute top-0 left-0 h-full w-10 bg-linear-to-r from-(--dark-bg) to-transparent" />
-          <div className="pointer-events-none hidden sm:block absolute top-0 right-0 h-full w-10 bg-linear-to-l from-(--dark-bg) to-transparent" />
+           
         </div>
 
         {/* Mobile nav arrows */}

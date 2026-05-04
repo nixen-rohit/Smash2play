@@ -22,7 +22,7 @@ const page = () => {
       <EventsSection />
       <Location />
       <Testimonial />
-       <Powered/>
+      <Powered/>
       <Footer />
 
     </div>

@@ -5,7 +5,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const Powered = () => {
   return (
-    <section className="bg-[#D4E971] p-6 md:p-12 font-sans">
+    <section className="bg-(--white-bg) p-6 md:p-12 font-sans">
       <div className="max-w-6xl mx-auto space-y-8">
         <h2 className="text-4xl text-center md:text-5xl font-bold mb-6 leading-tight">
           Powered by Callories
@@ -40,7 +40,7 @@ const Powered = () => {
             <Link
               target="_blank"
               href="https://callories.vercel.app/"
-              className="inline-flex items-center justify-between bg-[#D4E971] text-black px-6 py-4 rounded-full font-bold w-fit hover:bg-white transition-colors group"
+              className="inline-flex items-center justify-between bg-(--highlight) text-black px-6 py-4 rounded-full font-bold w-fit hover:bg-white transition-colors group"
             >
               Explore Callories
               <div className="ml-4 rounded-full p-1 ">

@@ -34,7 +34,7 @@ const HowItsWorkSection = () => {
   ];
 
   return (
-    <section className="bg-(--dark-bg) text-white py-20 px-6 md:px-20 min-h-screen flex items-center">
+    <section className="bg-(--white-bg) text-(--white-text) py-20 px-6 md:px-20 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Left Side: Branding & Title */}
         <div className="lg:col-span-5 flex flex-col justify-center">
@@ -87,7 +87,7 @@ const HowItsWorkSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-[#141C1F] p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] border border-white/5 group"
+              className="bg-(--dark-bg)/10 backdrop-blur-xs p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] border border-white/5 group"
             >
               {/* Corner Icon */}
               <div className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-6 md:right-6 text-(--highlight)/20 group-hover:text-(--highlight) transition-colors duration-500">

@@ -68,7 +68,7 @@ const itemVariants: Variants = {
 
 export default function SolutionSection() {
   return (
-    <section className="py-24 bg-(--dark-bg) overflow-hidden relative">
+    <section className="py-20 bg-(--white-bg) overflow-hidden relative">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-(--highlight)/5 rounded-full blur-3xl" />
@@ -122,7 +122,7 @@ export default function SolutionSection() {
                 scale: 1.02,
                 borderColor: "var(--highlight)",
               }}
-              className="group relative rounded-3xl p-6 lg:p-8 bg-(--card-bg) border border-(--highlight)/10 transition-colors duration-300 flex flex-col h-full"
+              className="group relative rounded-3xl p-6 lg:p-8 bg-(--dark-bg)/10 backdrop-blur-xs border border-(--highlight)/10 transition-colors duration-300 flex flex-col h-full"
             >
               {/* Icon Container */}
               <div className="w-16 h-16 rounded-2xl bg-(--highlight)/10 border border-(--highlight)/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-(--highlight)/20 transition-all duration-500">

@@ -125,18 +125,18 @@ export default function Header() {
       </motion.header>
 
       {/* --- Floating Action Buttons (Always Visible) --- */}
-      <div className="fixed bottom-8 right-6 flex flex-col gap-4 z-110">
+      <div className="fixed text-(--white-text) bottom-8 right-6 flex flex-col gap-4 z-110">
         {/* WhatsApp FAB */}
         <FloatingIcon
           href={`https://wa.me/${wanumber}`}
-          bgColor="bg-black"
+          bgColor="bg-(--highlight)"
           icon={<FaWhatsapp />}
           label="WhatsApp"
         />
         {/* Call FAB */}
         <FloatingIcon
           href={`tel:+${wanumber}`}
-          bgColor="bg-black"
+          bgColor="bg-(--highlight)"
           icon={<FaPhone />}
           label="Call Us"
         />
@@ -144,7 +144,7 @@ export default function Header() {
         {/* Trial FAB */}
         <FloatingIcon
           href="#pricing"
-          bgColor="bg-black"
+          bgColor="bg-(--highlight)"
           icon={<FaCalendarCheck />}
           label="Book Trial"
         />
@@ -176,7 +176,7 @@ function FloatingIcon({
     >
       {icon}
       {/* Tooltip Label */}
-      <span className="absolute right-16 bg-(--white-text) text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none (--white-text)space-nowrap shadow-xl">
+      <span className="absolute right-16 bg-(--white-bg) text-(--black) text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none (--white-text)space-nowrap shadow-xl">
         {label}
       </span>
     </motion.a>

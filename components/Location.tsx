@@ -212,17 +212,17 @@ export default function Location() {
   return (
     <div
       id="venues"
-      className="flex flex-col lg:flex-row h-auto lg:h-screen bg-(--dark-bg) p-4 lg:p-6 gap-4 lg:gap-6 font-sans overflow-hidden"
+      className="flex flex-col lg:flex-row h-auto lg:h-screen bg-(--white-bg) p-4 lg:p-6 gap-4 lg:gap-6 font-sans overflow-hidden"
     >
       {/* LEFT PANEL */}
       <motion.div
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="w-full lg:w-1/2 bg-(--card-bg) rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--highlight)/10"
+        className="w-full lg:w-1/2 bg-(--dark-bg)/10 backdrop-blur-xs rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--highlight)/10"
       >
         {/* HEADER */}
         <header className="mb-6">
-          <h1 className="text-2xl lg:text-4xl font-bold text-(--dark-text) tracking-tight">
+          <h1 className="text-2xl lg:text-4xl font-bold text-(--white-text) tracking-tight">
             VENUES
           </h1>
           <p className="font-semibold text-(--p)">

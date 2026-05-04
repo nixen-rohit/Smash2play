@@ -51,13 +51,13 @@ export default function Header() {
         }}
         animate={isHidden ? "hidden" : "visible"}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-0 left-0 w-full z-100 bg-transparent backdrop-blur-md border-b border-(--white-text)/5"
+        className="fixed top-0 left-0 w-full z-100 bg-(--white-bg) backdrop-blur-md border-b border-(--white-text)/5"
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* --- Logo --- */}
           <Link href="/" className="group">
             <Image
-              src="/img/smash.png"
+              src="/Img/smash.png"
               alt="Smash2play Logo"
               width={80}
               height={80}

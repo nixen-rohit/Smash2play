@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   FaWhatsapp,
@@ -55,9 +56,14 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* --- Logo --- */}
           <Link href="/" className="group">
-            <h1 className="text-2xl md:text-3xl font-[FormulaBold] uppercase tracking-widest text-(--white-text)">
-              SMASH2PLAY<span className="text-(--red)">.</span>
-            </h1>
+            <Image
+              src="/img/smash.png"
+              alt="Smash2play Logo"
+              width={80}
+              height={80}
+              className="object-contain"
+              priority
+            />
           </Link>
 
           {/* --- Desktop Navigation Tabs --- */}

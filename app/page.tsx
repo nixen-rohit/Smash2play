@@ -8,6 +8,7 @@ import Testimonial from "@/components/Testimonial";
 import VenuePartnershipSection from "@/components/VenuePartnershipSection";
 import EventsSection from "@/components/EventsSection";
 import Footer from "@/components/layout/Footer";
+import Powered from "@/components/Powered";
 
 const page = () => {
   return (
@@ -21,7 +22,9 @@ const page = () => {
       <EventsSection />
       <Location />
       <Testimonial />
+       <Powered/>
       <Footer />
+
     </div>
   );
 };

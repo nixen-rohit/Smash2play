@@ -57,7 +57,7 @@ export default function Header() {
           {/* --- Logo --- */}
           <Link href="/" className="group">
             <Image
-              src="/Img/smash.png"
+              src="/Img/logo.webp"
               alt="Smash2play Logo"
               width={80}
               height={80}

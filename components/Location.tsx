@@ -218,7 +218,7 @@ export default function Location() {
       <motion.div
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="w-full lg:w-1/2 bg-(--card-bg) rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--highlight)/10"
+        className="w-full lg:w-1/2 bg-(--dark-bg)/10 rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border-5 border-(--highlight)/10"
       >
         {/* HEADER */}
         <header className="mb-6">

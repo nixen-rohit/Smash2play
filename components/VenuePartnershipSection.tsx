@@ -103,7 +103,7 @@ const partnershipModels: PartnershipModel[] = [
 
 export default function VenuePartnershipSection() {
   return (
-    <section className="w-full bg-(--dark-bg) text-(--dark-text) py-16 sm:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden">
+    <section id="partner" className="w-full bg-(--dark-bg) text-(--dark-text) py-16 sm:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
         <motion.div
@@ -201,6 +201,7 @@ export default function VenuePartnershipSection() {
 
         {/* Partnership Models */}
         <motion.div
+          id="#partner"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

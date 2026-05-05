@@ -135,7 +135,7 @@ const EventsSection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInVariants}
-              className="bg-(--highlight)/10  border border-(--highlight)/20 p-5 sm:p-6 md:p-8 rounded-3xl hover:border-(--highlight)/50 transition-all group"
+              className="bg-(--highlight)/10  border border-(--highlight) p-5 sm:p-6 md:p-8 rounded-3xl transition-all group"
             >
               <div className="bg-(--highlight)/20 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
                 {service.icon}
@@ -181,7 +181,7 @@ const EventsSection = () => {
           </p>
           <div className="h-[600px] relative">
             <CircularGallery
-              bend={1}              
+              bend={1}
               borderRadius={0.05}
               scrollSpeed={2}
               scrollEase={0.05}
@@ -189,7 +189,7 @@ const EventsSection = () => {
           </div>
         </motion.div>
 
-        <div className="relative bg-(--dark-bg)/10  rounded-4xl p-5 sm:p-8 md:p-12 border border-(--highlight)/20 overflow-hidden">
+        <div className="relative bg-(--highlight)/10  rounded-4xl p-5 sm:p-8 md:p-12 border border-(--highlight) overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-(--highlight)/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10">
             <div className="lg:col-span-1">
@@ -271,7 +271,7 @@ const EventsSection = () => {
           {/* Coaching Card */}
           <motion.div
             whileHover={{ y: -5 }}
-            className="group relative bg-(--dark-bg)/10  border border-(--highlight)/20 p-8 rounded-4xl overflow-hidden transition-colors hover:border-(--highlight)/50"
+            className="group relative bg-(--highlight)/10  border border-(--highlight) p-8 rounded-4xl overflow-hidden transition-colors"
           >
             {/* Decorative background glow */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--highlight)/10 blur-[80px] group-hover:bg-(--highlight)/20 transition-all" />
@@ -286,7 +286,7 @@ const EventsSection = () => {
               <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
                 Elevate your game with structured modules designed for every
                 skill level.
-                <span className="block font-semibold mt-1 text-(--white-text)">
+                <span className="block font-semibold mt-1 text-(--p)">
                   Train Like a Pro.
                 </span>
               </p>
@@ -295,7 +295,7 @@ const EventsSection = () => {
                 {coachingTags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-4 py-1.5 bg-(--highlight)/10 text-(--highlight) text-[11px] font-bold uppercase rounded-full border border-(--highlight)/10 group-hover:bg-(--highlight) group-hover:text-black transition-colors"
+                    className="px-4 py-1.5 bg-(--highlight)/10 text-(--highlight) text-[11px] font-bold uppercase rounded-full border border-(--highlight) group-hover:bg-(--highlight) group-hover:text-white transition-colors"
                   >
                     {tag}
                   </span>
@@ -307,7 +307,7 @@ const EventsSection = () => {
           {/* Events Card */}
           <motion.div
             whileHover={{ y: -5 }}
-            className="group relative bg-(--dark-bg)/10  border border-(--highlight)/20 p-8 rounded-4xl overflow-hidden transition-colors hover:border-(--highlight)/50"
+            className="group relative bg-(--highlight)/10  border border-(--highlight) p-8 rounded-4xl overflow-hidden transition-colors"
           >
             {/* Decorative background glow */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--highlight)/10 blur-[80px] group-hover:bg-(--highlight)/20 transition-all" />
@@ -330,7 +330,7 @@ const EventsSection = () => {
                 {eventTags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-4 py-1.5 bg-(--highlight)/10 text-(--highlight) text-[11px] font-bold uppercase rounded-full border border-(--highlight)/10 group-hover:bg-(--highlight) group-hover:text-black transition-colors"
+                    className="px-4 py-1.5 bg-(--highlight)/10 text-(--highlight) text-[11px] font-bold uppercase rounded-full border border-(--highlight) group-hover:bg-(--highlight) group-hover:text-white transition-colors"
                   >
                     {tag}
                   </span>

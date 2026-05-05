@@ -94,10 +94,10 @@ const ProblemSection: React.FC = () => {
         {/* Timeline Container */}
         <div className="relative">
           {/* The Vertical Line (Desktop Only) */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0  w-0.5 bg-(--highlight)/50 -translate-x-1/2">
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0  w-0.5 bg-(--white-bg) -translate-x-1/2">
             <motion.div
               style={{ scaleY, originY: 0 }}
-              className="absolute top-0 left-0 w-full h-full bg-(--highlight) shadow-[0_0_15px(--highlight)"
+              className="absolute top-0 left-0 w-full h-full bg-blue-500 shadow-[0_0_20px_#3b82f6]"
             />
           </div>
 
@@ -118,17 +118,17 @@ const ProblemSection: React.FC = () => {
                       initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
-                      className="bg-(--dark-bg)/10 backdrop-blur-xs rounded-3xl p-8 border border-(--dark-text)/5 hover:border-(--highlight)/30 transition-colors group"
+                      className="bg-white backdrop-blur-xs rounded-3xl p-8 border border-(--dark-text)/5 hover:border-(--highlight)/30 transition-colors group"
                     >
                       <div className="flex items-center gap-4 mb-4  ">
-                        <div className="w-12 h-12 rounded-xl bg-[#0a0f11] flex items-center justify-center text-(--highlight) border border-(--dark-text)/10 group-hover:scale-110 transition-transform">
+                        <div className="w-12 h-12 rounded-xl bg-(--highlight)/15 flex items-center justify-center text-(--highlight) border border-(--dark-text)/10 group-hover:scale-110 transition-transform">
                           <item.icon size={24} />
                         </div>
-                        <h4 className="text-xl font-bold text-(--dark-text)">
+                        <h4 className="text-xl font-bold text-(--white-text)">
                           0{item.id}. {item.title}
                         </h4>
                       </div>
-                      <p className="text-gray-400 text-sm leading-relaxed">
+                      <p className="text-(--p) text-sm leading-relaxed">
                         {item.description}
                       </p>
                     </motion.div>

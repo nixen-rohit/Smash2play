@@ -165,7 +165,7 @@ export default function TestimonialSlider() {
                     .map((item) => (
                       <div
                         key={item.id}
-                        className="group h-full bg-(--dark-bg)/10 backdrop-blur-xs border border-(--highlight)/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-(--dark)/5   hover:border-(--highlight)/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
+                        className="group h-full bg-white backdrop-blur-xs border border-(--highlight)/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-(--dark)/5   hover:border-(--highlight)/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
                       >
                         {/* Top */}
                         <div>

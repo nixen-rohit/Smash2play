@@ -34,7 +34,7 @@ const HowItsWorkSection = () => {
   ];
 
   return (
-    <section className="bg-(--white-bg) text-(--white-text) py-20 px-6 md:px-20 min-h-screen flex items-center">
+    <section className="bg-(--white-bg) text-(--white-text) pb-20 px-6 md:px-20 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Left Side: Branding & Title */}
         <div className="lg:col-span-5 flex flex-col justify-center">
@@ -71,7 +71,7 @@ const HowItsWorkSection = () => {
               </motion.div>
             </div>
 
-            <h3 className="mt-8 md:mt-12 text-base sm:text-lg md:text-2xl font-medium text-gray-400 leading-relaxed max-w-full sm:max-w-lg md:max-w-md">
+            <h3 className="mt-8 md:mt-12 text-base sm:text-lg md:text-2xl font-medium text-(--highlight) leading-relaxed max-w-full sm:max-w-lg md:max-w-md">
               Smash2Play is the ultimate destination for athletes, combining
               top-tier facilities with a vibrant community.
             </h3>
@@ -87,7 +87,7 @@ const HowItsWorkSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-(--highlight)/10 backdrop-blur-xs p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] border border-white/5 group"
+              className="bg-(--highlight)/10 border border-(--highlight) backdrop-blur-xs p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] group"
             >
               {/* Corner Icon */}
               <div className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-6 md:right-6 text-(--highlight)/20 group-hover:text-(--highlight) transition-colors duration-500">
@@ -98,7 +98,7 @@ const HowItsWorkSection = () => {
                 <h4 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 tracking-tight leading-snug">
                   {step.title}
                 </h4>
-                <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                <p className="text-(--p) leading-relaxed text-sm sm:text-base">
                   {step.description}
                 </p>
               </div>

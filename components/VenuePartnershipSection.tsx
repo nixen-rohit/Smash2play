@@ -145,7 +145,7 @@ export default function VenuePartnershipSection() {
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className={`
-                  group relative rounded-3xl p-6 sm:p-8 overflow-hidden cursor-pointer
+                  group relative rounded-3xl p-6 sm:p-8 overflow-hidden cursor-pointer bg-white
                   ${feature.bg} border border-(--highlight)/20
                   transition-all duration-500 hover:shadow-2xl hover:shadow-(--highlight)/10 backdrop-blur-xs
                 `}
@@ -157,7 +157,7 @@ export default function VenuePartnershipSection() {
                     <div className="w-10 h-10 rounded-xl bg-(--highlight)/20 flex items-center justify-center text-(--highlight)">
                       {feature.icon}
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-(--dark-text)">
+                    <h4 className="text-lg sm:text-xl font-bold text-(--highlight)">
                       {feature.title}
                     </h4>
                   </div>
@@ -172,7 +172,7 @@ export default function VenuePartnershipSection() {
                     {feature.items.map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 text-sm text-(--dark-text)/90"
+                        className="flex items-start gap-2 text-sm text-(--p)"
                       >
                         <span className="text-(--highlight) mt-1">•</span>
                         <span>{item}</span>
@@ -219,7 +219,7 @@ export default function VenuePartnershipSection() {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
                 className={`
-                  relative rounded-2xl p-6 border border-(--highlight)/20
+                  relative rounded-2xl p-6 border border-(--highlight)/20 bg-(--white-bg)
                   hover:border-(--highlight)/50 transition-all duration-300
                 `}
               >
@@ -227,7 +227,7 @@ export default function VenuePartnershipSection() {
                   <div className="w-12 h-12 rounded-xl bg-(--highlight)/20 flex items-center justify-center">
                     {model.icon}
                   </div>
-                  <h4 className="text-lg font-bold text-(--dark-text)">
+                  <h4 className="text-lg font-bold text-(--highlight)">
                     {model.title}
                   </h4>
                 </div>
@@ -249,7 +249,7 @@ export default function VenuePartnershipSection() {
           variants={fadeInVariants}
           className="flex flex-col sm:flex-row justify-center gap-4 pt-8 "
         >
-          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--highlight) hover:brightness-110 text-(--dark-bg) font-bold py-4 px-8 rounded-full transition-all transform hover:scale-[1.02] hover:shadow-lg hover:shadow-(--highlight)/20 focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">
+          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--highlight) hover:brightness-110 text-(--white-bg) font-bold py-4 px-8 rounded-full transition-all transform hover:scale-[1.02] hover:shadow-lg hover:shadow-(--highlight)/20 focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">
             Partner With Smash2Play <FaArrowRight size={18} />
           </button>
           <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-(--highlight)/50 hover:border-(--highlight) hover:bg-(--highlight)/10 text-(--highlight) hover:text-(--dark-text) font-bold py-4 px-8 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">

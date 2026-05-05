@@ -19,9 +19,9 @@ import {
 } from "react-icons/fa6";
 const navTabs = [
   { name: "HOME", href: "#home" },
-  { name: "SERVICES", href: "#services" },
-  { name: "PARTNERSHIP", href: "#partnership" },
   { name: "SPORTS", href: "#sports" },
+  { name: "PARTNERSHIP", href: "#partnership" },
+  { name: "EVENTS", href: "#services" },
   { name: "VENUES", href: "#venues" },
 ];
 
@@ -51,7 +51,7 @@ export default function Header() {
         }}
         animate={isHidden ? "hidden" : "visible"}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-0 left-0 w-full z-100 bg-(--white-bg) backdrop-blur-md border-b border-(--white-text)/5"
+        className="fixed top-0 left-0 w-full z-100 bg-transparent backdrop-blur-sm border-b border-(--white-text)/5"
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* --- Logo --- */}
@@ -74,7 +74,7 @@ export default function Header() {
                   initial="initial"
                   whileHover="hover"
                   animate="initial"
-                  className="relative py-2 text-sm font-bold uppercase tracking-[0.25em] text-(--white-text) cursor-pointer"
+                  className="relative py-2 text-sm font-bold uppercase tracking-[0.25em] text-(--highlight) cursor-pointer"
                 >
                   {tab.name}
                   <motion.div

@@ -49,6 +49,16 @@ const Hero = () => {
     >
       {/* Sticky container ensures everything stays in viewport while scrolling */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/Img/bg.jpeg"
+            alt="Hero Background"
+            fill
+            priority
+            className="object-cover opacity-50"
+          />
+        </div>
         {/* 1. Hero Content Section (The Text and Floating Icons) */}
         <motion.div
           style={{
@@ -100,22 +110,22 @@ const Hero = () => {
 
           {/* Text Content */}
           <div className="max-w-4xl relative z-30">
-            <motion.p className="text-(--highlight) text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-6">
+            <motion.p className="bg-white p-1 rounded-2xl border border-(--highlight) text-(--highlight) text-[10px] md:text-lg font-black uppercase tracking-[0.4em] mb-6">
               Trusted by 1000+ players across Delhi NCR
             </motion.p>
             <h2 className="text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter mb-8">
               Play. Train. Compete. <br />
               <span className="text-(--highlight)">All in One Place.</span>
             </h2>
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="bg-white p-1 border border-(--highlight) font-medium rounded-2xl text-(--p) text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
               Book premium sports venues, train with expert coaches, or host
               unforgettable game events.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-(--highlight) text-black px-10 py-5 rounded-sm font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
+              <button className="bg-(--highlight) text-white px-10 py-5 rounded-sm font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
                 Book a Slot
               </button>
-              <button className="border border-(--highlight) px-10 py-5 rounded-sm font-black uppercase text-xs tracking-widest hover:bg-white/5 transition">
+              <button className="bg-white border border-(--highlight) px-10 py-5 rounded-sm font-black uppercase text-xs tracking-widest hover:bg-white/5 transition">
                 Explore Venues
               </button>
             </div>

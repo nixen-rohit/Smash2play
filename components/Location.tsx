@@ -219,17 +219,17 @@ export default function Location() {
       <motion.div
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="w-full lg:w-1/2 bg-(--dark-bg)/10 backdrop-blur-xs rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--highlight)/10"
+        className="w-full lg:w-1/2 bg-(--dark-bg)/10 backdrop-blur-xs rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--highlight)"
       >
         {/* HEADER */}
         <header className="mb-6">
-          <h1 className="text-2xl lg:text-4xl font-bold text-(--dark-text) tracking-tight">
+          <h1 className="text-2xl lg:text-4xl font-bold text-(--white-bg) tracking-tight">
             VENUES
           </h1>
-          <p className="font-semibold text-(--p)">
+          <p className="font-semibold text-white">
             Multiple Locations Across Delhi NCR VENUES
           </p>
-          <p className="text-(--p) mt-1">
+          <p className="text-white mt-1">
             {filteredListings.length} listing
             {filteredListings.length !== 1 ? "s" : ""}
           </p>
@@ -245,7 +245,7 @@ export default function Location() {
                 ${
                   quickFilter === f && !hasModalFilter
                     ? "border-(--highlight) text-(--highlight) bg-(--highlight)/10"
-                    : "border-(--highlight)/20 text-(--p) hover:border-(--highlight)/40 hover:bg-(--highlight)/5"
+                    : "border-(--highlight) text-white hover:border-(--highlight)/40 hover:bg-(--highlight)/10"
                 }`}
             >
               {f}
@@ -260,7 +260,7 @@ export default function Location() {
                 ${
                   hasModalFilter
                     ? "border-(--highlight) text-(--highlight) bg-(--highlight)/10"
-                    : "border-(--highlight)/20 text-(--p) hover:border-(--highlight)/40 hover:bg-(--highlight)/5"
+                    : "border-(--highlight) text-white hover:border-(--highlight)/40 hover:bg-(--highlight)/10"
                 }`}
             >
               <FiSliders size={13} />
@@ -289,7 +289,7 @@ export default function Location() {
                     </span>
                     <button
                       onClick={() => setShowFilterModal(false)}
-                      className="text-(--p) hover:text-(--dark-text) transition-colors p-0.5 rounded-full hover:bg-(--highlight)/10"
+                      className="text-white hover:text-(--white-text) transition-colors p-0.5 rounded-full hover:bg-(--highlight)/10"
                     >
                       <FiX size={15} />
                     </button>
@@ -327,7 +327,7 @@ export default function Location() {
                   <div className="flex gap-2 px-4 py-3 border-t border-(--highlight)/20">
                     <button
                       onClick={() => setTempChecked([])}
-                      className="flex-1 py-2 rounded-xl border border-(--highlight)/20 text-xs font-medium text-(--p) hover:bg-(--highlight)/5 transition-all"
+                      className="flex-1 py-2 rounded-xl border border-(--highlight)/20 text-xs font-medium text-white hover:bg-(--highlight)/5 transition-all"
                     >
                       Clear
                     </button>
@@ -354,7 +354,7 @@ export default function Location() {
           className="flex-1 overflow-y-auto pr-1 space-y-3 no-scrollbar min-h-0"
         >
           {pagedListings.length === 0 ? (
-            <div className="flex items-center justify-center h-32 text-(--p) text-sm">
+            <div className="flex items-center justify-center h-32 text-white text-sm">
               No listings found for selected location(s).
             </div>
           ) : (
@@ -363,7 +363,7 @@ export default function Location() {
                 key={item.id}
                 variants={itemVars}
                 onClick={() => setSelectedId(item.id)}
-                className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--dark-bg)/50 rounded-3xl lg:rounded-4xl border transition-all cursor-pointer
+                className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--white-bg) rounded-3xl lg:rounded-4xl border transition-all cursor-pointer
                   ${
                     selectedId === item.id
                       ? "border-(--highlight) bg-(--highlight)/5"
@@ -382,13 +382,13 @@ export default function Location() {
                     <span className="text-[10px] font-bold uppercase text-(--highlight) tracking-wider">
                       {item.type}
                     </span>
-                    <h3 className="font-bold text-(--dark-text) leading-snug mt-1 text-sm lg:text-base">
+                    <h3 className="font-bold text-(--white-text) leading-snug mt-1 text-sm lg:text-base">
                       {item.title}
                     </h3>
                   </div>
-                  <div className="flex items-center gap-1 text-xs text-(--p)">
+                  <div className="flex items-center gap-1 text-xs text-white">
                     <FaMapMarkerAlt className="text-(--highlight) text-xl shrink-0" />
-                    <span className="truncate text-(--dark-text)/90 font-medium text-sm">
+                    <span className="truncate text-(--white-text)/90 font-medium text-sm">
                       {item.location}
                     </span>
                   </div>
@@ -408,8 +408,8 @@ export default function Location() {
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-medium transition-all
                 ${
                   safePage === 1
-                    ? "border-(--highlight)/10 text-(--p)/50 cursor-not-allowed"
-                    : "border-(--highlight)/20 text-(--p) hover:border-(--highlight) hover:text-(--highlight) hover:bg-(--highlight)/5"
+                    ? "border-(--highlight) text-white/50 cursor-not-allowed"
+                    : "border-(--highlight) text-white hover:border-(--highlight)/40 hover:bg-(--highlight)/5"
                 }`}
             >
               <FiChevronLeft size={14} />
@@ -422,7 +422,7 @@ export default function Location() {
                 p === "..." ? (
                   <span
                     key={`ellipsis-${i}`}
-                    className="w-8 text-center text-xs text-(--p)/50"
+                    className="w-8 text-center text-xs text-white/50"
                   >
                     …
                   </span>
@@ -434,7 +434,7 @@ export default function Location() {
                       ${
                         safePage === p
                           ? "bg-(--highlight) text-(--dark-bg) shadow-sm"
-                          : "text-(--p) hover:bg-(--highlight)/10 hover:text-(--highlight)"
+                          : "text-white hover:bg-(--highlight)"
                       }`}
                   >
                     {p}
@@ -450,8 +450,8 @@ export default function Location() {
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-medium transition-all
                 ${
                   safePage === totalPages
-                    ? "border-(--highlight)/10 text-(--p)/50 cursor-not-allowed"
-                    : "border-(--highlight)/20 text-(--p) hover:border-(--highlight) hover:text-(--highlight) hover:bg-(--highlight)/5"
+                    ? "border-(--highlight) text-white/50 cursor-not-allowed"
+                    : "border-(--highlight) text-white hover:border-(--highlight) hover:text-(--highlight) hover:bg-(--highlight)/5"
                 }`}
             >
               Next

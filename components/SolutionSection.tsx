@@ -68,7 +68,7 @@ const itemVariants: Variants = {
 
 export default function SolutionSection() {
   return (
-    <section className="py-20 bg-(--white-bg) overflow-hidden relative">
+    <section className="pt-20 bg-(--white-bg) overflow-hidden relative">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-(--highlight)/5 rounded-full blur-3xl" />
@@ -89,7 +89,7 @@ export default function SolutionSection() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--highlight)/10 border border-(--highlight)/20 text-(--highlight) font-semibold text-sm mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--highlight)/10 border border-(--highlight) text-(--highlight) font-semibold text-sm mb-6"
           >
             <FiCheckCircle className="w-4 h-4" />
             <span>The Complete Ecosystem</span>
@@ -122,10 +122,10 @@ export default function SolutionSection() {
                 scale: 1.02,
                 borderColor: "var(--highlight)",
               }}
-              className="group relative rounded-3xl p-6 lg:p-8 bg-(--highlight)/10 backdrop-blur-xs border border-(--highlight)/10 transition-colors duration-300 flex flex-col h-full"
+              className="group relative rounded-3xl p-6 lg:p-8 bg-(--highlight)/10 backdrop-blur-xs border border-(--highlight) transition-colors duration-300 flex flex-col h-full"
             >
               {/* Icon Container */}
-              <div className="w-16 h-16 rounded-2xl bg-(--highlight)/10 border border-(--highlight)/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-(--highlight)/20 transition-all duration-500">
+              <div className="w-16 h-16 rounded-2xl bg-(--highlight)/10 border border-(--highlight) flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500">
                 {pillar.icon}
               </div>
 

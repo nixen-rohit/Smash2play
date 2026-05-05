@@ -18,9 +18,9 @@ import {
   FaXmark,
 } from "react-icons/fa6";
 const navTabs = [
-  { name: "HOME", href: "#home" },
+  { name: "HOME", href: "#" },
   { name: "SPORTS", href: "#sports" },
-  { name: "PARTNERSHIP", href: "#partnership" },
+  { name: "PARTNERSHIP", href: "#partner" },
   { name: "EVENTS", href: "#services" },
   { name: "VENUES", href: "#venues" },
 ];

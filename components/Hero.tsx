@@ -110,7 +110,7 @@ const Hero = () => {
 
           {/* Text Content */}
           <div className="max-w-4xl relative z-30">
-            <motion.p className="bg-white p-1 rounded-2xl border border-(--highlight) text-(--highlight) text-[10px] md:text-lg font-black uppercase tracking-[0.4em] mb-6">
+            <motion.p className="bg-white p-1 rounded-2xl border border-(--highlight) text-(--highlight) text-[10px] md:text-lg font-black uppercase tracking-[0.4em] mb-2">
               Trusted by 1000+ players across Delhi NCR
             </motion.p>
             <h2 className="text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter mb-8">

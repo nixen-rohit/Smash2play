@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
@@ -13,19 +12,18 @@ const Powered = () => {
 
         {/* --- Callories Fitness Program Card --- */}
         <div className="bg-(--highlight)/10 rounded-[40px] overflow-hidden flex flex-col md:flex-row items-center p-4 md:p-8 border-2 border-(--highlight)/10">
-          {/* Image Container */}
-          <div className="w-full md:w-1/2 relative h-[300px] md:h-[400px] rounded-[30px] overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center text-zinc-500">
-              {/* Replace with your actual image path */}
-              <Image
-                src="/Img/Powered.jpg"
-                alt="Fitness Program"
-                loading="eager"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
-              />
-            </div>
+          {/* Video Container */}
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="object-cover w-full h-auto rounded-2xl"
+            >
+              {/* Replace with your actual video path if needed */}
+              <source src="/Video/callories.mp4" type="video/mp4" />
+            </video>
           </div>
 
           {/* Text Content */}
@@ -41,7 +39,7 @@ const Powered = () => {
             <Link
               target="_blank"
               href="https://callories.vercel.app/"
-              className="group inline-flex items-center justify-between bg-(--highlight) text-(--dark-bg) px-6 py-4 rounded-full font-bold w-fit hover:bg-(--highlight)/80 transition-colors"
+              className="group inline-flex items-center justify-between bg-(--highlight) text-(--white-bg) px-6 py-4 rounded-full font-bold w-fit hover:bg-(--highlight)/80 transition-colors"
             >
               Explore Callories
               <div className="ml-4 rounded-full p-1 ">

@@ -122,7 +122,7 @@ export default function SolutionSection() {
                 scale: 1.02,
                 borderColor: "var(--highlight)",
               }}
-              className="group relative rounded-3xl p-6 lg:p-8 bg-(--white-bg)/10 backdrop-blur-xs border border-(--highlight)/10 transition-colors duration-300 flex flex-col h-full"
+              className="group relative rounded-3xl p-6 lg:p-8 bg-(--highlight)/10 backdrop-blur-xs border border-(--highlight)/10 transition-colors duration-300 flex flex-col h-full"
             >
               {/* Icon Container */}
               <div className="w-16 h-16 rounded-2xl bg-(--highlight)/10 border border-(--highlight)/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-(--highlight)/20 transition-all duration-500">

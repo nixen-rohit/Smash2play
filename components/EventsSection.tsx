@@ -135,9 +135,9 @@ const EventsSection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInVariants}
-              className="bg-(--dark-bg)/10  border border-(--highlight)/20 p-5 sm:p-6 md:p-8 rounded-3xl hover:border-(--highlight)/50 transition-all group"
+              className="bg-(--highlight)/10  border border-(--highlight)/20 p-5 sm:p-6 md:p-8 rounded-3xl hover:border-(--highlight)/50 transition-all group"
             >
-              <div className="bg-(--dark-bg) w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              <div className="bg-(--highlight)/20 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
                 {service.icon}
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-(--white-text)">

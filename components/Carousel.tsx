@@ -107,7 +107,7 @@ export default function Carousel() {
 
       {/* Header */}
 
-      <h2 className="absolute top-10 left-40 z-100 text-white text-4xl md:text-5xl font-bold leading-tight max-w-xl">
+      <h2 className="absolute left-10 top-30 md:left-20 lg:left-30 md:top-10 z-100 text-white text-4xl md:text-5xl font-bold leading-tight max-w-xl">
         Everything You Need —{" "}
         <span className="text-gray-400">In One Place</span>
       </h2>
@@ -119,7 +119,7 @@ export default function Carousel() {
             width={500}
             height={500}
             src={lastSlide.image}
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover opacity-80"
             alt="incoming-prev"
           />
         ) : (
@@ -131,7 +131,7 @@ export default function Carousel() {
                 width={500}
                 height={500}
                 src={activeSlide.image}
-                className="w-full h-full object-cover opacity-50"
+                className="w-full h-full object-cover opacity-80"
                 alt="current"
               />
             )}

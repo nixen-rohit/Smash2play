@@ -12,7 +12,7 @@ const Powered = () => {
         </h2>
 
         {/* --- Callories Fitness Program Card --- */}
-        <div className="bg-(--dark-bg)/10 rounded-[40px] overflow-hidden flex flex-col md:flex-row items-center p-4 md:p-8 border-2 border-(--highlight)/10">
+        <div className="bg-(--highlight)/10 rounded-[40px] overflow-hidden flex flex-col md:flex-row items-center p-4 md:p-8 border-2 border-(--highlight)/10">
           {/* Image Container */}
           <div className="w-full md:w-1/2 relative h-[300px] md:h-[400px] rounded-[30px] overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center text-zinc-500">
@@ -33,7 +33,7 @@ const Powered = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Want more than <br /> just play?
             </h2>
-            <p className="text-zinc-400 text-lg mb-8 max-w-sm">
+            <p className="text-(--p) text-lg mb-8 max-w-sm">
               Join Callories — our fitness program designed to help you lose
               weight, build strength, and stay consistent.
             </p>
@@ -41,7 +41,7 @@ const Powered = () => {
             <Link
               target="_blank"
               href="https://callories.vercel.app/"
-              className="inline-flex items-center justify-between bg-(--highlight) text-(--dark-bg) px-6 py-4 rounded-full font-bold w-fit hover:bg-white transition-colors group"
+              className="group inline-flex items-center justify-between bg-(--highlight) text-(--dark-bg) px-6 py-4 rounded-full font-bold w-fit hover:bg-(--highlight)/80 transition-colors"
             >
               Explore Callories
               <div className="ml-4 rounded-full p-1 ">
@@ -63,14 +63,14 @@ const Powered = () => {
             <Link
               target="_blank"
               href="https://callories.vercel.app/"
-              className="w-full sm:w-auto text-center bg-(--dark-bg) text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform"
+              className="w-full sm:w-auto text-center bg-(--highlight) text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform"
             >
               Book Your Slot
             </Link>
             <Link
               target="_blank"
               href="https://callories.vercel.app/"
-              className="w-full sm:w-auto text-center border-2 border-(--dark-bg) text-(--dark-bg) px-10 py-5 rounded-2xl font-bold text-lg hover:bg-(--dark-bg) hover:text-white transition-all"
+              className="w-full sm:w-auto text-center border-2 border-(--highlight) text-(--dark-bg) px-10 py-5 rounded-2xl font-bold text-lg hover:bg-(--highlight) hover:text-(--dark-text) transition-all"
             >
               Partner With Us
             </Link>

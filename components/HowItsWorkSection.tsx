@@ -87,7 +87,7 @@ const HowItsWorkSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-(--dark-bg)/10 backdrop-blur-xs p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] border border-white/5 group"
+              className="bg-(--highlight)/10 backdrop-blur-xs p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] border border-white/5 group"
             >
               {/* Corner Icon */}
               <div className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-6 md:right-6 text-(--highlight)/20 group-hover:text-(--highlight) transition-colors duration-500">

@@ -136,14 +136,14 @@ export default function Header() {
         <FloatingIcon
           href={`https://wa.me/${wanumber}`}
           bgColor="bg-(--highlight)"
-          icon={<FaWhatsapp />}
+          icon={<FaWhatsapp className="text-white" />}
           label="WhatsApp"
         />
         {/* Call FAB */}
         <FloatingIcon
           href={`tel:+${wanumber}`}
           bgColor="bg-(--highlight)"
-          icon={<FaPhone />}
+          icon={<FaPhone className="text-white" />}
           label="Call Us"
         />
 
@@ -151,7 +151,7 @@ export default function Header() {
         <FloatingIcon
           href="#pricing"
           bgColor="bg-(--highlight)"
-          icon={<FaCalendarCheck />}
+          icon={<FaCalendarCheck className="text-white" />}
           label="Book Trial"
         />
       </div>
@@ -182,7 +182,7 @@ function FloatingIcon({
     >
       {icon}
       {/* Tooltip Label */}
-      <span className="absolute right-16 bg-(--white-bg) text-(--black) text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none (--white-text)space-nowrap shadow-xl">
+      <span className="absolute right-16 bg-(--white-bg) text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">
         {label}
       </span>
     </motion.a>

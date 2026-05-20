@@ -46,7 +46,7 @@ export default function HeroVideo({ progress }: { progress: number }) {
   const gap = imageProgress * 16;
 
   return (
-    <div className="h-full w-full bg-[#e1edfb]">
+    <div className="h-full w-full bg-(--dark-bg)">
       <div
         className="flex h-full w-full items-stretch justify-center"
         style={{
@@ -100,7 +100,7 @@ export default function HeroVideo({ progress }: { progress: number }) {
             loop
             playsInline
           >
-            <source src="/Video/bg-video.mp4" type="video/mp4" />
+            <source src="/Video/herovideo.mp4" type="video/mp4" />
           </video>
  
         </div>

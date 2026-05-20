@@ -109,7 +109,7 @@ export default function Carousel() {
 
       <h2 className="absolute left-10 top-30 md:left-20 lg:left-30 md:top-10 z-100 text-white text-4xl md:text-5xl font-bold leading-tight max-w-xl">
         Everything You Need —{" "}
-        <span className="text-gray-400">In One Place</span>
+        <span className="text-(--highlight)">In One Place</span>
       </h2>
 
       {/* 1. BACKGROUND LAYER */}
@@ -227,7 +227,7 @@ export default function Carousel() {
               <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">
                 {activeSlide.title}
               </h1>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-(--dark-text) text-lg leading-relaxed">
                 {activeSlide.description}
               </p>
             </motion.div>

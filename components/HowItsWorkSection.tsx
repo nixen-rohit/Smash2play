@@ -34,21 +34,19 @@ const HowItsWorkSection = () => {
   ];
 
   return (
-    <section className="bg-(--white-bg) text-(--white-text) pb-20 px-6 md:px-20 min-h-screen flex items-center">
+    <section className="bg-(--dark-bg) text-(--dark-text) pb-20 px-6 md:px-20 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Left Side: Branding & Title */}
         <div className="lg:col-span-5 flex flex-col justify-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3 mb-12"
+         <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex w-[10vw] items-center justify-center gap-2 py-2 rounded-full bg-(--highlight) text-(--dark-text) font-semibold text-sm mb-6"
           >
-            <div className="w-8 h-8 rounded-full bg-(--highlight)" />
-            <span className="text-sm font-bold tracking-tight text-(--highlight)">
-              How It Works
-            </span>
+            <span>How It Works</span>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +69,7 @@ const HowItsWorkSection = () => {
               </motion.div>
             </div>
 
-            <h3 className="mt-8 md:mt-12 text-base sm:text-lg md:text-2xl font-medium text-(--highlight) leading-relaxed max-w-full sm:max-w-lg md:max-w-md">
+            <h3 className="mt-8 md:mt-12 text-base sm:text-lg md:text-2xl font-medium text-(--dark-text) leading-relaxed max-w-full sm:max-w-lg md:max-w-md">
               Smash2Play is the ultimate destination for athletes, combining
               top-tier facilities with a vibrant community.
             </h3>
@@ -87,14 +85,14 @@ const HowItsWorkSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-(--highlight)/10 border border-(--highlight) backdrop-blur-xs p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] group"
+              className="bg-(--dark-text) p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[280px] md:min-h-[320px] group"
             >
               {/* Corner Icon */}
               <div className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-6 md:right-6 text-(--highlight)/20 group-hover:text-(--highlight) transition-colors duration-500">
                 <PiTennisBallFill className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
               </div>
 
-              <div className="pr-8 sm:pr-10">
+              <div className="pr-8 sm:pr-10 text-(--dark-bg)">
                 <h4 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 tracking-tight leading-snug">
                   {step.title}
                 </h4>

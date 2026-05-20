@@ -78,7 +78,7 @@ const ProblemSection: React.FC = () => {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="bg-(--highlight) text-(--dark-text) px-4 py-1.5 rounded-full text-xs font-bold mb-6 inline-block"
+            className="bg-(--highlight) text-(--dark-text) px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block"
           >
             Problem Analysis
           </motion.span>
@@ -94,7 +94,7 @@ const ProblemSection: React.FC = () => {
         {/* Timeline Container */}
         <div className="relative">
           {/* The Vertical Line (Desktop Only) */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0  w-0.5 bg-(--white-bg) -translate-x-1/2">
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0  w-0.5 bg-white -translate-x-1/2">
             <motion.div
               style={{ scaleY, originY: 0 }}
               className="absolute top-0 left-0 w-full h-full bg-blue-500 shadow-[0_0_20px_#3b82f6]"
@@ -124,11 +124,11 @@ const ProblemSection: React.FC = () => {
                         <div className="w-12 h-12 rounded-xl bg-(--highlight)/15 flex items-center justify-center text-(--highlight) border border-(--dark-text)/10 group-hover:scale-110 transition-transform">
                           <item.icon size={24} />
                         </div>
-                        <h4 className="text-xl font-bold text-(--white-text)">
+                        <h4 className="text-xl font-bold text-(--dark-text)">
                           0{item.id}. {item.title}
                         </h4>
                       </div>
-                      <p className="text-(--p) text-sm leading-relaxed">
+                      <p className="text-(--p) text-lg leading-relaxed">
                         {item.description}
                       </p>
                     </motion.div>

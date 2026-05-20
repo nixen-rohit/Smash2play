@@ -219,11 +219,11 @@ export default function Location() {
       <motion.div
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="w-full lg:w-1/2 bg-(--dark-bg)/10 backdrop-blur-xs rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--highlight)"
+        className="w-full lg:w-1/2 bg-(--dark-bg)/10 backdrop-blur-xs rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--dark-text)"
       >
         {/* HEADER */}
         <header className="mb-6">
-          <h1 className="text-2xl lg:text-4xl font-bold text-(--white-bg) tracking-tight">
+          <h1 className="text-2xl lg:text-4xl font-bold text-(--dark-text) tracking-tight">
             VENUES
           </h1>
           <p className="font-semibold text-white">
@@ -242,10 +242,9 @@ export default function Location() {
               key={f}
               onClick={() => handleQuickFilter(f)}
               className={`px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium darkspace-nowrap transition-all
-                ${
-                  quickFilter === f && !hasModalFilter
-                    ? "border-(--highlight) text-(--highlight) bg-(--highlight)/10"
-                    : "border-(--highlight) text-white hover:border-(--highlight)/40 hover:bg-(--highlight)/10"
+                ${quickFilter === f && !hasModalFilter
+                  ? "border-(--dark-text) text-(--highlight) bg-(--highlight)/10"
+                  : "border-(--dark-text) text-white hover:border-(--dark-text)/40 hover:bg-(--highlight)/10"
                 }`}
             >
               {f}
@@ -257,10 +256,9 @@ export default function Location() {
             <button
               onClick={openFilterModal}
               className={`flex items-center gap-1.5 px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium darkspace-nowrap transition-all
-                ${
-                  hasModalFilter
-                    ? "border-(--highlight) text-(--highlight) bg-(--highlight)/10"
-                    : "border-(--highlight) text-white hover:border-(--highlight)/40 hover:bg-(--highlight)/10"
+                ${hasModalFilter
+                  ? "border-(--dark-text) text-(--highlight) bg-(--highlight)/10"
+                  : "border-(--dark-text) text-white hover:border-(--dark-text)/40 hover:bg-(--highlight)/10"
                 }`}
             >
               <FiSliders size={13} />
@@ -281,15 +279,15 @@ export default function Location() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.97 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 z-50 bg-(--card-bg) rounded-2xl shadow-2xl border border-(--highlight)/20 w-64"
+                  className="absolute top-full left-0 mt-2 z-50 bg-(--card-bg) rounded-2xl shadow-2xl border border-(--dark-text)/20 w-64"
                 >
-                  <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-(--highlight)/20">
+                  <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-(--dark-text)/20">
                     <span className="font-semibold text-(--dark-text) text-sm">
                       Filter by Location
                     </span>
                     <button
                       onClick={() => setShowFilterModal(false)}
-                      className="text-white hover:text-(--white-text) transition-colors p-0.5 rounded-full hover:bg-(--highlight)/10"
+                      className="text-white hover:text-(--dark-text) transition-colors p-0.5 rounded-full hover:bg-(--highlight)/10"
                     >
                       <FiX size={15} />
                     </button>
@@ -306,7 +304,7 @@ export default function Location() {
                         >
                           <span
                             className={`w-[18px] h-[18px] rounded-[5px] border-2 flex items-center justify-center shrink-0 transition-all
-                              ${checked ? "bg-(--highlight) border-(--highlight)" : "border-(--highlight)/30 group-hover:border-(--highlight)/50"}`}
+                              ${checked ? "bg-(--highlight) border-(--dark-text)" : "border-(--dark-text)/30 group-hover:border-(--dark-text)/50"}`}
                           >
                             {checked && (
                               <FiCheck
@@ -324,10 +322,10 @@ export default function Location() {
                     })}
                   </div>
 
-                  <div className="flex gap-2 px-4 py-3 border-t border-(--highlight)/20">
+                  <div className="flex gap-2 px-4 py-3 border-t border-(--dark-text)/20">
                     <button
                       onClick={() => setTempChecked([])}
-                      className="flex-1 py-2 rounded-xl border border-(--highlight)/20 text-xs font-medium text-white hover:bg-(--highlight)/5 transition-all"
+                      className="flex-1 py-2 rounded-xl border border-(--dark-text)/20 text-xs font-medium text-white hover:bg-(--highlight)/5 transition-all"
                     >
                       Clear
                     </button>
@@ -363,11 +361,10 @@ export default function Location() {
                 key={item.id}
                 variants={itemVars}
                 onClick={() => setSelectedId(item.id)}
-                className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--white-bg) rounded-3xl lg:rounded-4xl border transition-all cursor-pointer
-                  ${
-                    selectedId === item.id
-                      ? "border-(--highlight) bg-(--highlight)/5"
-                      : "border-transparent hover:border-(--highlight)/20"
+                className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--dark-bg) rounded-3xl lg:rounded-4xl border transition-all cursor-pointer
+                  ${selectedId === item.id
+                    ? "border-(--dark-text) bg-(--highlight)/5"
+                    : "border-transparent hover:border-(--dark-text)/20"
                   }`}
               >
                 <Image
@@ -382,13 +379,13 @@ export default function Location() {
                     <span className="text-[10px] font-bold uppercase text-(--highlight) tracking-wider">
                       {item.type}
                     </span>
-                    <h3 className="font-bold text-(--white-text) leading-snug mt-1 text-sm lg:text-base">
+                    <h3 className="font-bold text-(--dark-text) leading-snug mt-1 text-sm lg:text-base">
                       {item.title}
                     </h3>
                   </div>
                   <div className="flex items-center gap-1 text-xs text-white">
                     <FaMapMarkerAlt className="text-(--highlight) text-xl shrink-0" />
-                    <span className="truncate text-(--white-text)/90 font-medium text-sm">
+                    <span className="truncate text-(--dark-text)/90 font-medium text-sm">
                       {item.location}
                     </span>
                   </div>
@@ -400,16 +397,15 @@ export default function Location() {
 
         {/* PAGINATION */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-between pt-4 mt-2 border-t border-(--highlight)/20 shrink-0">
+          <div className="flex items-center justify-between pt-4 mt-2 border-t border-(--dark-text)/20 shrink-0">
             {/* Previous */}
             <button
               onClick={() => goToPage(safePage - 1)}
               disabled={safePage === 1}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-medium transition-all
-                ${
-                  safePage === 1
-                    ? "border-(--highlight) text-white/50 cursor-not-allowed"
-                    : "border-(--highlight) text-white hover:border-(--highlight)/40 hover:bg-(--highlight)/5"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-full border text-xs font-medium transition-all
+                ${safePage === 1
+                  ? "border-(--dark-text) text-white/50 cursor-not-allowed"
+                  : "border-(--dark-text) text-white hover:border-(--dark-text)/40 hover:bg-(--highlight)/5"
                 }`}
             >
               <FiChevronLeft size={14} />
@@ -431,10 +427,9 @@ export default function Location() {
                     key={p}
                     onClick={() => goToPage(p as number)}
                     className={`w-8 h-8 rounded-xl text-xs font-semibold transition-all
-                      ${
-                        safePage === p
-                          ? "bg-(--highlight) text-(--dark-bg) shadow-sm"
-                          : "text-white hover:bg-(--highlight)"
+                      ${safePage === p
+                        ? "bg-(--highlight) text-(--dark-bg) shadow-sm"
+                        : "text-white hover:bg-(--highlight)"
                       }`}
                   >
                     {p}
@@ -447,11 +442,10 @@ export default function Location() {
             <button
               onClick={() => goToPage(safePage + 1)}
               disabled={safePage === totalPages}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-medium transition-all
-                ${
-                  safePage === totalPages
-                    ? "border-(--highlight) text-white/50 cursor-not-allowed"
-                    : "border-(--highlight) text-white hover:border-(--highlight) hover:text-(--highlight) hover:bg-(--highlight)/5"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-full border text-xs font-medium transition-all
+                ${safePage === totalPages
+                  ? "border-(--dark-text) text-white/50 cursor-not-allowed"
+                  : "border-(--dark-text) text-white hover:border-(--dark-text) hover:text-(--highlight) hover:bg-(--highlight)/5"
                 }`}
             >
               Next
@@ -465,7 +459,7 @@ export default function Location() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="w-full lg:flex-1 h-[320px] lg:h-auto relative rounded-4xl lg:rounded-[2.5rem] overflow-hidden shadow-sm border border-(--highlight)/10"
+        className="w-full lg:flex-1 h-[320px] lg:h-auto relative rounded-4xl lg:rounded-[2.5rem] overflow-hidden shadow-sm border border-(--dark-text)/10"
       >
         <iframe
           key={mapSrc}

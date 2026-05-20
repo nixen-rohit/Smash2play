@@ -1,10 +1,8 @@
 "use client";
 
-import React from "react";
 import { motion, Variants } from "framer-motion";
 import { FaDumbbell, FaTrophy, FaUsers } from "react-icons/fa";
 import { FaFutbol } from "react-icons/fa6";
-import { FiCheckCircle } from "react-icons/fi";
 
 const pillars = [
   {
@@ -68,13 +66,7 @@ const itemVariants: Variants = {
 
 export default function SolutionSection() {
   return (
-    <section className="pt-20 bg-(--white-bg) overflow-hidden relative">
-      {/* Subtle background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-(--highlight)/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-(--highlight)/5 rounded-full blur-3xl" />
-      </div>
-
+    <section className="pt-20 bg-(--dark-bg) overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
@@ -89,17 +81,16 @@ export default function SolutionSection() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--highlight)/10 border border-(--highlight) text-(--highlight) font-semibold text-sm mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--highlight) text-(--dark-text) font-semibold text-sm mb-6"
           >
-            <FiCheckCircle className="w-4 h-4" />
             <span>The Complete Ecosystem</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-(--white-text) tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-(--dark-text) tracking-tight mb-6">
             Meet <span className="text-(--highlight)">Smash2Play</span>
           </h2>
 
-          <p className="text-xl text-(--p) leading-relaxed">
+          <p className="text-xl text-(--dark-text) leading-relaxed">
             A complete sports ecosystem — play, train, and compete with
             world-class infrastructure and a strong community.
           </p>
@@ -122,14 +113,14 @@ export default function SolutionSection() {
                 scale: 1.02,
                 borderColor: "var(--highlight)",
               }}
-              className="group relative rounded-3xl p-6 lg:p-8 bg-(--highlight)/10 backdrop-blur-xs border border-(--highlight) transition-colors duration-300 flex flex-col h-full"
+              className="group relative rounded-3xl p-6 lg:p-8 bg-(--dark-text) flex flex-col h-full"
             >
               {/* Icon Container */}
               <div className="w-16 h-16 rounded-2xl bg-(--highlight)/10 border border-(--highlight) flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500">
                 {pillar.icon}
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-bold text-(--white-text) mb-3">
+              <h3 className="text-xl lg:text-2xl font-bold text-(--dark-bg) mb-3">
                 {pillar.title}
               </h3>
 

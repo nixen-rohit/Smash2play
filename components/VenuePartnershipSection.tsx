@@ -117,11 +117,11 @@ export default function VenuePartnershipSection() {
             Build Your Own Sports Venue With{" "}
             <span className="text-(--highlight)">Smash2Play</span>
           </h2>
-          <p className="text-xl sm:text-2xl font-bold text-(--highlight) mt-2 mb-4">
+          <p className="text-xl sm:text-2xl font-bold text-(--dark-text) mt-2 mb-4">
             We Don&apos;t Just Build Sports Venues. We Build Profitable
             Businesses.
           </p>
-          <p className="text-(--p) text-base sm:text-lg leading-relaxed">
+          <p className="text-(--dark-text) text-base sm:text-lg leading-relaxed">
             Have land or planning to invest? We design, construct, and operate
             high-performing sports venues — so you don&apos;t have to figure it
             out yourself.
@@ -157,13 +157,13 @@ export default function VenuePartnershipSection() {
                     <div className="w-10 h-10 rounded-xl bg-(--highlight)/20 flex items-center justify-center text-(--highlight)">
                       {feature.icon}
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-(--highlight)">
+                    <h4 className="text-lg sm:text-xl font-bold text-(--dark-bg)">
                       {feature.title}
                     </h4>
                   </div>
 
                   <p
-                    className={`text-sm mb-4 ${feature.dark ? "text-(--p)" : "text-gray-700"}`}
+                    className={`text-sm mb-4 text-(--dark-bg)`}
                   >
                     {feature.description}
                   </p>
@@ -172,7 +172,7 @@ export default function VenuePartnershipSection() {
                     {feature.items.map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 text-sm text-(--p)"
+                        className="flex items-start gap-2 text-sm text-(--dark-bg)"
                       >
                         <span className="text-(--highlight) mt-1">•</span>
                         <span>{item}</span>
@@ -219,22 +219,19 @@ export default function VenuePartnershipSection() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className={`
-                  relative rounded-2xl p-6 border border-(--highlight)/20 bg-(--white-bg)
-                  hover:border-(--highlight)/50 transition-all duration-300
-                `}
+                className="relative rounded-2xl p-6 bg-(--dark-text)"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-(--highlight)/20 flex items-center justify-center">
                     {model.icon}
                   </div>
-                  <h4 className="text-lg font-bold text-(--highlight)">
+                  <h4 className="text-lg font-bold text-black">
                     {model.title}
                   </h4>
                 </div>
 
-                <p className="text-(--p) text-sm mb-3">{model.description}</p>
-                <p className="text-(--highlight) font-semibold text-sm">
+                <p className="text-(--dark-bg) text-sm mb-3">{model.description}</p>
+                <p className="text-(--highlight) font-semibold text-sm cursor-pointer">
                   {model.highlight}
                 </p>
               </motion.div>
@@ -250,7 +247,7 @@ export default function VenuePartnershipSection() {
           variants={fadeInVariants}
           className="flex flex-col sm:flex-row justify-center gap-4 pt-8 "
         >
-          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--highlight) hover:brightness-110 text-(--white-bg) font-bold py-4 px-8 rounded-full transition-all transform hover:scale-[1.02] hover:shadow-lg hover:shadow-(--highlight)/20 focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">
+          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--highlight) hover:brightness-110 text-(--dark-text) font-bold py-4 px-8 rounded-full transition-all transform hover:scale-[1.02] hover:shadow-lg hover:shadow-(--highlight)/20 focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">
             Partner With Smash2Play <FaArrowRight size={18} />
           </button>
           <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-(--highlight)/50 hover:border-(--highlight) hover:bg-(--highlight)/10 text-(--highlight) hover:text-(--dark-text) font-bold py-4 px-8 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-(--highlight) focus:ring-offset-2 focus:ring-offset-(--dark-bg)">

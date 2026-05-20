@@ -13,13 +13,10 @@ import {
   FaCalendar,
   FaUtensils,
 } from "react-icons/fa";
-import Image from "next/image";
 
-const images = [
-  "/Img/ball.png",
-  "/Img/Corporate.jpg",
-  "/Img/cricket-turf.jpg",
-  "/Img/Team.webp",
+const videos = [
+  "/Img/smashall.mp4",
+  "/Img/smashfootball.mp4",
 ];
 
 const EventsSection = () => {
@@ -28,10 +25,10 @@ const EventsSection = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   const handleCycleStart = useCallback(() => {
-    setCurrentImgIndex((prev) => (prev + 1) % images.length);
+    setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
   }, []);
 
   const services = [
@@ -80,15 +77,18 @@ const EventsSection = () => {
     </div>
   );
 
-  const HoverImage = (
-    <div className="w-full h-full">
-      <Image
-        width={500}
-        height={500}
-        src={images[currentImgIndex]}
-        alt="Event highlight"
+  const HoverVideo = (
+    <div className="w-full h-full relative overflow-hidden">
+      <video
+        key={videos[currentVideoIndex]}
         className="w-full h-full object-cover"
-      />
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={videos[currentVideoIndex]} type="video/mp4" />
+      </video>
     </div>
   );
 
@@ -107,7 +107,7 @@ const EventsSection = () => {
   return (
     <section
       id="services"
-      className="bg-(--white-bg) py-14 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
+      className="bg-(--dark-bg) py-14 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         <motion.div
@@ -117,11 +117,11 @@ const EventsSection = () => {
           variants={fadeInVariants}
           className="text-center"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-(--white-text) font-extrabold mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-(--dark-text) font-extrabold mb-4 sm:mb-6 leading-tight">
             Host Unforgettable Events at{" "}
             <span className="text-(--highlight) block">Smash2Play</span>
           </h1>
-          <p className="text-(--p) max-w-4xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
+          <p className="text-(--dark-text) max-w-4xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
             From corporate tournaments to birthday parties — we turn your events
             into high-energy, memorable experiences.
           </p>
@@ -135,12 +135,12 @@ const EventsSection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInVariants}
-              className="bg-(--highlight)/10  border border-(--highlight) p-5 sm:p-6 md:p-8 rounded-3xl transition-all group"
+              className="bg-(--dark-text) p-5 sm:p-6 md:p-8 rounded-3xl transition-all group"
             >
               <div className="bg-(--highlight)/20 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
                 {service.icon}
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-(--white-text)">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-(--dark-bg)">
                 {service.title}
               </h3>
               <p className="text-(--p) mb-5 sm:mb-6 text-sm sm:text-base leading-relaxed">
@@ -168,13 +168,13 @@ const EventsSection = () => {
           variants={fadeInVariants}
           className="text-center"
         >
-          <span className="inline-block bg-(--highlight)/10 text-(--highlight) px-4 py-1.5 rounded-full text-sm font-semibold mb-4 border border-(--highlight)/20">
+          <span className="inline-block bg-(--highlight) text-(--dark-text) px-4 py-1.5 rounded-full text-sm font-semibold mb-4 border border-(--highlight)/20">
             500+ successful events hosted
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-(--white-text)">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-(--dark-text)">
             Trusted by Leading Companies & Banks
           </h2>
-          <p className="text-(--p) max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
+          <p className="text-(--dark-text) max-w-3xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
             We&apos;ve successfully hosted events for top corporates and
             institutions — delivering high-energy, well-organized experiences
             every time.
@@ -189,23 +189,23 @@ const EventsSection = () => {
           </div>
         </motion.div>
 
-        <div className="relative bg-(--highlight)/10  rounded-4xl p-5 sm:p-8 md:p-12 border border-(--highlight) overflow-hidden">
+        <div className="relative bg-(--dark-text) rounded-4xl p-5 sm:p-8 md:p-12 border border-(--highlight) overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-(--highlight)/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10">
             <div className="lg:col-span-1">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-(--white-text)">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-(--dark-bg)">
                 What We Handle
               </h3>
               <div className="space-y-3">
                 {handledItems.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-(--white-bg) hover:bg-(--highlight)/10 transition-colors cursor-default"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-(--dark-bg) cursor-default"
                   >
                     <div className="text-(--highlight) shrink-0">
                       {item.icon}
                     </div>
-                    <span className="font-medium text-base sm:text-lg text-(--white-text)">
+                    <span className="font-medium text-base sm:text-lg text-(--dark-text)">
                       {item.title}
                     </span>
                   </div>
@@ -213,12 +213,12 @@ const EventsSection = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-1 bg-(--white-bg) rounded-2xl p-6 border border-(--highlight)/10 flex flex-col justify-between">
+            <div className="lg:col-span-1 bg-(--dark-bg) rounded-2xl p-6 border border-(--highlight)/10 flex flex-col justify-between">
               <div>
-                <h4 className="text-xl font-semibold mb-4 text-(--white-text)">
+                <h4 className="text-xl font-semibold mb-4 text-(--dark-text)">
                   Why Choose Us
                 </h4>
-                <ul className="space-y-3 text-(--p) text-sm sm:text-base">
+                <ul className="space-y-3 text-(--dark-text) text-sm sm:text-base">
                   <li className="flex items-start gap-2">
                     <span className="text-(--highlight) mt-1">✓</span>{" "}
                     End-to-end coordination
@@ -238,20 +238,20 @@ const EventsSection = () => {
             <div className="lg:col-span-1">
               <PixelTransition
                 firstContent={CardContent}
-                secondContent={HoverImage}
+                secondContent={HoverVideo}
                 gridSize={12}
                 pixelColor="#006eeb"
                 animationStepDuration={0.4}
                 autoPlay={true}
                 autoPlayInterval={3000}
-                onCycleStart={handleCycleStart} // <-- add this
+                onCycleStart={handleCycleStart}
                 className="w-full! h-full! rounded-2xl border border-(--highlight)/10"
                 aspectRatio="100%"
               />
             </div>
 
             <div className="lg:col-span-3 flex flex-col sm:flex-row justify-center gap-4 mt-6 pt-6 border-t border-(--highlight)/10">
-              <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--highlight) hover:bg-(--highlight)/90 text-(--white-bg) font-bold py-3.5 px-8 rounded-full transition-all transform hover:scale-[1.02]">
+              <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-(--highlight) hover:bg-(--highlight)/90 text-(--dark-text) font-bold py-3.5 px-8 rounded-full transition-all transform hover:scale-[1.02]">
                 Plan Your Event <FaArrowRight size={18} />
               </button>
               <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-(--highlight) hover:bg-(--highlight)/10 text-(--highlight) font-bold py-3.5 px-8 rounded-full transition-all">
@@ -271,16 +271,13 @@ const EventsSection = () => {
           {/* Coaching Card */}
           <motion.div
             whileHover={{ y: -5 }}
-            className="group relative bg-(--highlight)/10  border border-(--highlight) p-8 rounded-4xl overflow-hidden transition-colors"
+            className="group relative bg-(--dark-text) p-8 rounded-4xl overflow-hidden transition-colors"
           >
-            {/* Decorative background glow */}
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--highlight)/10 blur-[80px] group-hover:bg-(--highlight)/20 transition-all" />
-
             <div className="relative z-10">
               <span className="text-(--highlight) text-xs font-bold uppercase tracking-widest mb-4 block">
                 Expert Training
               </span>
-              <h3 className="text-3xl font-bold mb-3 text-(--white-text) tracking-tight">
+              <h3 className="text-3xl font-bold mb-3 text-(--dark-bg) tracking-tight">
                 Coaching Programs
               </h3>
               <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
@@ -307,21 +304,18 @@ const EventsSection = () => {
           {/* Events Card */}
           <motion.div
             whileHover={{ y: -5 }}
-            className="group relative bg-(--highlight)/10  border border-(--highlight) p-8 rounded-4xl overflow-hidden transition-colors"
+            className="group relative bg-(--dark-text) p-8 rounded-4xl overflow-hidden transition-colors"
           >
-            {/* Decorative background glow */}
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-(--highlight)/10 blur-[80px] group-hover:bg-(--highlight)/20 transition-all" />
-
             <div className="relative z-10">
               <span className="text-(--highlight) text-xs font-bold uppercase tracking-widest mb-4 block">
                 Competitive Play
               </span>
-              <h3 className="text-3xl font-bold mb-3 text-(--white-text) tracking-tight">
+              <h3 className="text-3xl font-bold mb-3 text-(--dark-bg) tracking-tight">
                 Events & Tournaments
               </h3>
               <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
                 From corporate showdowns to community matchups.
-                <span className="block font-semibold mt-1 text-(--white-text)">
+                <span className="block font-semibold mt-1 text-(--dark-text)">
                   Compete. Connect. Celebrate.
                 </span>
               </p>

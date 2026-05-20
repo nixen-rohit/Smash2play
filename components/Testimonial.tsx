@@ -112,9 +112,9 @@ export default function TestimonialSlider() {
         <div className="relative mb-10 sm:mb-12">
           {/* Centered text */}
           <div className="text-center">
-            <p className="text-(--highlight)/80 text-xs sm:text-sm font-medium tracking-wide uppercase mb-2">
-              Testimonial
-            </p>
+            <span className="inline-block bg-(--highlight) text-(--dark-text) px-4 py-1.5 rounded-full text-sm font-semibold mb-4 border border-(--highlight)/20">
+            Testimonials
+          </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-text) leading-tight">
               Transformative Client Experiences
             </h2>

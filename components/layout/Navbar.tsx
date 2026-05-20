@@ -51,7 +51,7 @@ export default function Header() {
         }}
         animate={isHidden ? "hidden" : "visible"}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-0 left-0 w-full z-100 bg-transparent backdrop-blur-sm border-b border-(--white-text)/5"
+        className="fixed top-0 left-0 w-full z-100 bg-transparent backdrop-blur-sm border-b border-(--dark-text)/5"
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* --- Logo --- */}
@@ -93,7 +93,7 @@ export default function Header() {
           {/* --- Mobile/Tablet Menu Toggle --- */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden flex items-center gap-2 text-(--white-text) font-bold uppercase tracking-widest text-xs"
+            className="lg:hidden flex items-center gap-2 text-(--dark-text) font-bold uppercase tracking-widest text-xs"
           >
             {isMenuOpen ? (
               <FaXmark className="text-xl" />
@@ -111,7 +111,7 @@ export default function Header() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden bg-(--glass-bg) border-t border-(--white-text)/20 overflow-hidden rounded-b-2xl"
+              className="lg:hidden bg-(--glass-bg) border-t border-(--dark-text)/20 overflow-hidden rounded-b-2xl"
             >
               <div className="flex flex-col p-8 gap-6">
                 {navTabs.map((tab) => (
@@ -119,7 +119,7 @@ export default function Header() {
                     key={tab.name}
                     href={tab.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-2xl font-black uppercase tracking-tighter text-(--white-text) hover:text-(--red) transition-colors"
+                    className="text-2xl font-black uppercase tracking-tighter text-(--dark-text) hover:text-(--red) transition-colors"
                   >
                     {tab.name}
                   </Link>
@@ -131,7 +131,7 @@ export default function Header() {
       </motion.header>
 
       {/* --- Floating Action Buttons (Always Visible) --- */}
-      <div className="fixed text-(--white-text) bottom-8 right-6 flex flex-col gap-4 z-110">
+      <div className="fixed text-(--dark-text) bottom-8 right-6 flex flex-col gap-4 z-110">
         {/* WhatsApp FAB */}
         <FloatingIcon
           href={`https://wa.me/${wanumber}`}
@@ -178,11 +178,11 @@ function FloatingIcon({
       href={href}
       whileHover={{ scale: 1.1, x: -5 }}
       whileTap={{ scale: 0.9 }}
-      className={`${bgColor} w-14 h-14 rounded-full flex items-center justify-center text-(--white-text) text-2xl shadow-2xl relative group`}
+      className={`${bgColor} w-14 h-14 rounded-full flex items-center justify-center text-(--dark-text) text-2xl shadow-2xl relative group`}
     >
       {icon}
       {/* Tooltip Label */}
-      <span className="absolute right-16 bg-(--white-bg) text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">
+      <span className="absolute right-16 bg-(--dark-bg) text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">
         {label}
       </span>
     </motion.a>

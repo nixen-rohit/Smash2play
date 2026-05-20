@@ -131,7 +131,7 @@ export default function Header() {
       </motion.header>
 
       {/* --- Floating Action Buttons (Always Visible) --- */}
-      <div className="fixed text-(--dark-text) bottom-8 right-6 flex flex-col gap-4 z-110">
+      <div className="fixed text-(--dark-bg) bottom-8 right-6 flex flex-col gap-4 z-110">
         {/* WhatsApp FAB */}
         <FloatingIcon
           href={`https://wa.me/${wanumber}`}
@@ -182,7 +182,7 @@ function FloatingIcon({
     >
       {icon}
       {/* Tooltip Label */}
-      <span className="absolute right-16 bg-(--dark-bg) text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">
+      <span className="absolute right-16 bg-(--dark-bg) text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">
         {label}
       </span>
     </motion.a>

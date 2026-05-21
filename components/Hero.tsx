@@ -148,22 +148,22 @@ const Hero = () => {
 
           {/* Text Content */}
           <div className="max-w-4xl relative z-30">
-            <motion.p className="text-(--highlight) text-[12px] font-black uppercase tracking-[0.4em] mb-5">
+            <motion.p className="text-white text-[12px] font-black uppercase tracking-[0.4em] mb-5">
               Trusted by 1000+ players across Delhi NCR
             </motion.p>
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter mb-8">
               Play. Train. Compete. <br />
-              <span className="text-(--highlight)">All in One Place.</span>
+              <span className="text-white">All in One Place.</span>
             </h2>
             <p className="font-medium text-(--dark-text) text-lg md:text-xl max-w-2xl mx-auto mb-10">
               Book premium sports venues, Train with expert coaches, <br />
               Or host unforgettable game events.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-(--highlight) text-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
+              <button className="bg-black border border-(--highlight) text-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
                 Book a Slot
               </button>
-              <button className="border border-(--highlight) px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-white/5 transition">
+              <button className="border border-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-white/5 transition">
                 Explore Venues
               </button>
             </div>

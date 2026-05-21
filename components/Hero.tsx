@@ -42,7 +42,7 @@ const Hero = () => {
   const img2Parallax = useTransform(scrollYProgress, [0, 0.5], [0, 150]);
   // Animation for the Hero layer coming up
   const heroY = useTransform(scrollYProgress, [0.3, 0.55], ["100%", "0%"]);
-   const smooth = useSpring(scrollYProgress, {
+  const smooth = useSpring(scrollYProgress, {
     stiffness: 60,
     damping: 20,
   });

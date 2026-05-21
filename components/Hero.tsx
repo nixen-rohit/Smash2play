@@ -152,8 +152,8 @@ const Hero = () => {
               Trusted by 1000+ players across Delhi NCR
             </motion.p>
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-tight">
-              Play. Compete. <br />
-              <span className="text-white">All in One Place.</span>
+              <span className="text-(--highlight)">Play.</span> Compete. <br />
+              <span className="text-white">All in <span className="text-(--highlight)">One Place.</span></span>
             </h2>
             <p className="font-medium text-(--dark-text) text-lg md:text-xl max-w-2xl mx-auto mb-10">
               Book premium sports venues, Train with expert coaches, <br />

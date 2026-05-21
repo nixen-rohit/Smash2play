@@ -2,17 +2,17 @@
 
 @font-face {
   font-family: "Helvetica";
-  src: url(../Font/HelveticaNeueRoman.woff2);
+  src: url(../public/Font/HelveticaNeueRoman.woff2);
 }
 
 @font-face {
   font-family: "Formula";
-  src: url(../font/FormulaBlack.woff);
+  src: url(../public/Font/FormulaBlack.woff);
 }
 
 @font-face {
   font-family: "FormulaBold";
-  src: url(../font/FormulaBold.woff);
+  src: url(../public/Font/FormulaBold.woff);
 }
 
 @theme {

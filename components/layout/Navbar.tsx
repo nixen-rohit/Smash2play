@@ -74,7 +74,7 @@ export default function Header() {
                   initial="initial"
                   whileHover="hover"
                   animate="initial"
-                  className="relative py-2 text-sm font-bold uppercase tracking-[0.25em] text-(--highlight) cursor-pointer"
+                  className="relative py-2 text-sm font-bold uppercase tracking-[0.25em] text-white cursor-pointer"
                 >
                   {tab.name}
                   <motion.div
@@ -135,14 +135,14 @@ export default function Header() {
         {/* WhatsApp FAB */}
         <FloatingIcon
           href={`https://wa.me/${wanumber}`}
-          bgColor="bg-(--highlight)"
+          bgColor="bg-black"
           icon={<FaWhatsapp className="text-white" />}
           label="WhatsApp"
         />
         {/* Call FAB */}
         <FloatingIcon
           href={`tel:+${wanumber}`}
-          bgColor="bg-(--highlight)"
+          bgColor="bg-black"
           icon={<FaPhone className="text-white" />}
           label="Call Us"
         />
@@ -150,7 +150,7 @@ export default function Header() {
         {/* Trial FAB */}
         <FloatingIcon
           href="#pricing"
-          bgColor="bg-(--highlight)"
+          bgColor="bg-black"
           icon={<FaCalendarCheck className="text-white" />}
           label="Book Trial"
         />

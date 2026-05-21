@@ -6,11 +6,15 @@
 }
 
 :root {
-  --dark-bg: #000;
+  --dark-bg: #07293b;
   --dark-text: #fff;
-  
+
+  --dark-bg2: #dededa;
+  --dark-text2: #07293b;
+
+
   /* highlight */
-  --highlight: #006eeb;
+  --highlight: #f04c24;
 }
 
 /* Smooth scrolling */

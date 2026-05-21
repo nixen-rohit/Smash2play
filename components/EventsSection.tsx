@@ -15,8 +15,8 @@ import {
 } from "react-icons/fa";
 
 const videos = [
-  "/Img/smashall.mp4",
-  "/Img/smashfootball.mp4",
+  "/Video/smashall.mp4",
+  "/Video/smashfootball.mp4",
 ];
 
 const EventsSection = () => {
@@ -71,7 +71,7 @@ const EventsSection = () => {
       <div className="w-14 h-14 bg-(--highlight)/10 rounded-full flex items-center justify-center mb-4 text-(--highlight)">
         <FaArrowRight size={22} className="-rotate-45" />
       </div>
-      <p className="text-(--p) text-sm sm:text-base leading-relaxed font-medium">
+      <p className=" text-sm sm:text-base leading-relaxed font-medium">
         &quot;You just show up and enjoy.&quot;
       </p>
     </div>
@@ -143,14 +143,14 @@ const EventsSection = () => {
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-(--dark-bg)">
                 {service.title}
               </h3>
-              <p className="text-(--p) mb-5 sm:mb-6 text-sm sm:text-base leading-relaxed">
+              <p className=" mb-5 sm:mb-6 text-lg sm:text-base leading-relaxed">
                 {service.description}
               </p>
               <ul className="space-y-3">
                 {service.items.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-sm sm:text-base text-(--p)"
+                    className="flex items-start gap-3 text-sm sm:text-base "
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-(--highlight) mt-2 shrink-0" />
                     <span>{item}</span>
@@ -240,7 +240,7 @@ const EventsSection = () => {
                 firstContent={CardContent}
                 secondContent={HoverVideo}
                 gridSize={12}
-                pixelColor="#006eeb"
+                pixelColor="#f04c24"
                 animationStepDuration={0.4}
                 autoPlay={true}
                 autoPlayInterval={3000}
@@ -280,10 +280,10 @@ const EventsSection = () => {
               <h3 className="text-3xl font-bold mb-3 text-(--dark-bg) tracking-tight">
                 Coaching Programs
               </h3>
-              <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
+              <p className=" mb-8 text-base leading-relaxed opacity-80">
                 Elevate your game with structured modules designed for every
                 skill level.
-                <span className="block font-semibold mt-1 text-(--p)">
+                <span className="block font-semibold mt-1 ">
                   Train Like a Pro.
                 </span>
               </p>
@@ -313,7 +313,7 @@ const EventsSection = () => {
               <h3 className="text-3xl font-bold mb-3 text-(--dark-bg) tracking-tight">
                 Events & Tournaments
               </h3>
-              <p className="text-(--p) mb-8 text-base leading-relaxed opacity-80">
+              <p className=" mb-8 text-base leading-relaxed opacity-80">
                 From corporate showdowns to community matchups.
                 <span className="block font-semibold mt-1 text-(--dark-text)">
                   Compete. Connect. Celebrate.

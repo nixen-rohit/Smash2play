@@ -31,7 +31,7 @@ const Powered = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Want more than <br /> just play?
             </h2>
-            <p className="text-(--p) text-lg mb-8 max-w-sm">
+            <p className="text-lg mb-8 max-w-sm">
               Join Callories — our fitness program designed to help you lose
               weight, build strength, and stay consistent.
             </p>
@@ -43,7 +43,7 @@ const Powered = () => {
             >
               Explore Callories
               <div className="ml-4 rounded-full p-1 ">
-                <FaArrowUpRightFromSquare size={18} className="text-(--dark-bg)" />
+                <FaArrowUpRightFromSquare size={18} className="text-(--dark-text)" />
               </div>
             </Link>
           </div>

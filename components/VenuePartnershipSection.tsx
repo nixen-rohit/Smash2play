@@ -103,7 +103,7 @@ const partnershipModels: PartnershipModel[] = [
 
 export default function VenuePartnershipSection() {
   return (
-    <section id="partner" className="w-full bg-(--dark-bg) text-(--dark-text) py-16 sm:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden">
+    <section id="partner" className="w-full bg-(--dark-bg2) py-16 sm:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
         <motion.div
@@ -113,15 +113,15 @@ export default function VenuePartnershipSection() {
           variants={fadeInVariants}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-(--dark-text) leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-(--dark-text2) leading-tight mb-4">
             Build Your Own Sports Venue With{" "}
             <span className="text-(--highlight)">Smash2Play</span>
           </h2>
-          <p className="text-xl sm:text-2xl font-bold text-(--dark-text) mt-2 mb-4">
+          <p className="text-xl sm:text-2xl font-bold text-(--dark-text2) mt-2 mb-4">
             We Don&apos;t Just Build Sports Venues. We Build Profitable
             Businesses.
           </p>
-          <p className="text-(--dark-text) text-base sm:text-lg leading-relaxed">
+          <p className="text-(--dark-text2) text-base sm:text-lg leading-relaxed">
             Have land or planning to invest? We design, construct, and operate
             high-performing sports venues — so you don&apos;t have to figure it
             out yourself.
@@ -135,7 +135,7 @@ export default function VenuePartnershipSection() {
           viewport={{ once: true }}
           variants={fadeInVariants}
         >
-          <h3 className="text-2xl sm:text-3xl font-black mb-8 text-center text-(--dark-text)">
+          <h3 className="text-2xl sm:text-3xl font-black mb-8 text-center text-(--dark-text2)">
             What You Get
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -163,7 +163,7 @@ export default function VenuePartnershipSection() {
                   </div>
 
                   <p
-                    className={`text-sm mb-4 text-(--dark-bg)`}
+                    className={`text-lg mb-4 text-(--dark-bg)`}
                   >
                     {feature.description}
                   </p>
@@ -172,7 +172,7 @@ export default function VenuePartnershipSection() {
                     {feature.items.map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 text-sm text-(--dark-bg)"
+                        className="flex items-start gap-2 text-md text-(--dark-bg)"
                       >
                         <span className="text-(--highlight) mt-1">•</span>
                         <span>{item}</span>
@@ -207,7 +207,7 @@ export default function VenuePartnershipSection() {
           viewport={{ once: true }}
           variants={fadeInVariants}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-(--dark-text)">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-(--dark-text2)">
             Partnership Models
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -230,8 +230,8 @@ export default function VenuePartnershipSection() {
                   </h4>
                 </div>
 
-                <p className="text-(--dark-bg) text-sm mb-3">{model.description}</p>
-                <p className="text-(--highlight) font-semibold text-sm cursor-pointer">
+                <p className="text-(--dark-bg) text-lg mb-3">{model.description}</p>
+                <p className="text-(--highlight) font-semibold text-md cursor-pointer">
                   {model.highlight}
                 </p>
               </motion.div>

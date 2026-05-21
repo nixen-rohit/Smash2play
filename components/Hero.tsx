@@ -5,6 +5,7 @@ import {
   motion,
   useScroll,
   useTransform,
+  useSpring,
   useMotionValueEvent,
 } from "framer-motion";
 import Image from "next/image";
@@ -41,11 +42,16 @@ const Hero = () => {
   const img2Parallax = useTransform(scrollYProgress, [0, 0.5], [0, 150]);
   // Animation for the Hero layer coming up
   const heroY = useTransform(scrollYProgress, [0.3, 0.55], ["100%", "0%"]);
+   const smooth = useSpring(scrollYProgress, {
+    stiffness: 60,
+    damping: 20,
+  });
+  const gridOpacity = useTransform(smooth, [0, 0.4], [0.15, 0.05]);
   return (
     <section
       ref={containerRef}
       // Height controls how "long" the user scrolls to finish the animation
-      className="relative h-[300vh] bg-black text-(--dark-text)"
+      className="relative h-[300vh] bg-(--dark-bg) text-(--dark-text)"
     >
       {/* Sticky container ensures everything stays in viewport while scrolling */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
@@ -61,10 +67,34 @@ const Hero = () => {
             loop
             playsInline
           >
-            <source src="/Video/smashvideo.mp4" type="video/mp4" />
+            <source src="/Video/smashfootball.mp4" type="video/mp4" />
           </video>
-          {/* Overlay to dim video and enhance text readability */}
           <div className="absolute inset-0 bg-black/60" />
+        </motion.div>
+
+        {/* Grid */}
+        <motion.div
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{ opacity: gridOpacity }}
+        >
+          <svg width="100%" height="100%">
+            <defs>
+              <pattern
+                id="grid"
+                width="60"
+                height="60"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 60 0 L 0 0 0 60"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
         </motion.div>
 
         {/* 1. Hero Content Section (The Text and Floating Icons) */}
@@ -121,13 +151,13 @@ const Hero = () => {
             <motion.p className="text-(--highlight) text-[12px] font-black uppercase tracking-[0.4em] mb-5">
               Trusted by 1000+ players across Delhi NCR
             </motion.p>
-            <h2 className="text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter mb-8">
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter mb-8">
               Play. Train. Compete. <br />
               <span className="text-(--highlight)">All in One Place.</span>
             </h2>
-            <p className="font-medium text-(--dark-text) text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-              Book premium sports venues, Train with expert coaches, <br />Or host
-              unforgettable game events.
+            <p className="font-medium text-(--dark-text) text-lg md:text-xl max-w-2xl mx-auto mb-10">
+              Book premium sports venues, Train with expert coaches, <br />
+              Or host unforgettable game events.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-(--highlight) text-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">

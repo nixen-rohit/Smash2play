@@ -96,7 +96,7 @@ const HowItsWorkSection = () => {
                 <h4 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 tracking-tight leading-snug">
                   {step.title}
                 </h4>
-                <p className="text-(--p) leading-relaxed text-sm sm:text-base">
+                <p className=" leading-relaxed text-sm sm:text-base">
                   {step.description}
                 </p>
               </div>

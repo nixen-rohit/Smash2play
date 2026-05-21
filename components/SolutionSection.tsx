@@ -124,9 +124,7 @@ export default function SolutionSection() {
                 {pillar.title}
               </h3>
 
-              <p className="text-(--p) font-medium mb-3">
-                {pillar.description}
-              </p>
+              <p className="font-medium mb-3">{pillar.description}</p>
 
               <p className="text-(--highlight)/90 text-sm leading-relaxed mb-3">
                 {pillar.subtext}

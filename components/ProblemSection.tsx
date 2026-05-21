@@ -70,7 +70,7 @@ const ProblemSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-20 bg-(--dark-bg) overflow-hidden"
+      className="relative py-20 bg-(--dark-bg2) overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
@@ -85,7 +85,7 @@ const ProblemSection: React.FC = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold text-(--dark-text) tracking-tight leading-tight mb-6"
+            className="text-5xl md:text-6xl font-bold text-(--dark-text2) tracking-tight leading-tight mb-6"
           >
             Why the Current <br /> System is Broken
           </motion.h2>
@@ -97,7 +97,7 @@ const ProblemSection: React.FC = () => {
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0  w-0.5 bg-white -translate-x-1/2">
             <motion.div
               style={{ scaleY, originY: 0 }}
-              className="absolute top-0 left-0 w-full h-full bg-blue-500 shadow-[0_0_20px_#3b82f6]"
+              className="absolute top-0 left-0 w-full h-full bg-(--highlight) shadow-[0_0_20px_(--highlight)]"
             />
           </div>
 
@@ -128,7 +128,7 @@ const ProblemSection: React.FC = () => {
                           0{item.id}. {item.title}
                         </h4>
                       </div>
-                      <p className="text-(--p) text-lg leading-relaxed">
+                      <p className=" text-lg leading-relaxed">
                         {item.description}
                       </p>
                     </motion.div>

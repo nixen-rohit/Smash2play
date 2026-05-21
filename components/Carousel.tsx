@@ -224,7 +224,7 @@ export default function Carousel() {
               <span className="font-bold tracking-[10px] text-(--highlight) uppercase">
                 {activeSlide.author}
               </span>
-              <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">
+              <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none">
                 {activeSlide.title}
               </h1>
               <p className="text-(--dark-text) text-lg leading-relaxed">

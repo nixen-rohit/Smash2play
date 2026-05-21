@@ -151,8 +151,8 @@ const Hero = () => {
             <motion.p className="text-white text-[12px] font-black uppercase tracking-[0.4em] mb-5">
               Trusted by 1000+ players across Delhi NCR
             </motion.p>
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter mb-8">
-              Play. Train. Compete. <br />
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-tight">
+              Play. Compete. <br />
               <span className="text-white">All in One Place.</span>
             </h2>
             <p className="font-medium text-(--dark-text) text-lg md:text-xl max-w-2xl mx-auto mb-10">

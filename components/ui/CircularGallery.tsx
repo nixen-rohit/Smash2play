@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import {
@@ -484,6 +485,7 @@ class App {
       { image: "/Img/brand12.webp", text: "" },
       { image: "/Img/brand13.webp", text: "" },
       { image: "/Img/brand14.webp", text: "" },
+      { image: "/Img/brand15.webp", text: "" },
     ];
 
     const galleryItems = items && items.length ? items : defaultItems;

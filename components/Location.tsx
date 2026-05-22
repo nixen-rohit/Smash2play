@@ -219,17 +219,17 @@ export default function Location() {
       <motion.div
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="w-full lg:w-1/2 bg-(--dark-text) backdrop-blur-xs rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--dark-text)"
+        className="w-full lg:w-1/2 bg-(--highlight) backdrop-blur-xs rounded-4xl lg:rounded-[2.5rem] p-5 lg:p-8 flex flex-col shadow-sm overflow-hidden border border-(--dark-text)"
       >
         {/* HEADER */}
         <header className="mb-6">
-          <h1 className="text-2xl lg:text-4xl font-bold text-(--dark-text2) tracking-tight">
+          <h1 className="text-2xl lg:text-4xl font-bold text-(--dark-text) tracking-tight">
             VENUES
           </h1>
-          <p className="font-semibold text-(--dark-text2)">
+          <p className="font-semibold text-(--dark-text)">
             Multiple Locations Across Delhi NCR VENUES
           </p>
-          <p className="text-(--dark-text2) mt-1">
+          <p className="text-(--dark-text) mt-1">
             {filteredListings.length} listing
             {filteredListings.length !== 1 ? "s" : ""}
           </p>
@@ -242,9 +242,10 @@ export default function Location() {
               key={f}
               onClick={() => handleQuickFilter(f)}
               className={`px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium darkspace-nowrap transition-all
-                ${quickFilter === f && !hasModalFilter
-                  ? "border-(--dark-text2) text-(--highlight) bg-(--highlight)/10"
-                  : "border-(--dark-text2) text-(--dark-text2) hover:border-(--dark-text2)/40 hover:bg-(--highlight)/10"
+                ${
+                  quickFilter === f && !hasModalFilter
+                    ? "border-(--dark-text) text-(--dark-text2) bg-(--highlight)/10"
+                    : "border-(--dark-text) text-(--dark-text) hover:border-(--dark-text)/40 hover:bg-(--highlight)/10"
                 }`}
             >
               {f}
@@ -256,15 +257,16 @@ export default function Location() {
             <button
               onClick={openFilterModal}
               className={`flex items-center gap-1.5 px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium darkspace-nowrap transition-all
-                ${hasModalFilter
-                  ? "border-(--dark-text2) text-(--highlight) bg-(--highlight)/10"
-                  : "border-(--dark-text2) text-(--dark-text2) hover:border-(--dark-text2)/40 hover:bg-(--highlight)/10"
+                ${
+                  hasModalFilter
+                    ? "border-(--dark-text) text-(--dark-text2) bg-(--highlight)/10"
+                    : "border-(--dark-text) text-(--dark-text) hover:border-(--dark-text)/40 hover:bg-(--highlight)/10"
                 }`}
             >
               <FiSliders size={13} />
               Filter
               {hasModalFilter && (
-                <span className="ml-1 bg-(--highlight) text-(--dark-text2) text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none">
+                <span className="ml-1 bg-(--highlight) text-(--dark-text) text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none">
                   {checkedLocations.length}
                 </span>
               )}
@@ -287,7 +289,7 @@ export default function Location() {
                     </span>
                     <button
                       onClick={() => setShowFilterModal(false)}
-                      className="text-(--dark-text2) hover:text-(--dark-text) transition-colors p-0.5 rounded-full hover:bg-(--highlight)/10"
+                      className="text-(--dark-text2) p-0.5 rounded-full hover:bg-(--highlight)/10"
                     >
                       <FiX size={15} />
                     </button>
@@ -304,12 +306,12 @@ export default function Location() {
                         >
                           <span
                             className={`w-4.5 h-4.5 rounded-[5px] border-2 flex items-center justify-center shrink-0 transition-all
-                              ${checked ? "bg-(--highlight) border-(--dark-text2)" : "border-(--dark-text2)/30 group-hover:border-(--dark-text2)/50"}`}
+                              ${checked ? "bg-(--highlight) border border-(--highlight)" : "border-gray-300"}`}
                           >
                             {checked && (
                               <FiCheck
                                 size={11}
-                                className="text-(--dark-text2)"
+                                className="text-(--dark-text)"
                                 strokeWidth={3}
                               />
                             )}
@@ -331,7 +333,7 @@ export default function Location() {
                     </button>
                     <button
                       onClick={applyFilter}
-                      className="flex-1 py-2 rounded-xl bg-(--highlight) text-(--dark-bg) text-xs font-semibold hover:brightness-110 active:scale-95 transition-all"
+                      className="flex-1 py-2 rounded-xl bg-(--highlight) text-(--dark-text) text-xs font-semibold hover:brightness-110 active:scale-95 transition-all"
                     >
                       Apply
                       {tempChecked.length > 0 ? ` (${tempChecked.length})` : ""}
@@ -361,10 +363,11 @@ export default function Location() {
                 key={item.id}
                 variants={itemVars}
                 onClick={() => setSelectedId(item.id)}
-                className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--dark-bg2) rounded-3xl lg:rounded-4xl border transition-all cursor-pointer
-                  ${selectedId === item.id
-                    ? "border-(--dark-text) bg-(--highlight)/5"
-                    : "border-transparent hover:border-(--dark-text2)/20"
+                className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--dark-bg) rounded-3xl lg:rounded-4xl border transition-all cursor-pointer
+                  ${
+                    selectedId === item.id
+                      ? "border-(--dark-text) bg-(--highlight)/5"
+                      : "border-transparent hover:border-(--dark-text2)/20"
                   }`}
               >
                 <Image
@@ -379,13 +382,13 @@ export default function Location() {
                     <span className="text-[10px] font-bold uppercase text-(--highlight) tracking-wider">
                       {item.type}
                     </span>
-                    <h3 className="font-bold text-(--dark-text2) leading-snug mt-1 text-sm lg:text-base">
+                    <h3 className="font-bold text-(--dark-text) leading-snug mt-1 text-sm lg:text-base">
                       {item.title}
                     </h3>
                   </div>
-                  <div className="flex items-center gap-1 text-xs text-(--dark-text2)">
-                    <FaMapMarkerAlt className="text-(--highlight) text-xl shrink-0" />
-                    <span className="truncate text-(--dark-text2)/90 font-medium text-sm">
+                  <div className="flex items-center gap-1 text-xs text-(--dark-text)">
+                    <FaMapMarkerAlt className="text-(--dark-text) text-xl shrink-0" />
+                    <span className="truncate text-(--dark-text) font-medium text-sm">
                       {item.location}
                     </span>
                   </div>
@@ -403,9 +406,10 @@ export default function Location() {
               onClick={() => goToPage(safePage - 1)}
               disabled={safePage === 1}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-full border text-xs font-medium transition-all
-                ${safePage === 1
-                  ? "border-(--dark-text2) text-(--dark-text2)/50 cursor-not-allowed"
-                  : "border-(--dark-text2) text-(--dark-text2) hover:border-(--dark-text2)/40 hover:bg-(--highlight)/5"
+                ${
+                  safePage === 1
+                    ? "border-(--dark-text) text-(--dark-text) cursor-not-allowed"
+                    : "border-(--dark-text) text-(--dark-text)"
                 }`}
             >
               <FiChevronLeft size={14} />
@@ -427,9 +431,10 @@ export default function Location() {
                     key={p}
                     onClick={() => goToPage(p as number)}
                     className={`w-8 h-8 rounded-xl text-xs font-semibold transition-all
-                      ${safePage === p
-                        ? "bg-(--highlight) text-(--dark-text) shadow-sm"
-                        : "text-(--dark-text2) hover:bg-(--highlight)"
+                      ${
+                        safePage === p
+                          ? "bg-(--dark-bg) text-(--dark-text) shadow-sm"
+                          : "text-(--dark-text2) hover:bg-(--highlight)"
                       }`}
                   >
                     {p}
@@ -443,9 +448,10 @@ export default function Location() {
               onClick={() => goToPage(safePage + 1)}
               disabled={safePage === totalPages}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-full border text-xs font-medium transition-all
-                ${safePage === totalPages
-                  ? "border-(--dark-text2) text-(--dark-text2)/50 cursor-not-allowed"
-                  : "border-(--dark-text2) text-(--dark-text2) hover:border-(--dark-text2) hover:text-(--highlight) hover:bg-(--highlight)/5"
+                ${
+                  safePage === totalPages
+                    ? "border-(--dark-text) text-(--dark-text) cursor-not-allowed"
+                    : "border-(--dark-text) text-(--dark-text)"
                 }`}
             >
               Next

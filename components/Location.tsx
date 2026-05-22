@@ -303,7 +303,7 @@ export default function Location() {
                           className="flex items-center gap-3 px-2 py-2.5 rounded-xl cursor-pointer hover:bg-(--highlight)/5 transition-colors group"
                         >
                           <span
-                            className={`w-[18px] h-[18px] rounded-[5px] border-2 flex items-center justify-center shrink-0 transition-all
+                            className={`w-4.5 h-4.5 rounded-[5px] border-2 flex items-center justify-center shrink-0 transition-all
                               ${checked ? "bg-(--highlight) border-(--dark-text2)" : "border-(--dark-text2)/30 group-hover:border-(--dark-text2)/50"}`}
                           >
                             {checked && (
@@ -428,7 +428,7 @@ export default function Location() {
                     onClick={() => goToPage(p as number)}
                     className={`w-8 h-8 rounded-xl text-xs font-semibold transition-all
                       ${safePage === p
-                        ? "bg-(--highlight) text-(--dark-text2) shadow-sm"
+                        ? "bg-(--highlight) text-(--dark-text) shadow-sm"
                         : "text-(--dark-text2) hover:bg-(--highlight)"
                       }`}
                   >
@@ -459,7 +459,7 @@ export default function Location() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="w-full lg:flex-1 h-[320px] lg:h-auto relative rounded-4xl lg:rounded-[2.5rem] overflow-hidden shadow-sm border border-(--dark-text)/10"
+        className="w-full lg:flex-1 h-80 lg:h-auto relative rounded-4xl lg:rounded-[2.5rem] overflow-hidden shadow-sm border border-(--dark-text)/10"
       >
         <iframe
           key={mapSrc}

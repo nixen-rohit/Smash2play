@@ -179,7 +179,7 @@ const EventsSection = () => {
             institutions — delivering high-energy, well-organized experiences
             every time.
           </p>
-          <div className="h-[600px] relative">
+          <div className="h-150 relative">
             <CircularGallery
               bend={1}
               borderRadius={0.05}

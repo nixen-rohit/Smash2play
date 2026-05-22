@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "Get the best equipment for your game.",
 };
 import Navbar from "@/components/layout/Navbar"
+import Loader from "@/components/Loader";
 
 export default function RootLayout({
   children,
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full antialiased`}>
       <body className="h-screen w-full">
+        <Loader />
         <Navbar/>
         {children}</body>
     </html>

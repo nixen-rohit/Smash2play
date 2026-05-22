@@ -146,7 +146,7 @@ export default function VenuePartnershipSection() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className={`
                   group relative rounded-3xl p-6 sm:p-8 overflow-hidden cursor-pointer bg-white
-                  ${feature.bg} border border-(--highlight)/20
+                  ${feature.bg} border border-(--highlight)/50
                   transition-all duration-500 hover:shadow-2xl hover:shadow-(--highlight)/10 backdrop-blur-xs
                 `}
                 style={{ minHeight: "320px" }}
@@ -219,7 +219,7 @@ export default function VenuePartnershipSection() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="relative rounded-2xl p-6 bg-(--dark-text)"
+                className="relative rounded-2xl p-6 bg-(--dark-text) border border-(--highlight)/50"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-(--highlight)/20 flex items-center justify-center">

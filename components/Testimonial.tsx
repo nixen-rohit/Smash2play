@@ -112,7 +112,7 @@ export default function TestimonialSlider() {
         <div className="relative mb-10 sm:mb-12">
           {/* Centered text */}
           <div className="text-center">
-            <span className="inline-block bg-(--highlight) text-(--dark-text) px-4 py-1.5 rounded-full text-sm font-semibold mb-4 border border-(--highlight)/20">
+            <span className="inline-block bg-(--highlight) text-(--dark-text) px-4 py-1.5 rounded-full text-sm font-semibold mb-4 border border-(--highlight)/50">
             Testimonials
           </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--dark-text2) leading-tight">
@@ -125,14 +125,14 @@ export default function TestimonialSlider() {
             <button
               onClick={prevSlide}
               aria-label="Previous"
-              className="  shadow-md border border-(--highlight)/20 p-2.5 sm:p-3 rounded-full text-(--highlight)  bg-(--dark-text) hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
+              className="  shadow-md p-2.5 sm:p-3 rounded-full text-(--highlight)  bg-(--dark-text) border border-(--highlight)/0 hover:border-(--highlight) transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
             >
               <LuChevronLeft size={22} />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next"
-              className="  shadow-md border border-(--highlight)/20 p-2.5 sm:p-3 rounded-full text-(--highlight)  bg-(--dark-text) hover:border-(--highlight)/40 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
+              className="  shadow-md p-2.5 sm:p-3 rounded-full text-(--highlight)  bg-(--dark-text) border border-(--highlight)/0 hover:border-(--highlight) transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--highlight)/50"
             >
               <LuChevronRight size={22} />
             </button>
@@ -165,7 +165,7 @@ export default function TestimonialSlider() {
                     .map((item) => (
                       <div
                         key={item.id}
-                        className="group h-full bg-white backdrop-blur-xs border border-(--highlight)/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-(--dark)/5   hover:border-(--highlight)/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
+                        className="group h-full bg-white backdrop-blur-xs border border-(--highlight)/50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-xl hover:shadow-(--dark)/5   hover:border-(--highlight)/40 transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
                       >
                         {/* Top */}
                         <div>

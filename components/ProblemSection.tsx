@@ -118,17 +118,17 @@ const ProblemSection: React.FC = () => {
                       initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
-                      className="bg-white backdrop-blur-xs rounded-3xl p-8 border border-(--dark-text)/5 hover:border-(--highlight)/30 transition-colors group"
+                      className="bg-(--dark-bg) backdrop-blur-xs rounded-3xl p-8 border border-(--dark-text)/5 hover:border-(--highlight)/30 transition-colors group"
                     >
                       <div className="flex items-center gap-4 mb-4  ">
-                        <div className="w-12 h-12 rounded-xl bg-(--highlight)/15 flex items-center justify-center text-(--highlight) border border-(--dark-text)/10 group-hover:scale-110 transition-transform">
+                        <div className="w-12 h-12 rounded-xl bg-(--highlight) flex items-center justify-center text-(--dark-text) border border-(--dark-text)/10 group-hover:scale-110 transition-transform">
                           <item.icon size={24} />
                         </div>
                         <h4 className="text-xl font-bold text-(--dark-text)">
                           0{item.id}. {item.title}
                         </h4>
                       </div>
-                      <p className=" text-lg leading-relaxed">
+                      <p className=" text-lg leading-relaxed text-(--dark-text)">
                         {item.description}
                       </p>
                     </motion.div>

@@ -2,6 +2,7 @@ import HowItsWorkSection from "@/components/HowItsWorkSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import Hero from "@/components/Hero";
+import Videosec from "@/components/Videosec";
 import Carousel from "@/components/Carousel";
 import Location from "@/components/Location";
 import Testimonial from "@/components/Testimonial";
@@ -15,6 +16,7 @@ const page = () => {
     <div className="min-h-screen w-full">
       <Hero />
       <ProblemSection />
+      <Videosec />
       <SolutionSection />
       <HowItsWorkSection />
       <Carousel />
@@ -22,7 +24,7 @@ const page = () => {
       <EventsSection />
       <Location />
       <Testimonial />
-      <Powered/>
+      <Powered />
       <Footer />
     </div>
   );

@@ -163,7 +163,12 @@ const Hero = () => {
               <button className="bg-black border border-(--highlight) text-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
                 Book a Slot
               </button>
-              <button className="border border-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-white/5 transition">
+              <button
+                onClick={() => {
+                  document.getElementById("venues")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="border border-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-white/5 transition"
+              >
                 Explore Venues
               </button>
             </div>

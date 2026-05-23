@@ -241,11 +241,11 @@ export default function Location() {
             <button
               key={f}
               onClick={() => handleQuickFilter(f)}
-              className={`px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium darkspace-nowrap transition-all
+              className={`px-4 lg:px-5 py-2 rounded-full text-xs lg:text-sm font-medium darkspace-nowrap transition-all
                 ${
                   quickFilter === f && !hasModalFilter
-                    ? "border-(--dark-text) text-(--dark-text2) bg-(--highlight)/10"
-                    : "border-(--dark-text) text-(--dark-text) hover:border-(--dark-text)/40 hover:bg-(--highlight)/10"
+                    ? "bg-(--dark-text) text-(--dark-text2)"
+                    : "bg-(--dark-text) text-(--dark-text2) hover:bg-(--dark-text)/90"
                 }`}
             >
               {f}
@@ -256,11 +256,11 @@ export default function Location() {
           <div className="relative">
             <button
               onClick={openFilterModal}
-              className={`flex items-center gap-1.5 px-4 lg:px-5 py-2 rounded-full border text-xs lg:text-sm font-medium darkspace-nowrap transition-all
+              className={`flex items-center gap-1.5 px-4 lg:px-5 py-2 rounded-full text-xs lg:text-sm font-medium darkspace-nowrap transition-all
                 ${
                   hasModalFilter
-                    ? "border-(--dark-text) text-(--dark-text2) bg-(--highlight)/10"
-                    : "border-(--dark-text) text-(--dark-text) hover:border-(--dark-text)/40 hover:bg-(--highlight)/10"
+                    ? "bg-(--dark-text) text-(--dark-text2)"
+                    : "bg-(--dark-text) text-(--dark-text2) hover:bg-(--dark-text)/90"
                 }`}
             >
               <FiSliders size={13} />
@@ -363,11 +363,11 @@ export default function Location() {
                 key={item.id}
                 variants={itemVars}
                 onClick={() => setSelectedId(item.id)}
-                className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--dark-bg) rounded-3xl lg:rounded-4xl border transition-all cursor-pointer
+                className={`flex gap-3 lg:gap-4 p-3 lg:p-4 bg-(--dark-text) rounded-3xl lg:rounded-4xl transition-all cursor-pointer
                   ${
                     selectedId === item.id
-                      ? "border-(--dark-text) bg-(--highlight)/5"
-                      : "border-transparent hover:border-(--dark-text2)/20"
+                      ? "bg-(--dark-text)/90"
+                      : "bg-(--dark-text)"
                   }`}
               >
                 <Image
@@ -382,13 +382,13 @@ export default function Location() {
                     <span className="text-[10px] font-bold uppercase text-(--highlight) tracking-wider">
                       {item.type}
                     </span>
-                    <h3 className="font-bold text-(--dark-text) leading-snug mt-1 text-sm lg:text-base">
+                    <h3 className="font-bold text-(--dark-text2) leading-snug mt-1 text-sm lg:text-base">
                       {item.title}
                     </h3>
                   </div>
-                  <div className="flex items-center gap-1 text-xs text-(--dark-text)">
-                    <FaMapMarkerAlt className="text-(--dark-text) text-xl shrink-0" />
-                    <span className="truncate text-(--dark-text) font-medium text-sm">
+                  <div className="flex items-center gap-1 text-xs text-(--dark-text2)">
+                    <FaMapMarkerAlt className="text-(--dark-text2) text-xl shrink-0" />
+                    <span className="truncate text-(--dark-text2) font-medium text-sm">
                       {item.location}
                     </span>
                   </div>
@@ -405,11 +405,11 @@ export default function Location() {
             <button
               onClick={() => goToPage(safePage - 1)}
               disabled={safePage === 1}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-full border text-xs font-medium transition-all
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium transition-all
                 ${
                   safePage === 1
-                    ? "border-(--dark-text) text-(--dark-text) cursor-not-allowed"
-                    : "border-(--dark-text) text-(--dark-text)"
+                    ? "bg-(--dark-text) text-(--dark-text2) cursor-not-allowed"
+                    : "bg-(--dark-text) text-(--dark-text2) hover:bg-(--dark-text)/90"
                 }`}
             >
               <FiChevronLeft size={14} />
@@ -433,8 +433,8 @@ export default function Location() {
                     className={`w-8 h-8 rounded-xl text-xs font-semibold transition-all
                       ${
                         safePage === p
-                          ? "bg-(--dark-bg) text-(--dark-text) shadow-sm"
-                          : "text-(--dark-text2) hover:bg-(--highlight)"
+                          ? "bg-(--dark-text) text-(--dark-text2)"
+                          : "text-(--dark-text2) hover:bg-(--dark-text)/90"
                       }`}
                   >
                     {p}
@@ -447,11 +447,11 @@ export default function Location() {
             <button
               onClick={() => goToPage(safePage + 1)}
               disabled={safePage === totalPages}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-full border text-xs font-medium transition-all
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium transition-all
                 ${
                   safePage === totalPages
-                    ? "border-(--dark-text) text-(--dark-text) cursor-not-allowed"
-                    : "border-(--dark-text) text-(--dark-text)"
+                    ? "bg-(--dark-text) text-(--dark-text2) cursor-not-allowed"
+                    : "bg-(--dark-text) text-(--dark-text2) hover:bg-(--dark-text)/90"
                 }`}
             >
               Next

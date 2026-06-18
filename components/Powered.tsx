@@ -22,7 +22,7 @@ const Powered = () => {
               className="object-cover w-full h-auto rounded-2xl"
             >
               {/* Replace with your actual video path if needed */}
-              <source src="/Video/callories.mp4" type="video/mp4" />
+              <source src="/Video/frame.mp4" type="video/mp4" />
             </video>
           </div>
 

@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import HeroVideo from "@/components/HeroVideo";
+import Link from "next/link";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -30,6 +31,8 @@ const Hero = () => {
       setHeroProgress(0);
     }
   });
+  const wanumber = process.env.NEXT_PUBLIC_WA_NUMBER;
+
   // 1. Video Animation: Moves from bottom to top.
   // It finishes exactly at 0.5 (middle of the scroll) so it stays pinned for the rest.
 
@@ -153,19 +156,25 @@ const Hero = () => {
             </motion.p>
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-tight">
               <span className="text-(--highlight)">Play.</span> Compete. <br />
-              <span className="text-white">All in <span className="text-(--highlight)">One Place.</span></span>
+              <span className="text-white">
+                All in <span className="text-(--highlight)">One Place.</span>
+              </span>
             </h2>
             <p className="font-medium text-(--dark-text) text-lg md:text-xl max-w-2xl mx-auto mb-10">
               Book premium sports venues, Train with expert coaches, <br />
               Or host unforgettable game events.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-black border border-(--highlight) text-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
-                Book a Slot
-              </button>
+              <Link href={`https://wa.me/${wanumber}`}>
+                <button className="bg-black border border-(--highlight) text-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:scale-105 transition-transform">
+                  Book a Slot
+                </button>
+              </Link>
               <button
                 onClick={() => {
-                  document.getElementById("venues")?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .getElementById("venues")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="border border-white px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-white/5 transition"
               >

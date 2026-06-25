@@ -31,6 +31,7 @@ export default function Header() {
   const { scrollY } = useScroll();
 
   const wanumber = process.env.NEXT_PUBLIC_WA_NUMBER;
+  const callnumber = process.env.NEXT_PUBLIC_CALL_NUMBER;
   // --- Scroll Logic: Hide on scroll down, show on scroll up ---
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -83,7 +84,7 @@ export default function Header() {
                       hover: { scaleX: 1 },
                     }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-(--red) origin-center"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-(--red) origin-center"
                   />
                 </motion.div>
               </Link>
@@ -141,7 +142,7 @@ export default function Header() {
         />
         {/* Call FAB */}
         <FloatingIcon
-          href={`tel:+${wanumber}`}
+          href={`tel:+${callnumber}`}
           bgColor="bg-black"
           icon={<FaPhone className="text-white" />}
           label="Call Us"
@@ -149,7 +150,7 @@ export default function Header() {
 
         {/* Trial FAB */}
         <FloatingIcon
-          href="#pricing"
+          href={`https://wa.me/${wanumber}`}
           bgColor="bg-black"
           icon={<FaCalendarCheck className="text-white" />}
           label="Book Trial"

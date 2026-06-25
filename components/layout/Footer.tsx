@@ -3,7 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaYoutube, FaInstagram, FaFacebookF } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
+import { IoMail } from "react-icons/io5";
 
 export default function Footer() {
   // Define the text to repeat
@@ -11,7 +12,7 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-(--dark-bg) text-white pt-12 pb-8 px-6 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto flex flex-col h-full min-h-[60vh] justify-between">
+      <div className="max-w-360 mx-auto flex flex-col h-full min-h-[60vh] justify-between">
         {/* --- Top Utility Bar (Empty as per original) --- */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] md:text-xs 2xl:text-sm font-[Helvetica] uppercase tracking-widest opacity-80"></div>
 
@@ -42,14 +43,19 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 border-t border-white/10 pt-10">
           {/* Social Icons */}
           <div className="flex items-center gap-5 text-xl">
-            <Link href="#" className="hover:scale-110 transition-transform">
-              <FaYoutube />
+            <Link
+              href="info@smash2play.com"
+              className="hover:scale-110 transition-transform"
+            >
+              <IoMail />
             </Link>
-            <Link href="#" className="hover:scale-110 transition-transform">
+            <Link
+              href="https://www.instagram.com/smash2play/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-transform"
+            >
               <FaInstagram />
-            </Link>
-            <Link href="#" className="hover:scale-110 transition-transform">
-              <FaFacebookF />
             </Link>
           </div>
 
